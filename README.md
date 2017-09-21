@@ -1,2 +1,2 @@
 # test
-test
+my test project
