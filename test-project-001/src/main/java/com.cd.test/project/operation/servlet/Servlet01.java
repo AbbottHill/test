@@ -23,7 +23,8 @@ import org.apache.logging.log4j.Logger;
  * Created by Administrator on 2017/9/22.
  */
 public class Servlet01 extends HttpServlet {
-    private static final Logger logger = LogManager.getLogger("Servlet01");
+    private static Logger logger = LogManager.getLogger(Servlet01.class.getName());
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
@@ -45,29 +46,12 @@ public class Servlet01 extends HttpServlet {
 //                e.printStackTrace();
 //            }
 
-
             Map requestMap = getParamsFromRequest(request);
             requestMap.put("service", "treeService");
             requestMap.put("method", "queryTreeNodes");
-            System.out.println(doExecute(requestMap));
+            Object result = doExecute(requestMap);
 
-
-            List nodes = new ArrayList();
-            Map map1 = new HashMap(); map1.put("id", "10001"); map1.put("name", "node10001");
-            Map map2 = new HashMap(); map1.put("id", "10004"); map1.put("name", "node1004");
-            Map map3 = new HashMap(); map1.put("id", "10002"); map1.put("name", "node10002"); map1.put("isParent", "true");
-            nodes.add(map1);
-//            nodes.add(map2);
-            nodes.add(map3);
-            String treeNodes = "[{id: 10001, name: 'node10001'}, " +
-                    "{id: 10004, name: 'node1002'}, " +
-                    "{id: 10002, pId: 10001, rootPId: 0, name: 'node10002', isParent: 'true'}]";
-//            writer.write("\"[" +
-//                    "{id: 10001, name: 'node10001'}, " +
-//                    "{id: 10004, name: 'node1002'}, " +
-//                    "{id: 10002, pId: 10001, rootPId: 0, name: 'node10002', isParent: 'true'}]\"");
-//            writer.write(JSONArray.toJSONString(treeNodes));
-            writer.write(JSONArray.toJSONString(nodes));
+            writer.write(JSONArray.toJSONString(result));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,11 +66,11 @@ public class Servlet01 extends HttpServlet {
         Object result = null;
 //        String service = String.valueOf(params.get("service"));
 //        String method = String.valueOf(params.get("method"));
-        Class classType = null;
+        Class classType;
         try {
             classType = Class.forName("com.cd.test.project.operation.service.treeService.TreeService");
             Object obj = classType.newInstance();
-
+            @SuppressWarnings("unchecked")
             Method[] methods = obj.getClass().getMethods();
             Method mExec = null;
             for (int i = 0; i < methods.length; i++) {

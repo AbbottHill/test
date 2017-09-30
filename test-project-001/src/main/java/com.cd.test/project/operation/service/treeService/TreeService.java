@@ -16,7 +16,7 @@ public class TreeService {
         Map map2 = new HashMap(); map2.put("id", "10004"); map2.put("name", "node1004");
         Map map3 = new HashMap(); map3.put("id", "10002"); map3.put("name", "node10002"); map3.put("isParent", "true");
         nodes.add(map1);
-//            nodes.add(map2);
+        nodes.add(map2);
         nodes.add(map3);
         return nodes;
     }
