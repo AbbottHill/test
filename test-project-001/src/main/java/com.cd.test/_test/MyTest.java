@@ -11,9 +11,15 @@ public class MyTest {
     public static void main(String[] args) {
         new MyTest();
     }
-
+    private int i;
     public MyTest() {
-        GooeleAviator.expressionEngine();
+        int j = 0;
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(MyTest.class.getName());
+        ApacheCommonsLang.arr2String();
+
+
 
         //        testCollections.test_map();
     }
@@ -63,13 +69,12 @@ class Collections_test {
 class ApacheCommonsLang {
     static void arr2String() {
         List list = new ArrayList();
-        list.add("abc");
-        list.add("123");
-        Map map = new HashMap();
-        list.add(map);
-        map.put("1", 1);
-        Iterator iterator = list.iterator();
-        System.out.println(StringUtils.join(iterator, ","));;
+//        list.add("abc");
+//        list.add("123");
+//        Map map = new HashMap();
+//        list.add(map);
+//        map.put("1", 1);
+        System.out.println(StringUtils.join(list, ","));
     }
 }
 
