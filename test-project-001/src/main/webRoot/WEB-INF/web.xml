@@ -3,6 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <listener>
+        <description>Application Listener</description>
+        <!--实现了ServletContextListener接口的监听器类 -->
+        <listener-class>com.cd.test.project.operation.servlet.listeners.MyApplicationListener</listener-class>
+    </listener>
+
+    <!-- log4j2在web工程设置日志文件保存在工程目录内 -->
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>isLog4jAutoInitializationDisabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
+
+    <session-config>
+        <session-timeout>30</session-timeout><!-- 单位为分钟,在达到这个时间之后session失效，并触发sessionDestroyed事件 -->
+    </session-config>
+
     <servlet>
         <servlet-name>servlet01</servlet-name>
         <servlet-class>com.cd.test.project.operation.servlet.Servlet01</servlet-class>
