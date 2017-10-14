@@ -22,7 +22,7 @@
     </Appenders>
 
     <Loggers>
-
+        <!-- sql -->
         <logger name="log4j.logger.org.mybatis" level="debug" additivity="false">
             <appender-ref ref="Console"/>
         </logger>
