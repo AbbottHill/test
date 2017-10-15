@@ -1,11 +1,5 @@
 package com.cd.test.project.common;
 
-
-
-
-
-import com.sun.deploy.config.Config;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

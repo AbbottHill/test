@@ -2,7 +2,6 @@ package com.cd.test.project.operation.servlet;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.sun.deploy.net.HttpRequest;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
