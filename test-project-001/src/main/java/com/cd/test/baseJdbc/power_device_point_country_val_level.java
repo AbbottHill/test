@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/8/15.
  */
-public class Power_device_point_country_val_jdbc {
+public class power_device_point_country_val_level {
     public static int type = 2;
     static String UP_POINT_ID_VAL_one = "0";
     static String UP_POINT_ID_VAL_second = "2";
