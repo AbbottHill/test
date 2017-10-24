@@ -3,6 +3,7 @@ package com.cd.test.test;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
