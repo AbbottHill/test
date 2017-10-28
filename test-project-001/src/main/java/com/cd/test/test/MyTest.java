@@ -2,6 +2,7 @@
 package com.cd.test.test;
 
 import com.googlecode.aviator.AviatorEvaluator;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -23,7 +24,12 @@ public class MyTest {
 	}
 
 	public MyTest() {
+		List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+		features.forEach(n -> System.out.println(n));
 
+		// 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，
+		// 看起来像C++的作用域解析运算符
+		features.forEach(System.out::println);
 	}
 
 	public static void myPrint(Object obj) {
@@ -35,6 +41,18 @@ public class MyTest {
 
 class Tools {
 
+	public static void main(String[] args) {
+//		double aa = -19162431.1254;
+//		System.out.println(aa);
+		System.out.println(10000000.0d);
+		System.out.println(9999999.999999999d);
+		System.out.println(new BigDecimal(9999999.999999999d));
+		System.out.println(9999999.9999999999d);
+		System.out.println(0.0001);
+
+
+	}
+
 	/**
 	 * @param str
 	 * @return
@@ -42,7 +60,7 @@ class Tools {
 	 *             if str is null
 	 */
 	static boolean isStringDigit(String str) throws NullPointerException {
-		return Pattern.matches("-?\\d+\\.?\\d+", str);
+		return Pattern.matches("-?\\d+\\.?\\d*", str);
 	}
 
 	/**
@@ -98,22 +116,20 @@ class CollectionsTest {
 
 	/**
 	 * @param list;
-	 *            key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
+	 * key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
 	 */
 	public static void sortList(List<Map<String, Object>> list, final String key, final int order, final int type) {
 		Collections.sort(list, new Comparator<Map<String, Object>>() {
 			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
 				String value1 = String.valueOf(o1.get(key));
 				String value2 = String.valueOf(o2.get(key));
-				if (Tools.isEmpty(value1)) {
-					System.out.println("value1" + value1);
-					return 1;
-				}
-				if (Tools.isEmpty(value2)) {
-					System.out.println("value2" + value2);
-					return -1;
-				}
 				if (type == 0) {
+					if (!Tools.isStringDigit(value1)) {
+						return 1;
+					}
+					if (!Tools.isStringDigit(value2)) {
+						return -1;
+					}
 					return new BigDecimal(value1).compareTo(new BigDecimal(value2)) * order;
 				} else {
 					return value1.compareTo(value2) * order;
@@ -122,31 +138,6 @@ class CollectionsTest {
 		});
 	}
 
-	/**
-	 * @param list;
-	 *            key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
-	 */
-	public static void sortList2(List<Map<String, Object>> list, final String key, final int order, final int type) {
-		Collections.sort(list, new Comparator<Map<String, Object>>() {
-			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
-				String value1 = String.valueOf(o1.get(key));
-				String value2 = String.valueOf(o2.get(key));
-				if (Tools.isEmpty(value1)) {
-					System.out.println("value1" + value1);
-					return 1;
-				}
-				if (Tools.isEmpty(value2)) {
-					System.out.println("value2" + value2);
-					return -1;
-				}
-				if (type == 0) {
-					return new BigDecimal(value1).compareTo(new BigDecimal(value2)) * order;
-				} else {
-					return value1.compareTo(value2) * order;
-				}
-			}
-		});
-	}
 
 }
 
@@ -204,9 +195,14 @@ class MyException extends Exception {
 }
 
 class LambdaExpress {
-	
-	@Test
-	public void lambdaRunnble(){
-		new Thread( () -> System.out.println("In Java8, Lambda expression rocks !!") ).start();
+
+	public static void main(String[] args) {
+		lambdaRunnble();
+	}
+
+	public static void lambdaRunnble(){
+		new Thread(() -> System.out.println(Thread.currentThread().getName())).start();
+
+		new Thread(() -> System.out.println("In Java8, Lambda expression rocks !!" + Thread.currentThread().getName())).start();
 	}
 }
