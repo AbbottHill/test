@@ -1,3 +1,25 @@
+/**
+ * OOP
+ */
+(function(){
+    function fun() {
+        return this.brand + ' run ' + this.speed;
+    }
+
+    function Car(brand, speed) {
+        this.brand = brand;
+        this.speed = speed;
+        this.run = fun;
+    }
+
+    var Ferrari = new Car('Ferrari', 300);
+    var LandRover = new Car('LandRover', 200);
+    
+    console.info(Ferrari.run());
+    console.info(LandRover.run());
+
+})();
+
 
 /**
  * ztree

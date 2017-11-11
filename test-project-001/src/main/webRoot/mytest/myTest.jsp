@@ -59,11 +59,11 @@
 
     </style>
 
-    <link rel="stylesheet" href="./css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="./jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="./jquery.validate.min.js"></script>
-    <script type="application/javascript" src="./messages_zh.min.js"></script>
-    <script type="application/javascript" src="./jquery.ztree.core.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/css/zTreeStyle.css" type="text/css">
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/messages_zh.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery.ztree.core.js"></script>
 </head>
 <body>
 <ul class="content">
