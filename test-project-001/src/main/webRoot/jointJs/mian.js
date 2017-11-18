@@ -1,5 +1,3 @@
-
-(function() {
     var graph = null;
     var paper = null;
     var rect = null;
@@ -32,7 +30,11 @@
             }
         });
 
-        rect2 = rect.clone();
+        rect2 = new joint.shapes.basic.myRect({
+            position: { x: 260, y: 160 },
+            size: { width: 100, height: 30 },
+            attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white' } }
+        });
         rect2.translate(300);
 
         link = new joint.dia.Link({
@@ -89,7 +91,19 @@
         });
     }
 
+
+    joint.shapes.basic.myRect = joint.shapes.basic.Generic.extend({
+        markup: '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>',
+        defaults: joint.util.deepSupplement({
+            type: 'basic.myRect',
+            attrs: {
+                'rect': { fill: 'white', stroke: 'black', 'follow-scale': true, width: 80, height: 40 },
+                'text': { 'font-size': 14, 'ref-x': .5, 'ref-y': .5, ref: 'rect', 'y-alignment': 'middle', 'x-alignment': 'middle' }
+            }
+        }, joint.shapes.basic.Generic.prototype.defaults)
+    });
+
+
     init();
     bindEvent();
-})();
 
