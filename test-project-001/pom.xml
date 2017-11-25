@@ -6,19 +6,80 @@
 
     <groupId>groupId</groupId>
     <artifactId>study</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <packaging>war</packaging>
+
     <properties>
         <springframework.version>4.3.4.RELEASE</springframework.version>
         <junit.version>4.12</junit.version>
+        <poi-version>3.16</poi-version>
         <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
         <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <my-property>world</my-property>
+                <poi-version>3.16</poi-version>
+                <!--<package.environment>test</package.environment>-->
+            </properties>
+        </profile>
+        <profile>
+            <id>regular</id>
+            <properties>
+                <package.environment>regular</package.environment>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
+        <!--在命令行中执行mvn，则相当于执行mvn package-->
+        <defaultGoal>package</defaultGoal>
+        <directory>${basedir}/target</directory>
+        <finalName>${artifactId}-${version}</finalName>
+        <!--
+        定义*.properties文件，包含一个properties列表，该列表会应用到支持filter的resources中。
+         也就是说，定义在filter的文件中的name=value键值对，会在build时代替${name}值应用到resources中。
+         maven的默认filter文件夹为${basedir}/src/main/filters
+        -->
+        <!--<filters>
+            <filter>filters/filter1.properties</filter>
+        </filters>-->
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>study</warName>
+                    <!--指定web.xml的路径  -->
+                    <webXml>src/main/webRoot/WEB-INF/web.xml</webXml>
+                    <!-- 对丢失web.xml检测机制进行忽略， Dynamic Web Module 3.0 工程时代不需要web.xml文件注册相关内容的，所以工程默认不生成web.xml。-->
+                    <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
+                    <!--指定jsp、js、css的路劲  -->
+                    <warSourceDirectory>${web.source.dir}</warSourceDirectory>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -81,8 +142,8 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
+
 
     <dependencies>
         <dependency>
@@ -136,7 +197,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
-            <version>3.13</version>
+            <version>${poi-version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
