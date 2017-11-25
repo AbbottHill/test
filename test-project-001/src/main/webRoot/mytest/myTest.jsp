@@ -161,5 +161,5 @@
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 </script>
-<script src="${pageContext.request.contextPath}/mytest/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
+<script src="${pageContext.request.contextPath}/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </html>

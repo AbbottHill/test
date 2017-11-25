@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <context:annotation-config />
+    <!--<context:component-scan base-package="org.springframework.web.filter"/>-->
+    <context:component-scan base-package="com.cd.test.project.operation.controllers"/>
+
+    <context:property-placeholder location="classpath:redis.properties"/>
+    <!-- 通过以下配置将spring session 和redis整合到了一起 -->
+    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
+        <!-- 过期时间10分钟 -->
+        <property name="maxInactiveIntervalInSeconds" value="600"></property>
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${REDIS_IP}"/>
+        <property name="password" value="${REQUIREPASS}"/>
+        <property name="port" value="${REDIS_PORT}"/>
+        <property name="database" value="6"/>
+        <property name="poolConfig" ref="jedisPoolConfig" />
+        <property name="usePool" value="true" />
+    </bean>
+
+    <!-- redis -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="${JEDIS_POOL_MAXACTIVE}" />
+        <property name="maxIdle" value="${JEDIS_POOL_MAXIDLE}" />
+        <property name="maxWaitMillis" value="${JEDIS_POOL_MAXWAIT}" />
+        <property name="testOnBorrow" value="${JEDIS_POOL_TESTONBORROW}" />
+        <property name="testOnReturn" value="${JEDIS_POOL_TESTONRETURN}" />
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+    </bean>
+
+    <!-- 让Spring Session不再执行config命令 -->
+    <util:constant static-field="org.springframework.session.data.redis.config.ConfigureRedisAction.NO_OP"/>
+
+</beans>
