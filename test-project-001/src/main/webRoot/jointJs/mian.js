@@ -14,6 +14,16 @@ function init() {
     $("#zoomOut").unbind().bind('click', function () {
         paperScroller.zoom(-0.05, { min: 0.4 });
     });
+    $("#scaleIn").unbind().bind('click', function () {
+        paper.scale(paper.scale().sx + 0.05);
+    });
+    $("#scaleOut").unbind().bind('click', function () {
+        paper.scale(paper.scale().sx - 0.05);
+    });
+    $("#scaleNone").unbind().bind('click', function () {
+        paper.scale(1);
+    });
+
     $("#fitContent").unbind().bind('click', function () {
         paperScroller.addPadding(0,0,0,0);
         paper.fitToContent();
@@ -97,10 +107,12 @@ function init() {
     graph.addCells([rect, rect2, link]);
 
     //background
-    background = V('<image width="1920px" height="1080px"/>');
+    background = V('<image/>');
+    // background = V('<image width="1920px" height="1080px"/>');
     background.attr({
         // 'xlink:href': 'https://file.isolarcloud.com/stpic/100004/file18220171110191652063.jpg', height: 780, width:1000
         'xlink:href': '/resources/images/lianhua.png'
+        // 'xlink:href': '/resources/images/933.png'
     });
     V(paper.viewport).prepend(background);
 

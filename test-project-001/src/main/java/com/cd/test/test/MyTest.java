@@ -3,6 +3,7 @@ package com.cd.test.test;
 
 import com.googlecode.aviator.AviatorEvaluator;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -13,30 +14,40 @@ import redis.clients.jedis.JedisPoolConfig;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public class MyTest {
+	String fieldStr;
+
 	public static void main(String[] args) {
 		new MyTest();
 	}
 
 	public MyTest() {
-		List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
-		features.forEach(n -> System.out.println(n));
-
+//		List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+//		features.forEach(n -> System.out.println(n));
 		// 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，
 		// 看起来像C++的作用域解析运算符
-		features.forEach(System.out::println);
+//		features.forEach(System.out::println);
+
+//		String variableStr = null;
+//		System.out.println(fieldStr);
+//		System.out.println(variableStr);
+
+//		String[] arr = {"Lambdas", "Default Method", "Stream API", "Date and Time API"};
+//		System.out.println(ArrayUtils.contains(arr,"Lambda"));
+
+//		System.out.println(String.valueOf(null));
+
 	}
 
 	public static void myPrint(Object obj) {
 		System.out.println("-----> " + obj);
 	}
-	
-
 }
 
 class Tools {
@@ -91,16 +102,12 @@ class Tools {
 
 class CollectionsTest {
 	public static void main(String[] args) {
-		List list = new ArrayList();
-		Map m1 = new HashMap();
-		m1.put("value", 1);
-		list.add(m1);
-		Map m2 = new HashMap();
-		m2.put("value", "--");
-		list.add(m2);
-		Map m3 = new HashMap();
-		m3.put("value", 3);
-		list.add(m3);
+		String[] strs = {
+				"0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
+				"0.4500", "--", "--", "0.4600", "0.4800", "0.4600", "0.4800", "0.5000", "0.5300", "0.5700", "0.5200", "--", "0.5500", "0.4800",
+				"0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700"
+				};
+		List list = Arrays.asList(strs);
 		System.out.println(list);
 		sortList(list, "value", -1, 0);
 		System.out.println(list);
@@ -118,12 +125,43 @@ class CollectionsTest {
 	 * @param list;
 	 * key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
 	 */
-	public static void sortList(List<Map<String, Object>> list, final String key, final int order, final int type) {
+	public static void sortList(List<String> list, final String key, final int order, final int type) {
+		Collections.sort(list, new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				String value1 = String.valueOf(o1);
+				String value2 = String.valueOf(o2);
+				if (type == 0) {
+					if (!Tools.isStringDigit(value1) && !Tools.isStringDigit(value2)) {
+						return 0;
+					}
+					if (!Tools.isStringDigit(value1)) {
+						return 1;
+					}
+					if (!Tools.isStringDigit(value2)) {
+						return -1;
+					}
+					return new BigDecimal(value1).compareTo(new BigDecimal(value2)) * order;
+				} else {
+					return value1.compareTo(value2) * order;
+				}
+			}
+		});
+	}
+
+	/**
+	 * @param list;
+	 * key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
+	 */
+	public static void sortListMap(List<Map<String, Object>> list, final String key, final int order, final int type) {
 		Collections.sort(list, new Comparator<Map<String, Object>>() {
 			public int compare(Map<String, Object> o1, Map<String, Object> o2) {
 				String value1 = String.valueOf(o1.get(key));
 				String value2 = String.valueOf(o2.get(key));
 				if (type == 0) {
+					if (!Tools.isStringDigit(value1) && !Tools.isStringDigit(value2)) {
+						return 0;
+					}
 					if (!Tools.isStringDigit(value1)) {
 						return 1;
 					}
