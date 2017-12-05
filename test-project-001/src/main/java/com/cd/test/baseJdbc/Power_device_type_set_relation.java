@@ -1,4 +1,4 @@
-package com.cd.test.Power_device_type_set_relation;
+package com.cd.test.baseJdbc;
 
 import com.cd.test.baseJdbc.CommonJdbc;
 import jxl.Cell;
