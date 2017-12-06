@@ -148,10 +148,12 @@
     </li>--%>
 
     <li class="element">
-        <ul id="treeDemo" class="ztree"></ul>
+        <a href="${pageContext.request.contextPath}/mytest/AMap.jsp">AMap</a>
+        <a href="${pageContext.request.contextPath}/mytest/GMap.jsp">GMap</a>
     </li>
 
     <li class="element">
+        <ul id="treeDemo" class="ztree"></ul>
     </li>
 
     <li class="element">
