@@ -58,7 +58,7 @@
         }
 
     </style>
-
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/css/zTreeStyle.css" type="text/css">
     <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
     <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery.validate.min.js"></script>
@@ -150,6 +150,8 @@
     <li class="element">
         <a href="${pageContext.request.contextPath}/mytest/AMap.jsp">AMap</a>
         <a href="${pageContext.request.contextPath}/mytest/GMap.jsp">GMap</a>
+        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |
+        <a href="${pageContext.request.contextPath}/jointJs/main.html">Joint</a>
     </li>
 
     <li class="element">

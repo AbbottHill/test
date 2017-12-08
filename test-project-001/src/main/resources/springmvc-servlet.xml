@@ -22,6 +22,8 @@
 
     <!-- configure the InternalResourceViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+        <!-- 决定视图类型，如果添加了jstl支持（即有jstl.jar），那么默认就是解析为jstl视图 -->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
         <!-- 前缀 -->
         <property name="prefix" value="/jsp/" />
         <!-- 后缀 -->

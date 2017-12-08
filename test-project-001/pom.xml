@@ -10,6 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework.version>4.3.4.RELEASE</springframework.version>
         <junit.version>4.12</junit.version>
         <poi-version>3.16</poi-version>
@@ -39,6 +40,7 @@
     </profiles>
 
     <build>
+        <finalName>APP</finalName>
         <!--在命令行中执行mvn，则相当于执行mvn package-->
         <defaultGoal>package</defaultGoal>
         <directory>${basedir}/target</directory>
@@ -172,7 +174,6 @@
             <artifactId>spring-context</artifactId>
             <version>${springframework.version}</version>
         </dependency>
-
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
@@ -185,6 +186,12 @@
             <version>3.1.0</version>
             <type>jar</type>
             <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
 
         <dependency>
@@ -311,6 +318,12 @@
             <version>2.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.4</version>
+            <!--<scope>provided</scope> -->
+        </dependency>
 
     </dependencies>
 </project>
