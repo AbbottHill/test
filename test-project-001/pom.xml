@@ -44,7 +44,7 @@
         <!--在命令行中执行mvn，则相当于执行mvn package-->
         <defaultGoal>package</defaultGoal>
         <directory>${basedir}/target</directory>
-        <finalName>${artifactId}-${version}</finalName>
+        <!--<finalName>${artifactId}-${version}</finalName>-->
         <!--
         定义*.properties文件，包含一个properties列表，该列表会应用到支持filter的resources中。
          也就是说，定义在filter的文件中的name=value键值对，会在build时代替${name}值应用到resources中。
@@ -323,6 +323,12 @@
             <artifactId>lombok</artifactId>
             <version>1.16.4</version>
             <!--<scope>provided</scope> -->
+        </dependency>
+
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
         </dependency>
 
     </dependencies>
