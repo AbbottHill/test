@@ -36,6 +36,13 @@
         <listener-class>com.cd.test.project.operation.servlet.listeners.MyApplicationListener</listener-class>
     </listener>
 
+    <listener>
+        <description>Session Listener</description>
+        <!--实现了ServletContextListener接口的监听器类 -->
+        <listener-class>com.cd.test.project.operation.servlet.listeners.MySessionListener</listener-class>
+    </listener>
+
+
     <!-- log4j2在web工程设置日志文件保存在工程目录内 -->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
