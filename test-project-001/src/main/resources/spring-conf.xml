@@ -44,10 +44,4 @@
     <!-- 让Spring Session不再执行config命令 -->
     <util:constant static-field="org.springframework.session.data.redis.config.ConfigureRedisAction.NO_OP"/>
 
-    <!-- redis pub/sub 订阅者 -->
-    <bean id="subscriber" class="com.cd.test.test.RedisPubSub.Subscriber"></bean>
-
-    <bean id="springContextUtil" class="com.cd.test.project.common.SpringContextUtil"></bean>
-
-
 </beans>

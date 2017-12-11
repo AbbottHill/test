@@ -151,7 +151,7 @@
         <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>
         <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>
         <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |
-        <a href="${pageContext.request.contextPath}/jointJs/main.html">Joint</a>
+        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>
         <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>
         <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">test</a>
     </li>
