@@ -40,7 +40,7 @@
             dataType: "json",
             type: "post",
             autoParam: ["id=zId"],
-            otherParam: { "id":"1", "name":"test"}
+            otherParam: { "id":"1", "name":"test", "method": "queryTreeNodes", "service": "treeService"}
         },
         callback: {
             onAsyncSuccess: zTreeOnAsyncSuccess

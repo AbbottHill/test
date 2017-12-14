@@ -25,7 +25,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
@@ -84,4 +83,19 @@
             <error-code>404</error-code>
             <location>/jsp/hello.jsp</location>
         </error-page>-->
+
+    <!-- 开启Session机制 -->
+    <listener>
+        　　<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <!--<filter>
+        <filter-name>requestContextFilter</filter-name>
+        <filter-class>
+            　　　 org.springframework.web.filter.RequestContextFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>requestContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
 </web-app>

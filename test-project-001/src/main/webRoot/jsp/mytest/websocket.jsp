@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2017/12/8
-  Time: 15:54
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.cd.test.project.common.JspUtils"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String path = request.getContextPath();
@@ -15,44 +9,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>websocketIndex</title>
-    <script type="text/javascript">
-        var wsuri = "<%=socPath%>getServer";
-        var ws = null;
-        function startWebSocket() {
-            if ('WebSocket' in window) {
-                ws = new WebSocket(wsuri);
-            }
-            else if ('MozWebSocket' in window) {
-                ws = new MozWebSocket(wsuri);
-            }
-            else
-                console.error("not support WebSocket!");
-            ws.onmessage = function (evt) {
-                document.getElementById("testSpan").innerHTML = document.getElementById("testSpan").innerHTML + "<br>" + evt.data;
-                console.info(evt);
-            };
-
-            ws.onclose = function (evt) {
-                console.info("close");
-                console.info(evt);
-            };
-
-            ws.onopen = function (evt) {
-                console.info("open");
-                console.info(evt);
-            };
-        }
-        ;
-
-        function init() {
-            startWebSocket();
-        };
-        init();
-
-        function sendMsg() {
-            ws.send(document.getElementById('writeMsg').value);
-        }
+    <script>
+        var ctx = 'ws://${pageContext.request.contextPath}';
+        var ctx = '<%=socPath%>'
     </script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/mytest/websocket.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </head>
 <body>
 <input type="text" id="writeMsg"/>
