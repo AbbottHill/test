@@ -7,6 +7,7 @@ import com.cd.test.project.common.Constants;
 import com.cd.test.project.common.GetHttpSessionConfigurator;
 import com.cd.test.project.common.SpringContextUtil;
 import com.cd.test.test.RedisPubSub.Subscriber;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,6 +21,7 @@ import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 
 @ServerEndpoint(value = "/getServer", configurator = GetHttpSessionConfigurator.class)
+@Log4j2
 //@ServerEndpoint(value = "/getServer", configurator = SpringConfigurator.class)
 public class TestWebsocket {
     //    private int i = 0;
@@ -109,6 +111,7 @@ public class TestWebsocket {
             }
         });
         t2.start();
+        log.error("Thread.activeCount() -->" + Thread.activeCount());
     }
 
 

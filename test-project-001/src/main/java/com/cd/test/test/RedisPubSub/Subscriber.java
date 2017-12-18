@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 import redis.clients.jedis.JedisPubSub;
 
+import java.io.Serializable;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
@@ -12,11 +13,16 @@ import java.util.concurrent.ArrayBlockingQueue;
  * redis pub/sub 订阅者
  */
 @Component("subscriber") @Scope("prototype")
-public class Subscriber extends JedisPubSub {
+public class Subscriber extends JedisPubSub implements Serializable{
 
     private ArrayBlockingQueue<String> arrayBlockingQueue = new ArrayBlockingQueue<String>(3);
+//    private ArrayBlockingQueue<String> arrayBlockingQueue = null;
 
     public Subscriber() {
+    }
+
+    public Subscriber(ArrayBlockingQueue<String> arrayBlockingQueue) {
+        this.arrayBlockingQueue = arrayBlockingQueue;
     }
 
     public void onMessage(String channel, String message) {

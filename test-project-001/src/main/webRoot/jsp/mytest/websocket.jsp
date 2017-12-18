@@ -11,13 +11,15 @@
     <title>websocketIndex</title>
     <script>
         var ctx = 'ws://${pageContext.request.contextPath}';
-        var ctx = '<%=socPath%>'
+        var ctx = '<%=socPath%>';
     </script>
     <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
     <script src="${pageContext.request.contextPath}/js/mytest/websocket.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </head>
 <body>
 <input type="text" id="writeMsg"/>
+<%--<input type="button" value="subscribe" onclick="subscribe()"/>--%>
+<%--<input type="button" value="initWebSocket" onclick="initWebSocket()"/>--%>
 <input type="button" value="sendSmgToServer" onclick="sendMsg()"/>
 <br>
 <span id="testSpan">

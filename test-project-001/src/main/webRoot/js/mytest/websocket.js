@@ -1,7 +1,7 @@
 var url = ctx + "getServer";
 var ws = null;
 (function startWebSocket(url) {
-    queryTimes();
+    userLogin();
 })(url);
 
 function initWebSocket () {
@@ -26,40 +26,58 @@ function initWebSocket () {
     ws.onopen = function (evt) {
         console.info("open");
         console.info(evt);
+
+        setSubscriberFlag();
     };
 }
-
 
 function sendMsg() {
     ws.send(document.getElementById('writeMsg').value);
 }
 
-function queryTimes() {
-    var params = {};
-    params["service"] = "pollingService";
-    params["method"] = "getTimes";
+/**
+ * create redis subscriber
+ */
+function subscribe() {
     $.ajax({
-        url: "/servlet_01",
+        url: "/subscribe",
         type: "post",
-        data: params,
         dataType: "json",
         timeout: 1000 * 10,             // async: false，temeout 属性无效
         beforeSend: function () {
 
         },
         success: function (data) {
-            document.getElementById("testSpan").innerHTML = document.getElementById("testSpan").innerHTML + "<br>" + "times: " + data.times;
-            initWebSocket();
+
         },
         error: function () {
-            easyDialog.open({
-                container: {
-                    header: LANG["login_prompt"],
-                    content: LANG["all_station_requesttimeout"]
-                },
-                fixed: false
-            });
+
         }
     });
+}
 
+/**
+ * simulate user login
+ */
+function userLogin() {
+    var abcd = "abcdefghij";
+    var topic = abcd[parseInt(Math.random() * 10)] + abcd[parseInt(Math.random() * 10)];
+    var topic = "aa";
+    $.ajax({
+        url: "/mvc/setTopic/" + topic, success: function (result) {
+            console.log(result);
+            initWebSocket();
+        }
+    });
+}
+
+/**
+ * set subscriberFlag = 1
+ */
+function setSubscriberFlag() {
+    $.ajax({
+        url: "/mvc/subscriberFlag", success: function (result) {
+            console.log(result);
+        }
+    });
 }

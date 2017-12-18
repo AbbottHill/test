@@ -67,7 +67,20 @@
 </head>
 <body>
 <ul class="content">
-    <%--<li class="element btnsLi">
+
+    <li class="element">
+        <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>
+        <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>
+        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |
+        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>
+        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>
+        <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a>
+    </li>
+
+    <li class="element">
+        <ul id="treeDemo" class="ztree"></ul>
+    </li>
+    <li class="element btnsLi">
         <button class="btn">1</button>
         <button class="btn">2</button>
         <button class="btn">3</button>
@@ -145,19 +158,6 @@
         </script>
         <a id="test" onclick="clickDownload(this)" download="downlaod.csv" href="#">download</a>&nbsp;&nbsp;&nbsp;
         <a onclick="clickDownload_ie()" href="#">IE download</a>
-    </li>--%>
-
-    <li class="element">
-        <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>
-        <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>
-        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |
-        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>
-        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>
-        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">test</a>
-    </li>
-
-    <li class="element">
-        <ul id="treeDemo" class="ztree"></ul>
     </li>
 
     <li class="element">

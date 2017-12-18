@@ -13,6 +13,7 @@ import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 import javax.swing.*;
+import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -178,6 +179,12 @@ class CollectionsTest {
         });
     }
 
+    public static void SetTest() {
+        Set set = new HashSet();
+        set.add("123");
+        set.add("123");
+        System.out.println(set.size());
+    }
 
 }
 

@@ -66,6 +66,11 @@ class Consumer implements Runnable {
     private Map m = null;
 
     public Consumer(Map m) {
+        try {
+            Thread.sleep(10 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         this.m = m;
     }
 
