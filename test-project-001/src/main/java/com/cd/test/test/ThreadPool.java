@@ -34,7 +34,9 @@ public class ThreadPool implements Serializable {
     }
 
     public static void main(String[] args) {
-        new ThreadPool(5); //实际应用中不在主线程中new
+        int cpuNum = Runtime.getRuntime().availableProcessors();// 获取处理器数量
+        int capacity = cpuNum * 2 + 1;// 根据cpu数量,计算出合理的线程并发数
+        new ThreadPool(capacity); //实际应用中不在主线程中new
     }
 
 }

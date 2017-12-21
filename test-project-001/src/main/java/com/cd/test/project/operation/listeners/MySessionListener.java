@@ -1,12 +1,4 @@
-package com.cd.test.project.operation.servlet.listeners;
-
-import com.cd.test.project.common.Constants;
-import com.cd.test.test.RedisPubSub.Subscriber;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import redis.clients.jedis.Jedis;
+package com.cd.test.project.operation.listeners;
 
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;

@@ -114,7 +114,7 @@
                         <!--<include>**/*.js</include>-->
                         <!--<include>**/*.js</include>-->
                         <!--<include>**/*.css</include>-->
-                        <include>mytest/*.js</include>
+                        <include>js/*.js</include>
                     </includes>
                     <!-- 以下目录和文件不会被压缩 -->
                     <excludes>

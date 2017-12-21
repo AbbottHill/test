@@ -3,6 +3,8 @@ package com.cd.test.test;
 
 import com.googlecode.aviator.AviatorEvaluator;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -15,6 +17,8 @@ import redis.clients.jedis.JedisPoolConfig;
 import javax.swing.*;
 import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
@@ -23,6 +27,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
+@Log4j2
 public class MyTest {
     String fieldStr;
 
@@ -91,16 +96,6 @@ class Tools {
         return false;
     }
 
-    static void copyFile(String filePath) {
-        // FileInputStream fileInputStream = null;
-        // try {
-        // fileInputStream = new FileInputStream(filePath);
-        // } catch (IOException e) {
-        // e.printStackTrace();
-        // } finally {
-        // fileInputStream.close();
-        // }
-    }
 }
 
 class CollectionsTest {
@@ -239,6 +234,13 @@ class MyException extends Exception {
     public synchronized Throwable fillInStackTrace() {
         return this;
     }
+
+    public static void testThrow() throws Exception {
+        System.out.println("start");
+        throw new Exception();
+//        System.out.println("end"); //unreachable statement
+    }
+
 }
 
 class LambdaExpress {
@@ -256,7 +258,36 @@ class LambdaExpress {
 
 class FileTest {
     public static void main(String[] args) {
+        copyFile();
         System.out.println(File.separatorChar);
+    }
+
+    static void copyFile() {
+        String filePath = "C:/Users/Administrator/Desktop/handbook.pdf";
+        try (FileInputStream in = new FileInputStream(filePath);
+             FileOutputStream out = new FileOutputStream("C:/Users/Administrator/Desktop/handbook.copy.pdf")
+        ) {
+            Long start = System.currentTimeMillis();
+            int b;
+            while ((b = in.read()) != -1) {
+                out.write(b);
+            }
+
+//            byte buffer[] = new byte[1024];
+//            //判断输入流中的数据是否已经读完的标识
+//            int len;
+//            //循环将输入流读入到缓冲区当中，(len=in.read(buffer))>0就表示in里面还有数据
+//            while ((len = in.read(buffer)) > 0) {
+//                //使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "/" + filename)当中
+//                out.write(buffer, 0, len);
+//            }
+
+            Long end = System.currentTimeMillis();
+            System.out.println("time: " + (end - start));
+
+        } catch (IOException e) {
+            e.getMessage();
+        }
     }
 }
 
@@ -299,3 +330,34 @@ class BlockQueueTest {
     }
 
 }
+
+class CharSetTest {
+    public static void main(String[] args) {
+        String str = "C逆变器ａｂ１２あㅟㅡ";
+        int[] ints = checkHalf(str);
+        System.out.println(ints[0] + ", " + ints[1]);
+    }
+    
+    /**
+     * char是可以动态的（1-2字节），如果char的长度超过了1就是全角，否则半角
+     * return  checkRet[0]:半角个数    checkRet[1]:全角个数
+     * */
+    public static int[] checkHalf(String str) {
+        int checkRet[] = new int[2];
+        byte[] Char = null;
+        for (int i = 0; i < str.length(); i++) {
+            try {
+                Char = (new Character(str.charAt(i)).toString()).getBytes("UTF-8");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (Char.length == 1) {// 统计半角个数
+                checkRet[0]++;
+            }else{// 统计全角个数
+                checkRet[1]++;
+            }
+        }
+        return checkRet;
+    }
+}
+
