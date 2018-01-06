@@ -6,14 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="com.cd.test.project.common.JspUtils"%>
+<%@ page import="com.cd.test.project.common.MyPropertyPlaceholder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta name="renderer" content="ie-comp">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
     <title>mytest</title>
     <style>
         body {
-            background-color: #c7edcc;
+            background-color: #fff;
         }
 
         .error {
@@ -57,6 +63,11 @@
             /*position: absolute;*/
         }
 
+        .resultArea {
+            width: 70%;
+            height: 70%;
+        }
+
     </style>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/css/zTreeStyle.css" type="text/css">
@@ -69,18 +80,24 @@
 <ul class="content">
 
     <li class="element">
-        <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>
-        <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>
-        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |
-        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>
-        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>
-        <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a>
+        <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a><br><br>
+        <a href="${pageContext.request.contextPath}/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
+    </li>
+
+    <li class="element">
+        <textarea class="resultArea"></textarea><button onclick="mytestObj.queryJson()">query json</button>
     </li>
 
     <li class="element">
         <ul id="treeDemo" class="ztree"></ul>
     </li>
     <li class="element btnsLi">
+        Event bind(scope)：
         <button class="btn">1</button>
         <button class="btn">2</button>
         <button class="btn">3</button>
@@ -107,7 +124,7 @@
         </form>
     </li>
     <li class="element" id="polygon_li">
-        <div class="testPolygon" style="background: url('test.png')">
+        <div class="testPolygon" style="background: url('/resources/images/lianhua.png')">
             测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；
             测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；测试polygon；
         </div>
@@ -140,12 +157,12 @@
     </li>
 
     <li class="element">
-        <canvas id="canvas" width="540px" height="540px"></canvas>
+        <div>test1</div>
+        <canvas id="canvas" width="540px" height="40px"></canvas>
+        <div>test2</div>
     </li>
     <li class="element">
-        <div>test1</div>
-        <canvas id="canvas_test" width="540px" height="80px"></canvas>
-        <div>test2</div>
+        String length：<input id="inputStr" value="△？①p゛゜」ぅぃび㉨ㅂъ变器" onkeyup="mytestObj.calculateLen()">Length: <span id="showLength"></span>
     </li>
     <li class="element">
         <script>
@@ -161,11 +178,13 @@
     </li>
 
     <li class="element">
+        MyPropertyHolder get version: <%=MyPropertyPlaceholder.getProperty("resource_version")%>
     </li>
 </ul>
 </body>
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 </script>
+<script src="${pageContext.request.contextPath}/js/canDoUtils.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 <script src="${pageContext.request.contextPath}/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </html>

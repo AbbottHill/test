@@ -27,7 +27,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-@Log4j2
 public class MyTest {
     String fieldStr;
 
@@ -50,6 +49,10 @@ public class MyTest {
 //		System.out.println(ArrayUtils.contains(arr,"Lambda"));
 
 //		System.out.println(String.valueOf(null));
+
+System.out.println( new BigDecimal(1.1)); //1.100000000000000088817841970012523233890533447265625
+System.out.println( new BigDecimal("1.1")); //1.1
+System.out.println( BigDecimal.valueOf(1.1)); //1.1
 
     }
 
@@ -75,8 +78,7 @@ class Tools {
     /**
      * @param str
      * @return
-     * @throws NullPointerException
-     *             if str is null
+     * @throws NullPointerException if str is null
      */
     static boolean isStringDigit(String str) throws NullPointerException {
         return Pattern.matches("-?\\d+\\.?\\d*", str);
@@ -120,8 +122,7 @@ class CollectionsTest {
     }
 
     /**
-     * @param list;
-     * key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
+     * @param list; key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
      */
     public static void sortList(List<String> list, final String key, final int order, final int type) {
         Collections.sort(list, new Comparator<String>() {
@@ -148,8 +149,7 @@ class CollectionsTest {
     }
 
     /**
-     * @param list;
-     * key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
+     * @param list; key; sort 1 升序，-1 倒序; type 1 字符排序，0 表示数字排序
      */
     public static void sortListMap(List<Map<String, Object>> list, final String key, final int order, final int type) {
         Collections.sort(list, new Comparator<Map<String, Object>>() {
@@ -249,7 +249,7 @@ class LambdaExpress {
         lambdaRunnble();
     }
 
-    public static void lambdaRunnble(){
+    public static void lambdaRunnble() {
         new Thread(() -> System.out.println(Thread.currentThread().getName())).start();
 
         new Thread(() -> System.out.println("In Java8, Lambda expression rocks !!" + Thread.currentThread().getName())).start();
@@ -333,15 +333,27 @@ class BlockQueueTest {
 
 class CharSetTest {
     public static void main(String[] args) {
-        String str = "C逆变器ａｂ１２あㅟㅡ";
-        int[] ints = checkHalf(str);
-        System.out.println(ints[0] + ", " + ints[1]);
+//        String str = "C逆变器ａｂ１２あㅟㅡ";
+//        int[] ints = checkHalf(str);
+//        System.out.println(ints[0] + ", " + ints[1]);
+
+
+//        System.out.println(leftSubstr("全角文字", 10));
+//        System.out.println(leftSubstr("C逆变ａｂa１２あㅟㅡ", 10));
+//        System.out.println(leftSubstr("全角文字判", 10));
+//        System.out.println(leftSubstr("全角文字123", 10));
+//        System.out.println(leftSubstr("全角文字判a", 10));
+//        System.out.println(leftSubstr("全角文字判断", 10));
+
+        String string = null;
+        getStrLength(string);
+        System.out.println("--------- end --------------");
     }
-    
+
     /**
      * char是可以动态的（1-2字节），如果char的长度超过了1就是全角，否则半角
      * return  checkRet[0]:半角个数    checkRet[1]:全角个数
-     * */
+     */
     public static int[] checkHalf(String str) {
         int checkRet[] = new int[2];
         byte[] Char = null;
@@ -353,11 +365,109 @@ class CharSetTest {
             }
             if (Char.length == 1) {// 统计半角个数
                 checkRet[0]++;
-            }else{// 统计全角个数
+            } else {// 统计全角个数
                 checkRet[1]++;
             }
         }
         return checkRet;
     }
+
+    /**
+     * 字符串长度取得（区分半角、全角）,全角字符2
+     *
+     * @param string
+     * @return
+     */
+    public static Integer getStrLength(String string) {
+        int len = 0;
+        if (null == string) {
+            return null;
+        } else {
+            for (int i = 0; i < string.length(); i++) {
+                char c = string.charAt(i);
+                if (isDbcCase(c)) { // 半角
+                    len = len + 1;
+                } else { // 全角
+                    len = len + 2;
+                }
+            }
+        }
+        return len;
+    }
+
+    /**
+     * 半角、全角字符判断
+     *
+     * @param c 字符
+     * @return true：半角； false：全角
+     */
+    public static boolean isDbcCase(char c) {
+        // 基本拉丁字母（即键盘上可见的，空格、数字、字母、符号）
+        if (c >= 32 && c <= 127) {
+            return true;
+        }
+        // 日文半角片假名和符号
+        else if (c >= 65377 && c <= 65439) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 字符串截取（区分半角、全角）
+     *
+     * @param str   字符串
+     * @param limit 长度
+     * @return
+     */
+    public static String leftSubstr(String str, int limit) {
+        if (getStrLength(str) <= limit) {
+            return str;
+        }
+        char[] chars = str.toCharArray();
+        int charLenSum = 0;
+        String result = "";
+        for (int i = 0; i < chars.length; i++) {
+            int charLen = isDbcCase(chars[i]) ? 1 : 2;
+            if (charLenSum + charLen > limit) {
+                return result;
+            }
+            charLenSum += charLen;
+            result += chars[i];
+            if (charLenSum == limit) {
+                return result;
+            }
+        }
+        return "";
+    }
+
 }
+
+class ThreadTest {
+
+    public static void main(String[] args) {
+        for (Thread t : list_threads()) {
+            System.out.println("---------> " + t.getName() + t.getState() + t.getClass().getName());
+        }
+    }
+
+    public static java.util.List<Thread> list_threads() {
+        int tc = Thread.activeCount();
+        Thread[] ts = new Thread[tc];
+        Thread.enumerate(ts);
+        return java.util.Arrays.asList(ts);
+    }
+}
+
+class RunTimeTest {
+    public static void main(String[] args) {
+        System.out.println("availableProcessors: " + Runtime.getRuntime().availableProcessors() + "");
+        System.out.println("freeMemory: " + Runtime.getRuntime().freeMemory()/(1024*1024) + " M");
+        System.out.println("totalMemory: " + Runtime.getRuntime().totalMemory()/(1024*1024) + " M");
+        System.out.println("maxMemory: " + Runtime.getRuntime().maxMemory()/(1024*1024) + " M");
+
+    }
+
+}
+
 

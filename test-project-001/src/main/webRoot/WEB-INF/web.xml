@@ -32,7 +32,7 @@
     <listener>
         <description>Application Listener</description>
         <!--实现了ServletContextListener接口的监听器类 -->
-        <listener-class>com.cd.test.project.operation.listeners.MyApplicationListener</listener-class>
+        <listener-class>com.cd.test.project.operation.listeners.MyServletContextListener</listener-class>
     </listener>
 
     <listener>

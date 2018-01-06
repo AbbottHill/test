@@ -1,5 +1,6 @@
 package com.cd.test.project.operation.controllers;
 
+import com.alibaba.fastjson.JSON;
 import com.cd.test.project.bean.User;
 import com.cd.test.project.common.SpringContextUtil;
 import com.cd.test.test.RedisPubSub.Subscriber;
@@ -20,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -105,5 +106,25 @@ public class TestController {
         return "success";
     }
 
+    @RequestMapping("/queryJson")
+    @ResponseBody
+    public String queryJson(HttpServletRequest request) {
+//        Map resultMap = new HashMap(3);
+//        resultMap.put("size", 1);
+//        resultMap.put("value", 2);
+//        return JSON.toJSONString(resultMap);
+//        return JSON.toJSONString(resultMap.toString());
 
+
+        List list = new ArrayList();
+        Map map = new HashMap();
+        map.put("a", "a01");
+        list.add(map);
+//        return JSON.toJSONString(list);
+//        return JSON.toJSONString(list.toString());
+
+        String str = "[{a: \"a01\"}]";
+//        return JSON.toJSONString(str);
+        return JSON.toJSONString(JSON.parseArray(str));
+    }
 }

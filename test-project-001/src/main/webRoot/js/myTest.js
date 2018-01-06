@@ -1,7 +1,55 @@
+var mytestObj = (function () {
+
+    return {
+        calculateLen: function () {
+            var inputStr = $("#inputStr").val();
+            var len = canDoUtils.getStrLen(inputStr)
+            $("#showLength").html(len);
+        },
+
+        queryJson: function () {
+
+            var params = {};
+            params["p"] = "p1";
+            $.ajax({
+                url: "/mvc/queryJson",
+                type: "post",
+                data: params,
+                dataType: "json",
+                timeout: 1000 * 10,             // async: false，temeout 属性无效
+                beforeSend: function () {
+
+                },
+                success: function (data) {
+                    debugger
+                    $(".resultArea").val('1：' + data);
+                    try {
+                        $(".resultArea").val($(".resultArea").val() + '\n2：' + JSON.parse(data));
+                    } catch (e) {
+
+                    }
+                    try {
+                        $(".resultArea").val($(".resultArea").val() + '\n3：' + eval('(' + data + ')'));
+                    } catch (e) {
+
+                    }
+                },
+                error: function () {
+                }
+            });
+
+        }
+
+    }
+
+})();
+
+mytestObj.calculateLen();
+
 /**
  * OOP
  */
-(function(){
+(function () {
     function fun() {
         return this.brand + ' run ' + this.speed;
     }
@@ -14,7 +62,7 @@
 
     var Ferrari = new Car('Ferrari', 300);
     var LandRover = new Car('LandRover', 200);
-    
+
     console.info(Ferrari.run());
     console.info(LandRover.run());
 
@@ -40,7 +88,7 @@
             dataType: "json",
             type: "post",
             autoParam: ["id=zId"],
-            otherParam: { "id":"1", "name":"test", "method": "queryTreeNodes", "service": "treeService"}
+            otherParam: {"id": "1", "name": "test", "method": "queryTreeNodes", "service": "treeService"}
         },
         callback: {
             onAsyncSuccess: zTreeOnAsyncSuccess

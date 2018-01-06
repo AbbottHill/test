@@ -53,4 +53,10 @@
     <bean id="msgSubThread" class="com.cd.test.project.common.MsgSubscribeThread" init-method="start" lazy-init="false" scope="session">
     </bean>-->
 
+    <bean id="myPropertyPlaceholder" class="com.cd.test.project.common.MyPropertyPlaceholder">
+        <property name="location">
+            <value>classpath:config.properties</value>
+        </property>
+    </bean>
+
 </beans>

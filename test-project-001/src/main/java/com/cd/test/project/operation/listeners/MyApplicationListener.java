@@ -1,31 +1,30 @@
 package com.cd.test.project.operation.listeners;
 
-
-
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Service;
 
 /**
- * Created by Administrator on 2017/9/26.
+ * Created by Administrator on 2017/12/26.
  */
-public class MyApplicationListener implements ServletContextListener {
+@Service
+public class MyApplicationListener implements ApplicationListener<ContextRefreshedEvent> {
+    private static final Log LOGGER = LogFactory.getLog(MyApplicationListener.class);
     @Override
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
-//        String path = Environment.class.getResource("").getPath();
-//        String webAppPath = path.substring(0, path.toUpperCase().lastIndexOf("WEB-INF/")).replaceAll("%20", " ");
-        System.setProperty("logPath", "D:\\test-project-001");
-
-//        Subscriber subscriber = new Subscriber();
-//        ApplicationContext ac = new ClassPathXmlApplicationContext("spring-conf.xml");
-//        JedisConnectionFactory jedisConnectionFactory = (JedisConnectionFactory) ac.getBean("connectionFactory");
-//        System.out.println(String.format("redis pool is starting, redis ip %s, redis port %d", jedisConnectionFactory.getHostName(), jedisConnectionFactory.getPort()));
-//        Jedis jedis = (Jedis) jedisConnectionFactory.getConnection().getNativeConnection();
-//        jedis.subscribe(subscriber, Constants.channel);
-
-    }
-
-    @Override
-    public void contextDestroyed(ServletContextEvent servletContextEvent) {
-
+    public void onApplicationEvent(ContextRefreshedEvent event) {
+        try {
+            // 在web项目中（spring mvc），系统会存在两个容器，一个是root application context
+            // ,另一个就是我们自己的 projectName-servlet context（作为root application context的子容器）。
+            // 这种情况下，就会造成onApplicationEvent方法被执行两次。为了避免这个问题，我们可以只在root
+            // application context初始化完成后调用逻辑代码，其他的容器的初始化完成，则不做任何处理。
+            if (event.getApplicationContext().getParent() == null) {
+                // 需要实现的功能
+                System.out.println("MyApplicationListener");
+            }
+        } catch (Exception e) {
+            LOGGER.error("StartGateServiceData", e);
+        }
     }
 }
