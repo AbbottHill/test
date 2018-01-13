@@ -62,9 +62,45 @@ function init() {
     });
     rect2.translate(300);
 
+    var rect3 = new joint.shapes.basic.myRect({
+        position: {x: 260, y: 160},
+        size: {width: 100, height: 30},
+        attrs: {rect: {fill: 'blue'}, text: {text: 'my box', fill: 'white'}}
+    });
+    rect3.translate(600);
+
+    var rect4 = new joint.shapes.basic.myRect({
+        position: {x: 260, y: 160},
+        size: {width: 100, height: 30},
+        attrs: {rect: {fill: 'blue'}, text: {text: 'my box', fill: 'white'}}
+    });
+    rect4.translate(1200);
+
+    var bigRect = new joint.shapes.basic.myBigRect({
+        position: {x: 260, y: 160},
+        size: {width: 100, height: 90},
+        attrs: {rect: {fill: 'blue'}, text: {text: 'my box', fill: 'white'}}
+    });
+    bigRect.translate(900);
+
     link = new joint.dia.Link({
         source: {id: rect.id},
         target: {id: rect2.id}
+    });
+
+    var link2 = new joint.dia.Link({
+        source: {id: rect2.id},
+        target: {id: rect3.id}
+    });
+
+    var link3 = new joint.dia.Link({
+        source: {id: rect3.id},
+        target: {id: bigRect.id}
+    });
+
+    var link4 = new joint.dia.Link({
+        source: {id: rect4.id},
+        target: {id: bigRect.id}
     });
 
     //小窗口
@@ -106,15 +142,25 @@ function init() {
     // add cell
     graph.addCells([rect, rect2, link]);
 
+    graph.addCells([rect3, link2]);
+
+    graph.addCells([bigRect]);
+
+    graph.addCells([link3]);
+
+    graph.addCells(rect4);
+
+    graph.addCells([link4]);
+
     //background
-    background = V('<image/>');
-    // background = V('<image width="1920px" height="1080px"/>');
-    background.attr({
-        // 'xlink:href': 'https://file.isolarcloud.com/stpic/100004/file18220171110191652063.jpg', height: 780, width:1000
-        'xlink:href': '/resources/images/lianhua.png'
-        // 'xlink:href': '/resources/images/933.png'
-    });
-    V(paper.viewport).prepend(background);
+    // background = V('<image/>');
+    // // background = V('<image width="1920px" height="1080px"/>');
+    // background.attr({
+    //     // 'xlink:href': 'https://file.isolarcloud.com/stpic/100004/file18220171110191652063.jpg', height: 780, width:1000
+    //     'xlink:href': '/resources/images/lianhua.png'
+    //     // 'xlink:href': '/resources/images/933.png'
+    // });
+    // V(paper.viewport).prepend(background);
 
     $(window).resize();
 }
@@ -132,6 +178,24 @@ function bindEvent() {
 
 
 joint.shapes.basic.myRect = joint.shapes.basic.Generic.extend({
+    markup: '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>',
+    defaults: joint.util.deepSupplement({
+        type: 'basic.myRect',
+        attrs: {
+            'rect': {fill: 'white', stroke: 'black', 'follow-scale': true, width: 80, height: 40},
+            'text': {
+                'font-size': 14,
+                'ref-x': .5,
+                'ref-y': .5,
+                ref: 'rect',
+                'y-alignment': 'middle',
+                'x-alignment': 'middle'
+            }
+        }
+    }, joint.shapes.basic.Generic.prototype.defaults)
+});
+
+joint.shapes.basic.myBigRect = joint.shapes.basic.Generic.extend({
     markup: '<g class="rotatable"><g class="scalable"><rect/></g><text/></g>',
     defaults: joint.util.deepSupplement({
         type: 'basic.myRect',
