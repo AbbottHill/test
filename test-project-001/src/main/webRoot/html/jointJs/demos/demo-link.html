@@ -25,7 +25,45 @@
         width: 800,
         height: 600,
         model: graph,
-        gridSize: 1
+        gridSize: 1,
+
+//        linkView: joint.dia.LinkView.extend({
+//            pointerclick: function (evt, x, y) {
+//
+//            },
+//            pointerdblclick: function (evt, x, y) {
+//
+//            },
+//            pointerdown: function (evt, x, y) {
+//
+//            },
+//            pointermove: function (evt, x, y) {
+//
+//            },
+//            pointerup: function (evt, x, y) {
+//
+//            },
+//            mouseover: function (evt) {
+//            },
+//            mouseout: function (evt) {
+//
+//            }
+//        })
+
+//        linkView: joint.dia.LinkView.extend({
+//            pointerdblclick: function(evt, x, y) {
+//                if (V(evt.target).hasClass('connection') || V(evt.target).hasClass('connection-wrap')) {
+//                    this.addVertex({ x: x, y: y });
+//                }
+//            }
+//        }),
+//        interactive: function(cellView) {
+//            if (cellView.model instanceof joint.dia.Link) {
+//                // Disable the default vertex add functionality on pointerdown.
+//                return { vertexAdd: false };
+//            }
+//            return true;
+//        }
     });
 
     var link = new joint.dia.Link({
@@ -91,7 +129,12 @@
         source: {x: 400, y: 20},
         target: {x: 740, y: 20},
         vertices: [{x: 400, y: 60}, {x: 550, y: 60}, {x: 550, y: 20}],
-        attrs: {}
+        attrs: {
+            '.connection-wrap': {display: 'none'},
+            '.marker-vertices': {display: 'none'},
+            '.link-tools': {display: 'none'},
+            '.marker-arrowheads': {display: 'none'}
+        }
     });
 
     link4.attr({
@@ -192,10 +235,35 @@
         ]
     });
 
-
     graph.addCell([link4]);
 //    graph.addCell([link, link2, link3, link4, link5, link6, link7, link8]);
 
+    myLink = joint.dia.Link.extend({
+        defaults: joint.util.deepSupplement({
+            type: 'myLink',
+            attrs: {
+                '.connection-wrap': {display: 'none'},
+                '.marker-vertices': {display: 'none'},
+                '.link-tools': {display: 'none'},
+                '.marker-arrowheads': {display: 'none'}
+            }
+        }, joint.dia.Link.prototype.defaults)
+    });
+
+    var link9 = new myLink({
+        source: {x: 10, y: 280},
+        target: {x: 740, y: 280},
+        vertices: [{x: 150, y: 350}, {x: 250, y: 350}, {x: 250, y: 280}, {x: 500, y: 280}, {x: 500, y: 350}, {
+            x: 630,
+            y: 350
+        }],
+        smooth: true,
+        attrs: {
+            '.marker-source': {fill: '#4b4a67', stroke: '#4b4a67', d: 'M 10 0 L 0 5 L 10 10 z'},
+            '.marker-target': {fill: '#4b4a67', stroke: '#4b4a67', d: 'M 10 0 L 0 5 L 10 10 z'}
+        },
+    });
+    graph.addCell(link9);
 
 </script>
 </body>

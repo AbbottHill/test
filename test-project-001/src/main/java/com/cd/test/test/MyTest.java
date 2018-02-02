@@ -72,6 +72,8 @@ class Tools {
         System.out.println(9999999.9999999999d);
         System.out.println(0.0001);
 
+        System.out.println(0.1d + 0.2d);
+
 
     }
 
