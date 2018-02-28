@@ -1,4 +1,4 @@
-package com.cd.test.project.operation.servlet;
+package com.cd.test.operation.servlet;
 
 import com.alibaba.fastjson.JSONArray;
 import org.apache.logging.log4j.LogManager;
@@ -55,7 +55,7 @@ public class Servlet01 extends HttpServlet {
         String method = String.valueOf(params.get("method"));
         try {
             if ("treeService".equals(String.valueOf(params.get("service")))) {
-                classType = Class.forName("com.cd.test.project.operation.service.treeService.TreeService");
+                classType = Class.forName("com.cd.test.project.service.treeService.TreeService");
             } else if ("pollingService".equals(String.valueOf(params.get("service")))) {
                 classType = Class.forName("com.cd.test.project.operation.service.PollingService.PollingService");
             }

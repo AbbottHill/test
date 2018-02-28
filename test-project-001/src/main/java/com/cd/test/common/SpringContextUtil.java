@@ -1,4 +1,4 @@
-package com.cd.test.project.common;
+package com.cd.test.common;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

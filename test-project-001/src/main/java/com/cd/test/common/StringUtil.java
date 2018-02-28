@@ -1,4 +1,4 @@
-package com.cd.test.project.common;
+package com.cd.test.common;
 
 /**
  * Created by Administrator on 2017/12/13.

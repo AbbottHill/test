@@ -1,4 +1,4 @@
-package com.cd.test.project.common;
+package com.cd.test.common;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

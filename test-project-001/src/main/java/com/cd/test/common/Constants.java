@@ -1,4 +1,4 @@
-package com.cd.test.project.common;
+package com.cd.test.common;
 
 
 /**

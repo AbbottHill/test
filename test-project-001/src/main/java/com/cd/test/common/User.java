@@ -1,4 +1,4 @@
-package com.cd.test.project.bean;
+package com.cd.test.common;
 
 import java.util.Date;
 import lombok.Data;

@@ -5,8 +5,8 @@
   Time: 8:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="com.cd.test.project.common.JspUtils"%>
-<%@ page import="com.cd.test.project.common.MyPropertyPlaceholder" %>
+<%@ page import="com.cd.test.common.JspUtils"%>
+<%@ page import="com.cd.test.common.MyPropertyPlaceholder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

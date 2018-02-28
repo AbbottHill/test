@@ -26,21 +26,13 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>/jsp/mytest/myTest.jsp</welcome-file>
     </welcome-file-list>
 
+    <!-- 开启Session机制 -->
     <listener>
-        <description>Application Listener</description>
-        <!--实现了ServletContextListener接口的监听器类 -->
-        <listener-class>com.cd.test.project.operation.listeners.MyServletContextListener</listener-class>
+        　　<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
-
-    <listener>
-        <description>Session Listener</description>
-        <!--实现了ServletContextListener接口的监听器类 -->
-        <listener-class>com.cd.test.project.operation.listeners.MySessionListener</listener-class>
-    </listener>
-
 
     <!-- log4j2在web工程设置日志文件保存在工程目录内 -->
     <listener>
@@ -57,20 +49,11 @@
 
     <servlet>
         <servlet-name>servlet01</servlet-name>
-        <servlet-class>com.cd.test.project.operation.servlet.Servlet01</servlet-class>
+        <servlet-class>com.cd.test.operation.servlet.Servlet01</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servlet01</servlet-name>
         <url-pattern>/servlet_01</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>SubscribeServlet</servlet-name>
-        <servlet-class>com.cd.test.project.operation.servlet.SubscribeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>SubscribeServlet</servlet-name>
-        <url-pattern>/subscribe</url-pattern>
     </servlet-mapping>
 
     <!-- Spring mvc -->  <!--configure the setting of springmvcDispatcherServlet and configure the mapping-->
@@ -88,15 +71,11 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!--    <error-page>
+        <error-page>
             <error-code>404</error-code>
-            <location>/jsp/hello.jsp</location>
-        </error-page>-->
+            <location>/jsp/mytest/myTest.jsp</location>
+        </error-page>
 
-    <!-- 开启Session机制 -->
-    <listener>
-        　　<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
     <!--<filter>
         <filter-name>requestContextFilter</filter-name>
         <filter-class>

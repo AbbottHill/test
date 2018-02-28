@@ -1,4 +1,4 @@
-package com.cd.test.project.common;
+package com.cd.test.common;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeansException;
