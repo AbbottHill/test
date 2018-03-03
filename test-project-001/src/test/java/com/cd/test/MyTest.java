@@ -1,30 +1,17 @@
 
-package java.com.cd.test;
+package com.cd.test;
 
 import com.googlecode.aviator.AviatorEvaluator;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
-
-import javax.swing.*;
-import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 public class MyTest {
@@ -50,15 +37,21 @@ public class MyTest {
 
 //		System.out.println(String.valueOf(null));
 
-System.out.println( new BigDecimal(1.1)); //1.100000000000000088817841970012523233890533447265625
-System.out.println( new BigDecimal("1.1")); //1.1
-System.out.println( BigDecimal.valueOf(1.1)); //1.1
+        System.out.println(new BigDecimal(1.1)); //1.100000000000000088817841970012523233890533447265625
+        System.out.println(new BigDecimal("1.1")); //1.1
+        System.out.println(BigDecimal.valueOf(1.1)); //1.1
 
     }
 
     public static void myPrint(Object obj) {
         System.out.println("-----> " + obj);
     }
+
+    @Test
+    public void UnitTest() {
+        System.out.println("JUnit test");
+    }
+
 }
 
 class Tools {
@@ -106,21 +99,18 @@ class CollectionsTest {
     public static void main(String[] args) {
         String[] strs = {
                 "0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
-                "0.4500", "--", "--", "0.4600", "0.4800", "0.4600", "0.4800", "0.5000", "0.5300", "0.5700", "0.5200", "--", "0.5500", "0.4800",
+                "0.4500", "--", "--", "0.4600", "0.4800", "1.4", "0.4800", "5", "5.3", "0.5700", "0.5200", "--", "0.5500", "0.4800",
                 "0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700"
         };
         List list = Arrays.asList(strs);
         System.out.println(list);
         sortList(list, "value", -1, 0);
         System.out.println(list);
-    }
 
-    static void mapCapacity() {
-        Map map = new HashMap(2);// initialCapacity
-        map.put("1", 1);
-        map.put("2", 2);
-        map.put("3", 3);
-        System.out.println(map);
+        for (Object object: list) {
+            System.out.println(object);
+        }
+
     }
 
     /**
@@ -181,7 +171,19 @@ class CollectionsTest {
         set.add("123");
         set.add("123");
         System.out.println(set.size());
+
+        //keySet
+        Map map = new HashMap();
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        Set mapSet = map.keySet();
+        for (Object object : mapSet) {
+            System.out.println(object);
+        }
     }
+
+
 
 }
 
@@ -244,6 +246,23 @@ class MyException extends Exception {
     }
 
 }
+
+class MapTest {
+
+    public static void main(String[] args) {
+
+    }
+
+    static void mapCapacity() {
+        Map map = new HashMap(2);// initialCapacity
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        System.out.println(map);
+    }
+
+}
+
 
 class LambdaExpress {
 
@@ -470,6 +489,32 @@ class RunTimeTest {
 
     }
 
+}
+
+class EnumTest {
+
+    public static void main(String[] args) {
+        Color color = Color.BLANK;
+        switch (color) {
+            case BLANK:
+                System.out.println(Color.BLANK.getIndex() + ": " + Color.BLANK.getName());
+                System.out.println(Color.BLANK);
+        }
+
+        color.printAll();
+
+        ColorEnum black = ColorEnum.BLACK;
+        black.printAll();
+    }
+
+    enum ColorEnum {
+        RED, BLUE, BLACK;
+        public void printAll() {
+            for (ColorEnum color: ColorEnum.values()) {
+                System.out.println(color.ordinal() + ": " + color.name());
+            }
+        }
+    }
 }
 
 

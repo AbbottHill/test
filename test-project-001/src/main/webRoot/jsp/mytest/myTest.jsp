@@ -84,7 +84,7 @@
         <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/jsp/mytest/websocket.jsp">webSocket</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a><br><br>
         <a href="${pageContext.request.contextPath}/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
     </li>

@@ -6,7 +6,7 @@ package com.cd.test.common;
 public class StringUtil {
 
     public static boolean isEmptyStr(String string) {
-        if (string == null || "".equals(string) || "null".equals(string) || "NULL".equals(string)) {
+        if (string == null || "".equals(string) || "null".equals(string) || "NULL".equals(string) || "nil".equals(string)) {
             return true;
         }
         return false;

@@ -38,6 +38,10 @@ var mytestObj = (function () {
                 }
             });
 
+        },
+
+        RESTful: function () {
+            
         }
 
     }
@@ -88,7 +92,7 @@ mytestObj.calculateLen();
             dataType: "json",
             type: "post",
             autoParam: ["id=zId"],
-            otherParam: {"id": "1", "name": "test", "method": "queryTreeNodes", "service": "treeService"}
+            otherParam: {"id": "1", "name": "test", "method": "queryTreeNodes", "service": "testService"}
         },
         callback: {
             onAsyncSuccess: zTreeOnAsyncSuccess

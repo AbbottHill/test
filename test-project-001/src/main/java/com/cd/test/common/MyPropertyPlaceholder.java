@@ -21,7 +21,7 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
 
     @Override
     protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) throws BeansException {
-        MyPropertyPlaceholder.updateProperty("resource_version", "3.2");
+//        MyPropertyPlaceholder.updateProperty("resource_version", "3.2");
         propertyMap = new HashMap<String, String>();
         for (Object key : props.keySet()) {
             String keyStr = key.toString();
@@ -31,7 +31,7 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
     }
 
     //static method for accessing context properties
-    public static Object getProperty(String name) {
+    public static String getProperty(String name) {
         return propertyMap.get(name);
     }
 

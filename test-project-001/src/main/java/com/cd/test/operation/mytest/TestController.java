@@ -1,4 +1,4 @@
-package com.cd.test.operation;
+package com.cd.test.operation.mytest;
 
 import com.alibaba.fastjson.JSON;
 import com.cd.test.common.User;
@@ -57,42 +57,7 @@ public class TestController {
     public String setTopic(HttpSession session, @PathVariable("topic") String topic) {
         System.out.println("topic=" + topic);
         session.setAttribute("topic", topic);
-
-//        if (null == session.getAttribute("executorService")) {
-//            ExecutorService executorService = Executors.newFixedThreadPool(2);
-//            session.setAttribute("executorService", executorService);
-//        }
-
-
-//        if (null == session.getAttribute("subscriberFlag")) {
-//            ArrayBlockingQueue<String> arrayBlockingQueue = new ArrayBlockingQueue<String>(3);
-////            arrayBlockingQueue = TestWebsocket.arrayBlockingQueue;
-//
-//            session.setAttribute("subscriberFlag", "111");
-//            session.setAttribute("arrayBlockingQueue", arrayBlockingQueue);
-//            Subscriber subscriber = new Subscriber(arrayBlockingQueue);
-//            Thread t1 = new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    arrayBlockingQueue.add("xxx");
-//                    JedisConnectionFactory jedisConnectionFactory = (JedisConnectionFactory) SpringContextUtil.getBean("connectionFactory");
-//                    System.out.println(String.format("redis pool is starting, redis ip %s, redis port %d", jedisConnectionFactory.getHostName(), jedisConnectionFactory.getPort()));
-//                    Jedis jedis = (Jedis) jedisConnectionFactory.getConnection().getNativeConnection();
-//                    jedis.subscribe(subscriber, topic);
-//                }
-//            });
-//            t1.start();
-////            executorService.execute(t1);
-//        }
-
         System.out.println(session.getAttribute("topic"));
-        return "success";
-    }
-
-    @RequestMapping("/subscriberFlag")
-    @ResponseBody
-    public String setSubscriberFlag(HttpSession session) {
-        session.setAttribute("subscriberFlag", "1");
         return "success";
     }
 

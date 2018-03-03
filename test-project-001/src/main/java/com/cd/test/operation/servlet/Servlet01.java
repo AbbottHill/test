@@ -1,6 +1,8 @@
 package com.cd.test.operation.servlet;
 
 import com.alibaba.fastjson.JSONArray;
+import com.cd.test.common.SpringContextUtil;
+import com.cd.test.common.StringUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,7 +37,6 @@ public class Servlet01 extends HttpServlet {
         try (Writer writer = response.getWriter()) {
             Map requestMap = getParamsFromRequest(request);
             Object result = doExecute(requestMap);
-
             writer.write(JSONArray.toJSONString(result));
         } catch (IOException e) {
             e.printStackTrace();
@@ -55,11 +56,14 @@ public class Servlet01 extends HttpServlet {
         String method = String.valueOf(params.get("method"));
         try {
             if ("treeService".equals(String.valueOf(params.get("service")))) {
-                classType = Class.forName("com.cd.test.project.service.treeService.TreeService");
+                classType = Class.forName("com.cd.test.operation.mytest.service.TestService");
             } else if ("pollingService".equals(String.valueOf(params.get("service")))) {
                 classType = Class.forName("com.cd.test.project.operation.service.PollingService.PollingService");
             }
-            Object obj = classType.newInstance();
+//            Object obj = classType.newInstance();\
+
+            String service = String.valueOf(params.get("service"));
+            Object obj = SpringContextUtil.getBean(service);
             Method[] methods = obj.getClass().getMethods();
             Method mExec = null;
             for (int i = 0; i < methods.length; i++) {
@@ -74,11 +78,9 @@ public class Servlet01 extends HttpServlet {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-//        } catch (NoSuchMethodException e) {
-//            e.printStackTrace();
         } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
