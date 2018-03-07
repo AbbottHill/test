@@ -1,6 +1,7 @@
 package com.cd.test.AnnotationTest;
 
-import com.cd.test.common.Constant;
+
+import com.cd.test.common.Constants;
 
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -22,7 +23,7 @@ public class TestAnotation {
     }
 
 
-    @RequestUrl(Constant.NETURL)
+    @RequestUrl(Constants.NETURL)
     @RequstType(Type.GET)
     public static void requestFromNet() {
 

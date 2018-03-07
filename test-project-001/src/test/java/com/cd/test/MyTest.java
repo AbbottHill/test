@@ -1,6 +1,7 @@
 
 package com.cd.test;
 
+import com.cd.test.common.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -10,15 +11,25 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.*;
 import java.util.regex.Pattern;
 
 public class MyTest {
     String fieldStr;
 
     public static void main(String[] args) {
-        new MyTest();
+////        new MyTest();
+//
+//        long l = 10_0_0;
+//        System.out.println(l);
+
+        System.out.println(1 / 3);//0
+        System.out.println(1 + 0.5);//0
+        System.out.println(1 / 3f);//0.33333334
+        System.out.println(1d / 3d);//0.3333333333333333
+
     }
 
     public MyTest() {
@@ -107,7 +118,7 @@ class CollectionsTest {
         sortList(list, "value", -1, 0);
         System.out.println(list);
 
-        for (Object object: list) {
+        for (Object object : list) {
             System.out.println(object);
         }
 
@@ -182,7 +193,6 @@ class CollectionsTest {
             System.out.println(object);
         }
     }
-
 
 
 }
@@ -467,25 +477,97 @@ class CharSetTest {
 class ThreadTest {
 
     public static void main(String[] args) {
-        for (Thread t : list_threads()) {
-            System.out.println("---------> " + t.getName() + t.getState() + t.getClass().getName());
+        for (Thread t : listThreads()) {
+            System.out.println("---------> Name：" + t.getName() + "State：" + t.getState() + "Class：" + t.getClass().getName());
         }
     }
 
-    public static java.util.List<Thread> list_threads() {
+    public static java.util.List<Thread> listThreads() {
         int tc = Thread.activeCount();
         Thread[] ts = new Thread[tc];
         Thread.enumerate(ts);
-        return java.util.Arrays.asList(ts);
+        return Arrays.asList(ts);
+    }
+}
+
+class CalendarTest {
+    public static void main(String[] args) {
+
+    }
+
+
+}
+
+class CallableTest implements Callable<String> {
+
+    public CallableTest(String acceptStr) {
+        this.acceptStr = acceptStr;
+    }
+
+    private String acceptStr;
+
+    @Override
+    public String call() throws Exception {
+        // 任务阻塞 1 秒
+        Thread.sleep(1000);
+        return this.acceptStr + " append some chars and return it!";
+    }
+
+
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        Callable<String> callable = new CallableTest("my callable test!");
+        FutureTask<String> task = new FutureTask<>(callable);
+        long beginTime = System.currentTimeMillis();
+        // 创建线程
+        new Thread(task).start();
+        // 调用get()阻塞主线程，反之，线程不会阻塞
+        String result = task.get();
+        long endTime = System.currentTimeMillis();
+        System.out.println("hello : " + result);
+        System.out.println("cast : " + (endTime - beginTime) / 1000 + " second!");
+    }
+}
+
+class CallableTest2 {
+
+    static class Sum implements Callable<Long> {
+        private final long from;
+        private final long to;
+
+        Sum(long from, long to) {
+            this.from = from;
+            this.to = to;
+        }
+
+        @Override
+        public Long call() {
+            long acc = 0;
+            for (long i = from; i <= to; i++) {
+                acc = acc + i;
+            }
+            System.out.println(Thread.currentThread().getName() + " : " + acc);
+            return acc;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        List<Future<Long>> results = executor.invokeAll(Arrays.asList(
+                new Sum(0, 10), new Sum(0, 1_000), new Sum(0, 1_000_000)
+        ));
+        executor.shutdown();
+        for (Future<Long> result : results) {
+            System.out.println(result.get());
+        }
     }
 }
 
 class RunTimeTest {
     public static void main(String[] args) {
         System.out.println("availableProcessors: " + Runtime.getRuntime().availableProcessors() + "");
-        System.out.println("freeMemory: " + Runtime.getRuntime().freeMemory()/(1024*1024) + " M");
-        System.out.println("totalMemory: " + Runtime.getRuntime().totalMemory()/(1024*1024) + " M");
-        System.out.println("maxMemory: " + Runtime.getRuntime().maxMemory()/(1024*1024) + " M");
+        System.out.println("freeMemory: " + Runtime.getRuntime().freeMemory() / (1024 * 1024) + " M");
+        System.out.println("totalMemory: " + Runtime.getRuntime().totalMemory() / (1024 * 1024) + " M");
+        System.out.println("maxMemory: " + Runtime.getRuntime().maxMemory() / (1024 * 1024) + " M");
 
     }
 
@@ -509,8 +591,9 @@ class EnumTest {
 
     enum ColorEnum {
         RED, BLUE, BLACK;
+
         public void printAll() {
-            for (ColorEnum color: ColorEnum.values()) {
+            for (ColorEnum color : ColorEnum.values()) {
                 System.out.println(color.ordinal() + ": " + color.name());
             }
         }
