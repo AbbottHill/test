@@ -1,4 +1,4 @@
-package java.com.cd.test.baseJdbc;
+package com.cd.test.baseJdbc;
 
 
 import java.sql.Connection;

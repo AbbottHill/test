@@ -11,28 +11,9 @@
 
     <context:annotation-config />
     <!--<context:component-scan base-package="org.springframework.web.filter"/>-->
-    <context:component-scan base-package="com.cd.test"/>
-
-    <!--配置打日志的任务池-->
-    <task:annotation-driven/>
-    <task:executor id="logExecutor" pool-size="5-10"
-                   queue-capacity="20" keep-alive="2000" rejection-policy="CALLER_RUNS"></task:executor>
-
-    <!-- 配置打印日志切面 -->
-    <aop:config><!--
-        <aop:pointcut id="myLogAspect" expression="
-            execution(* com.chhliu.core.service.*.process*(..)) ||
-            execution(* com.chhliu.service.*.transform*(..)) ||
-            execution(* com.chhliu.channel.output.*.send*(..))"/>-->
-        <aop:pointcut id="myLogAspect" expression="execution(public * *(..)) "/>
-        <aop:aspect id="logProxy" ref="logProxy">
-            <aop:before method="logStart" pointcut-ref="myLogAspect"/>
-        </aop:aspect>
-    </aop:config>
-
+    <!--<context:component-scan base-package="com.cd.test"/>-->
 
     <context:property-placeholder location="classpath:redis.properties"/>
-
     <!--
         1. spring-session does not work with sessionListener
         2. spring-session does not work with javax.websocket
@@ -71,11 +52,5 @@
 <!--
     <bean id="msgSubThread" class="com.cd.test.project.common.MsgSubscribeThread" init-method="start" lazy-init="false" scope="session">
     </bean>-->
-
-    <bean id="myPropertyPlaceholder" class="com.cd.test.common.MyPropertyPlaceholder">
-        <property name="location">
-            <value>classpath:config.properties</value>
-        </property>
-    </bean>
 
 </beans>

@@ -65,7 +65,7 @@ public class ThreadPool implements Serializable {
             @Override
             public void run() {
                 Calendar calendar = Calendar.getInstance();//系统当前时间
-                String date = Constants.simpleDateFormat.format(calendar.getTime());
+                String date = Constants.SIMPLE_DATE_FORMAT.format(calendar.getTime());
                 System.out.println(Thread.currentThread().getId() + " run " + date);
             }
         }, 0, 3, TimeUnit.SECONDS);

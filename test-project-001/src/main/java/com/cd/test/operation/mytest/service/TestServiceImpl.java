@@ -1,6 +1,8 @@
 package com.cd.test.operation.mytest.service;
 
+import com.cd.test.common.LoggerProxy;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.Map;
 @Log4j2
 @Service("testService")
 public class TestServiceImpl implements TestService{
+    @Autowired
+    LoggerProxy loggerProxy;
 
     @Override
     public List queryTreeNodes(Map map) {
@@ -21,7 +25,8 @@ public class TestServiceImpl implements TestService{
         nodes.add(map1);
         nodes.add(map2);
         nodes.add(map3);
-        log.info("nodes：" + nodes);
+
+        loggerProxy.info("nodes：" + nodes);
         return nodes;
     }
 }

@@ -91,13 +91,15 @@ var canDoUtils = (function () {
      */
     function getStrLen(str) {
         var len = 0;
-        var c;
-        for (var i = 0; i < str.length; i++) {
-            c = str.charCodeAt(i);
-            if (isDbcCase(c)) { //半角
-                len = len + 1;
-            } else { //全角
-                len = len + 2;
+        if (!isUndefinedOrNull(str)) {
+            var c;
+            for (var i = 0; i < str.length; i++) {
+                c = str.charCodeAt(i);
+                if (isDbcCase(c)) { //半角
+                    len = len + 1;
+                } else { //全角
+                    len = len + 2;
+                }
             }
         }
         return len;
@@ -172,7 +174,28 @@ var canDoUtils = (function () {
     /**
      * new cookie
      */
+    function jqueryAjax (url, params, successFunc, failFunc, dataType, type) {
+        if (isUndefinedOrNull(url) || url === '') {
+            return;
+        }
+        var request = $.ajax({
+            url: url,
+            method: isUndefinedOrNull(type)? "POST": type,
+            data: params,
+            dataType: isUndefinedOrNull(dataType)?"json": dataType
+        });
 
+        request.done(function( msg ) {
+            if (!isUndefinedOrNull(successFunc) && typeof successFunc === 'function') {
+                successFunc(msg);
+            }
+        });
+
+        request.fail(function( jqXHR, textStatus ) {
+            // alert( "Request failed: " + textStatus );
+            // failFunc();
+        });
+    }
 
     return {
         getStrLen: getStrLen,
@@ -183,5 +206,6 @@ var canDoUtils = (function () {
         fixNumber: fixNumber,
         logger: logger,
         zeroFill: zeroFill,
+        jqueryAjax: jqueryAjax,
     };
 })();

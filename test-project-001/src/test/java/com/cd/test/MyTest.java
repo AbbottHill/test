@@ -578,6 +578,9 @@ class EnumTest {
     public static void main(String[] args) {
         Color color = Color.BLANK;
         switch (color) {
+            case RED:
+                System.out.println(Color.BLANK.getIndex() + ": " + Color.BLANK.getName());
+                System.out.println(Color.BLANK);
             case BLANK:
                 System.out.println(Color.BLANK.getIndex() + ": " + Color.BLANK.getName());
                 System.out.println(Color.BLANK);

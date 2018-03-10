@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface TestService {
 
-    public List queryTreeNodes(Map map);
+    List queryTreeNodes(Map map);
 
 }
     

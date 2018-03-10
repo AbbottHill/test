@@ -1,10 +1,13 @@
 package com.cd.test.operation.servlet;
 
 import com.alibaba.fastjson.JSONArray;
+import com.cd.test.common.LoggerProxy;
 import com.cd.test.common.SpringContextUtil;
 import com.cd.test.common.StringUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

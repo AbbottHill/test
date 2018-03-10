@@ -2,11 +2,13 @@ package com.cd.test.common;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -16,25 +18,31 @@ import java.util.Properties;
  */
 @Component
 public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
+//    @Autowired
+//    LoggerProxy loggerProxy;
 
-    private static Map<String, String> propertyMap;
+    private static Map<String,String> propertyMap = new HashMap<String, String>();
 
     @Override
-    protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) throws BeansException {
-//        MyPropertyPlaceholder.updateProperty("resource_version", "3.2");
-        propertyMap = new HashMap<String, String>();
+    protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) {
         for (Object key : props.keySet()) {
             String keyStr = key.toString();
             String value = props.getProperty(keyStr);
             propertyMap.put(keyStr, value);
         }
+        propertyMap.put(Constants.VERSION, Constants.TIME_VERSION_FORMAT.format(new Date()));
+//        logger.info("propertyMap: " + propertyMap);
     }
 
     //static method for accessing context properties
-    public static String getProperty(String name) {
+    public static Object getProperty(String name) {
         return propertyMap.get(name);
     }
 
+    //static method for get system version
+    public static Object appVersion() {
+        return propertyMap.get(Constants.VERSION);
+    }
 
     /**
      * 修改/添加AutoAnalysisTime.properties资源文件中键值对;

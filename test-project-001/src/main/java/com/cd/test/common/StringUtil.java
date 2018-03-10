@@ -11,4 +11,18 @@ public class StringUtil {
         }
         return false;
     }
+
+    public static String dealEmptyStr(String string) {
+        if (isEmptyStr(String.valueOf(string))) {
+            return Constants.REPLACEMENT_EMPTY_STRING;
+        }
+        return String.valueOf(string);
+    }
+
+    public static String dealEmptyStr(String string, String replace) {
+        if (isEmptyStr(String.valueOf(string))) {
+            return replace;
+        }
+        return String.valueOf(string);
+    }
 }

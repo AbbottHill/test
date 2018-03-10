@@ -1,4 +1,4 @@
-package com.cd.test.operation.mytest;
+package com.cd.test.operation.mytest.controller;
 
 import com.cd.test.operation.bean.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;

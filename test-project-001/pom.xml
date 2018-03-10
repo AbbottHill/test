@@ -17,8 +17,9 @@
         <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
         <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
         <springframework.version>4.3.4.RELEASE</springframework.version>
-        <jackson.version>2.4.4</jackson.version>
-        <artifactId.version>1.8.6</artifactId.version>
+        <jackson.version>2.9.0</jackson.version>
+        <aspectj_version>1.8.6</aspectj_version>
+        <oozie_version>4.2.0</oozie_version>
     </properties>
 
     <profiles>
@@ -181,15 +182,51 @@
             <artifactId>spring-websocket</artifactId>
             <version>${springframework.version}</version>
         </dependency>
+
+
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${artifactId.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!--aop-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj_version}</version>
+        </dependency>
+
+        <!--oozie-->
+        <dependency>
+            <groupId>org.apache.oozie</groupId>
+            <artifactId>oozie-core</artifactId>
+            <version>${oozie_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.oozie</groupId>
+            <artifactId>oozie-client</artifactId>
+            <version>${oozie_version}</version>
         </dependency>
 
         <dependency>
@@ -367,10 +404,5 @@
             <version>${jackson.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>${artifactId.version}</version>
-        </dependency>
     </dependencies>
 </project>

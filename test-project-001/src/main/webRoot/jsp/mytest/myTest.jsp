@@ -87,6 +87,7 @@
         <a href="${pageContext.request.contextPath}/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a><br><br>
         <a href="${pageContext.request.contextPath}/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/taskManagement/toTaskManagementPage">taskManagement</a>&nbsp;&nbsp;&nbsp;
     </li>
 
     <li class="element">
@@ -96,7 +97,7 @@
     <li class="element">
         <ul id="treeDemo" class="ztree"></ul>
     </li>
-    <li class="element btnsLi">
+   <%-- <li class="element btnsLi">
         Event bind(scope)：
         <button class="btn">1</button>
         <button class="btn">2</button>
@@ -179,7 +180,7 @@
 
     <li class="element">
         MyPropertyHolder get version: <%=MyPropertyPlaceholder.getProperty("resource_version")%>
-    </li>
+    </li>--%>
 </ul>
 </body>
 <script type="application/javascript">

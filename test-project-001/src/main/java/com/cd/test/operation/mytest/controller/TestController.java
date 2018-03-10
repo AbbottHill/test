@@ -1,7 +1,10 @@
-package com.cd.test.operation.mytest;
+package com.cd.test.operation.mytest.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cd.test.common.LoggerProxy;
 import com.cd.test.common.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -22,6 +26,8 @@ import java.util.*;
 @Controller
 @RequestMapping("/mvc")
 public class TestController {
+    @Autowired
+    LoggerProxy logProxy;
 
     @RequestMapping("/hello")
     public String greeting(@RequestParam(value = "name", required = false, defaultValue = "World") String name, Model model) {
@@ -64,22 +70,16 @@ public class TestController {
     @RequestMapping("/queryJson")
     @ResponseBody
     public String queryJson(HttpServletRequest request) {
-//        Map resultMap = new HashMap(3);
-//        resultMap.put("size", 1);
-//        resultMap.put("value", 2);
-//        return JSON.toJSONString(resultMap);
-//        return JSON.toJSONString(resultMap.toString());
+        System.out.println("asyncTest. " + Thread.currentThread().getName());
 
-
+//        logProxy.asyncTest();
         List list = new ArrayList();
         Map map = new HashMap();
         map.put("a", "a01");
         list.add(map);
-//        return JSON.toJSONString(list);
-//        return JSON.toJSONString(list.toString());
-
         String str = "[{a: \"a01\"}]";
-//        return JSON.toJSONString(str);
         return JSON.toJSONString(JSON.parseArray(str));
     }
+
+
 }

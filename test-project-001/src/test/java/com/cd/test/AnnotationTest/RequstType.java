@@ -10,8 +10,4 @@ public @interface RequstType {
     Type value() default Type.POST;
 }
 
-//用枚举指定请求类型
-enum Type {
-    GET, POST
-};
     

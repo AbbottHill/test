@@ -6,12 +6,26 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <File name="ErrorLog" fileName="logs/file-error.log" append="false">
+        <File name="InfoLog" fileName="/logs/file-info.log" append="false">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %t %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </File>
+
+        <File name="ErrorLog" fileName="/logs/file-error.log" append="false">
             <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d{yyyy.MM.dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </File>
 
-        <RollingFile name="RollingFileError" fileName="${sys:user.home}/logs/roll-file-error.log" filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+        <RollingFile name="RollingFileInfo" fileName="/logs/roll-file-info.log" filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <ThresholdFilter level="info"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="RollingFileError" fileName="/logs/roll-file-error.log" filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
             <ThresholdFilter level="ERROR"/>
             <Policies>
@@ -42,9 +56,11 @@
             <appender-ref ref="Console"/>
         </logger>
 
-        <Root level="debug">
+        <Root level="info">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="InfoLog"/>
             <AppenderRef ref="ErrorLog"/>
+            <AppenderRef ref="RollingFileInfo"/>
             <AppenderRef ref="RollingFileError"/>
         </Root>
     </Loggers>
