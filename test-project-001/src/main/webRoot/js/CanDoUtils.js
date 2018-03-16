@@ -1,4 +1,4 @@
-var canDoUtils = (function () {
+var CanDoUtils = (function () {
 
     Date.prototype.Format = function (fmt) {
         var o =

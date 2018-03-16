@@ -9,6 +9,9 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Log4j2
@@ -33,6 +36,17 @@ public class LoggerProxy {
 
     @Async
     public void info(String message) {
+//        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\chudong.SUNGROW\\Desktop\\RedisDesktopManager.rar");
+//             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\chudong.SUNGROW\\Desktop\\RedisDesktopManager.copy.rar");
+//        ) {
+//            byte[] bts = new byte[32];
+//            while (fileInputStream.read(bts) != -1) {
+//                fileOutputStream.write(bts);
+//            }
+//        } catch (FileNotFoundException e) {
+//        } catch (IOException e) {
+//        }
+
         log.info(message);
     }
 

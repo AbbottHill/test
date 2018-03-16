@@ -31,7 +31,7 @@
 
     <!-- 开启Session机制 -->
     <listener>
-        　　<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    　　<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
 
     <!-- log4j2在web工程设置日志文件保存在工程目录内 -->

@@ -28,7 +28,7 @@
     </style>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
     <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/canDoUtils.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/CanDoUtils.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/bootstrap/bootstrap.css">
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
@@ -40,58 +40,35 @@
 
 </head>
 <body>
-<div>
-    fdsafdsagaqewqrewq
-</div>
+<form id="add_task_form" class="form-inline" role="form" method="post" enctype="multipart/form-data"  target="nm_iframe" onsubmit="return addTask()"
+      action="${pageContext.request.contextPath}/taskManagement/addTask">
+    <div class="form-group">
+        <label class="sr-only" for="task_content">Task</label>
+        <input type="text" class="form-control" id="task_content" name="task_content" placeholder="请输入名称">
+    </div>
+    <div class="form-group">
+        <label class="sr-only" for="pic">图片</label>
+        <input type="file" id="pic" name="pic">
+    </div>
+    <input type="submit" class="btn btn-default">
+</form>
+<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 
 <div class="container-fluid">
-    <!-- 仅含表头的表格，与下面的表格表头必须一致，然后将此表的css设置为position:fixed，脱离文档流，达到表头固定的效果-->
-    <table class="table table-bordered table-striped fixedhead" id="fixedhead">
-        <thead>
-        <tr>
-            <th>用户名</th>
-            <th>密码</th>
-            <th>状态</th>
-        </tr>
-        </thead>
-
-    </table>
-    <!-- 含有数据的表格，实际上表头的内容不会被显示，因为会被上面的表覆盖，但也不要删除表头，因为需要占位，否则表中第一行数据无法看到。-->
     <table class="table table-bordered table-striped" id="user_table">
-        <thead>
-        <tr>
-            <th>用户名</th>
-            <th>密码</th>
-            <th>状态</th>
-        </tr>
-        </thead>
         <tbody id="user_table_tbody">
         </tbody>
     </table>
 </div>
+
 </body>
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 
-    //固定表头的宽度，自适应user_table的宽度
-    function autoWidth() {
-        document.getElementById("fixedhead").style.width = document.getElementById("user_table").offsetWidth;
-
-    }
-
-    window.onresize = function () {
-        //当窗口重绘，重新适应宽度
-        autoWidth();
-    };
-    window.onload = function () {
-        //页面加载完毕，表头表的自适应宽度
-        autoWidth();
-    };
-
     //批量生成表格数据
     var tbody = document.getElementById("user_table_tbody");
 
-    canDoUtils.jqueryAjax(contextPath + "/taskManagement/tasksInfo", {
+    CanDoUtils.jqueryAjax(contextPath + "/taskManagement/tasksInfo", {
         task_id: $("#task_id").val()
     }, dealData, null, 'json');
 
@@ -111,10 +88,35 @@
     function dealData(data) {
         for(var i = 0, temObj, lens = data.length; i < lens; i ++) {
             temObj = data[i];
-            innerHtml += "<tr><td>" + temObj["0"] + "</td><td>" + temObj["1"] + "</td><td>" + temObj["2"] + "</td></tr>"
+
+            innerHtml += "<tr><td>" + temObj["0"] + "</td><td>" + temObj["1"] + "</td><td>" + dealImageNames(temObj["2"]) + "</td></tr>"
         }
         tbody.innerHTML = innerHtml;
     }
+
+    function dealImageNames(imgNames) {
+        var htmlStr = "";
+        if (!CanDoUtils.isEmptyStr(imgNames)) {
+            var imgNamesArr = imgNames.split(/;/g);
+            for(var i = 0, temObj, lens = imgNamesArr.length; i < lens; i ++) {
+                temObj = imgNamesArr[i];
+                if (/\./g.test(temObj)) {//文件名中包含'.'
+                    htmlStr += '<img style="max-width: 580px;" src="/taskManagement/loadImg?imgName=' + temObj + '">'
+                } else {
+                    htmlStr += temObj;
+                }
+            }
+        }
+        return htmlStr;
+    }
+
+    function addTask() {
+        if (CanDoUtils.isEmptyStr($("#task_content").val())) {
+            $("#task_content").focus();
+            return false;
+        }
+    }
+
 
 
 </script>

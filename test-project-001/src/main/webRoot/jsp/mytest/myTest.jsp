@@ -186,6 +186,6 @@
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 </script>
-<script src="${pageContext.request.contextPath}/js/canDoUtils.js?vx=<%=JspUtils.resourceVersion()%>"></script>
+<script src="${pageContext.request.contextPath}/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 <script src="${pageContext.request.contextPath}/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </html>

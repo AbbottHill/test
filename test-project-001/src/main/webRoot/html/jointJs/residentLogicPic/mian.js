@@ -192,7 +192,7 @@ function drawMatrix() {
  * 根据元素连线
  */
 function createLinkByItems(item1, item2) {
-    if (canDoUtils.isUndefinedOrNull(item1) || canDoUtils.isUndefinedOrNull(item2)) {
+    if (CanDoUtils.isUndefinedOrNull(item1) || CanDoUtils.isUndefinedOrNull(item2)) {
         return;
     }
     var link = new joint.dia.Link({

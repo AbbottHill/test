@@ -14,5 +14,10 @@ public class Constants {
     public static final String NETURL = "localhost:8099";
 
     public static final int MY_MINIMUM_COLUMN_COUNT = 4;
+    public static final String FILE_PATH = "D:\\TaskManagement\\";
+    public static final String IMAGE_FILE_PATH = FILE_PATH + "images\\";
+    public static final String FILE_NAME = "tasks.xlsx";
+    public static final SimpleDateFormat FILE_NAME_TIMERORMAT = new SimpleDateFormat("yyyyMMddHHmmssSSS");
 }
+
 

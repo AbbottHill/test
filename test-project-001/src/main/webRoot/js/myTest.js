@@ -3,7 +3,7 @@ var mytestObj = (function () {
     return {
         calculateLen: function () {
             var inputStr = $("#inputStr").val();
-            var len = canDoUtils.getStrLen(inputStr)
+            var len = CanDoUtils.getStrLen(inputStr)
             $("#showLength").html(len);
         },
 

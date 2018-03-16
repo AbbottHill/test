@@ -11,6 +11,9 @@ import java.util.ResourceBundle;
  * Created by Administrator on 2017/9/27.
  */
 public class JspUtils {
+
+
+    @Deprecated
     public static String resourceVersion() {
 //        ResourceBundle rb = ResourceBundle.getBundle("config");
 //        return rb.getString("resource_version");
