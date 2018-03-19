@@ -1,5 +1,4 @@
 <%--<%@ page import="com.cd.test.common.JspUtils"%>--%>
-<%@ page import="com.cd.test.common.MyPropertyPlaceholder" %>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -27,7 +26,7 @@
 
     </style>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
     <script type="application/javascript" src="${pageContext.request.contextPath}/js/CanDoUtils.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/bootstrap/bootstrap.css">
@@ -35,6 +34,7 @@
     <%--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">--%>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="${pageContext.request.contextPath}/js/plugin/bootstrap/bootstrap.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.form.js"></script>
     <!-- 移动端1：1缩放达到缩放布局不乱的效果 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -68,9 +68,11 @@
     //批量生成表格数据
     var tbody = document.getElementById("user_table_tbody");
 
-    CanDoUtils.jqueryAjax(contextPath + "/taskManagement/tasksInfo", {
-        task_id: $("#task_id").val()
-    }, dealData, null, 'json');
+    function queryTasks() {
+        CanDoUtils.jqueryAjax(contextPath + "/taskManagement/tasksInfo", {
+            task_id: $("#task_id").val()
+        }, dealData, null, 'json');
+    }
 
 //
 //    var inner = "";
@@ -84,8 +86,8 @@
 //    tbody.innerHTML = inner;
 
 
-    var innerHtml = "";
     function dealData(data) {
+        var innerHtml = "";
         for(var i = 0, temObj, lens = data.length; i < lens; i ++) {
             temObj = data[i];
 
@@ -115,9 +117,29 @@
             $("#task_content").focus();
             return false;
         }
+        var options = {
+            url: '${pageContext.request.contextPath}/taskManagement/addTask',   //同action
+            type: 'post',
+            beforeSend: function (xhr) {//请求之前
+
+            },
+            success: function (data) {
+                $("#pic").val("");
+                $("#task_content").val("");
+                queryTasks();
+            },
+            complete: function (xhr) {//请求完成
+
+            },
+            error: function (xhr, status, msg) {
+
+            }
+        };
+        $("#add_task_form").ajaxSubmit(options);
+        return false;
     }
 
-
+    queryTasks();
 
 </script>
 </html>

@@ -525,6 +525,8 @@ class CallableTest implements Callable<String> {
         long endTime = System.currentTimeMillis();
         System.out.println("hello : " + result);
         System.out.println("cast : " + (endTime - beginTime) / 1000 + " second!");
+        String result1 = task.get();
+        System.out.println("hello : " + result1);
     }
 }
 

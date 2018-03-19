@@ -1,4 +1,4 @@
-package com.cd.test;
+package com.cd.test.ThreadTestPkg;
 
 /**
  * Created by Administrator on 2017/12/9.
@@ -7,9 +7,7 @@ package com.cd.test;
 import com.cd.test.common.Constants;
 
 import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;

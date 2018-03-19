@@ -58,13 +58,14 @@ public class TaskManagementController  extends BaseController {
             if (fileName.length() > 10) {
                 fileName = fileName.substring(0, 10);
             }
-            fileName = Constants.FILE_NAME_TIMERORMAT.format(new Date()) + "-" + fileName;
+            fileName = Constants.FILE_NAME_TIME_RORMAT.format(new Date()) + "-" + fileName;
             try (FileOutputStream fileOutputStream = new FileOutputStream(Constants.IMAGE_FILE_PATH + fileName)){
                 byte[] bytes = file.getBytes();
+                //BASE64 code
 //                System.out.println("bytes: " + bytes);
-                String encode = new BASE64Encoder().encode(bytes);
+//                String encode = new BASE64Encoder().encode(bytes);
 //                System.out.println("encode: " + encode);
-                byte[] bytes1 = new BASE64Decoder().decodeBuffer(encode);
+//                byte[] bytes1 = new BASE64Decoder().decodeBuffer(encode);
 //                System.out.println("bytes1: " + bytes1);
                 fileOutputStream.write(bytes);
             } catch (IOException e) {
@@ -72,11 +73,10 @@ public class TaskManagementController  extends BaseController {
             }
         }
         Map rowMap = new HashMap();
-        rowMap.put("task_content", multipartRequest.getParameter("task_content"));
-        rowMap.put("image_names", fileName);
+        rowMap.put(0, Constants.SIMPLE_DATE_FORMAT.format(new Date()));
+        rowMap.put(1, multipartRequest.getParameter("task_content"));
+        rowMap.put(2, fileName);
         taskManagementService.addRow(rowMap);
-
-
         // Servlet way
 //        MultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());
 //        MultipartHttpServletRequest multipartRequest = resolver.resolveMultipart(request);

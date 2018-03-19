@@ -13,7 +13,7 @@
 <html>
 <head>
     <title>spring websocket</title>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
     <script type="text/javascript">
         var socPath = '<%=socPath%>'
         var ws = null;

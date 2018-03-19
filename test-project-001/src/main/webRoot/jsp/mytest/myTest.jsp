@@ -71,10 +71,10 @@
     </style>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery.validate.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/messages_zh.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery.ztree.core.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/messages_zh.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.ztree.core.js"></script>
 </head>
 <body>
 <ul class="content">

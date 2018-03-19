@@ -1,8 +1,5 @@
 package com.cd.test.common;
 
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.stereotype.Component;
@@ -30,7 +27,7 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
             String value = props.getProperty(keyStr);
             propertyMap.put(keyStr, value);
         }
-        propertyMap.put(Constants.VERSION, Constants.TIME_VERSION_FORMAT.format(new Date()));
+        propertyMap.put(Constants.VERSION, Constants.VERSION_TIME_FORMAT.format(new Date()));
 //        logger.info("propertyMap: " + propertyMap);
     }
 

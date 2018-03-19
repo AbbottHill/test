@@ -9,6 +9,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ import java.util.*;
 @Service
 public class TaskManagementServiceImpl implements TaskManagementService {
     @Autowired
-    LoggerProxy loggerProxy;
+    private LoggerProxy loggerProxy;
 
     /**
      * 解析Excel文件
@@ -98,25 +99,37 @@ public class TaskManagementServiceImpl implements TaskManagementService {
         return list;
     }
 
-
-    public int addRow(Map row) {
-//        try (Workbook workbook = WorkbookFactory.create(new File(Constants.FILE_PATH + Constants.FILE_NAME));
-//             OutputStream outputStream = new FileOutputStream(Constants.FILE_PATH + Constants.FILE_NAME)
-//        ) {
-//            int numberOfSheets = workbook.getNumberOfSheets();
-//            if (numberOfSheets > 0) {
-//                Sheet sheetAt = workbook.getSheetAt(0);
-//                Row row1 = sheetAt.createRow(1);
-//                row1.createCell(0).setCellValue(Constants.SIMPLE_DATE_FORMAT.format(new Date()));
-//                row1.createCell(1).setCellValue(String.valueOf(row.get("task_content")));
-//                row1.createCell(2).setCellValue(String.valueOf(row.get("image_names")));
-//            }
-//            workbook.write(outputStream);
-//        } catch (InvalidFormatException e) {
-//            loggerProxy.error(e);
-//        } catch (IOException e) {
-//            loggerProxy.error(e);
-//        }
+    /**
+     *
+     * @param rowMap
+     * @return
+     */
+    @Override
+    public int addRow(Map rowMap) {
+        List taskList = null;
+        List sheetsList = this.excelFileExecution();
+        if (sheetsList.size() > 0) {
+            taskList = (List) sheetsList.get(0);
+        }
+        if (null != taskList && taskList.size() > 0) {
+            taskList.add(1, rowMap);
+            try (Workbook wb = new XSSFWorkbook();
+                 OutputStream outputStream = new FileOutputStream(Constants.FILE_PATH + Constants.FILE_NAME)
+            ) {
+                Sheet sheet = wb.createSheet();
+                for (int rowIndex = 0; rowIndex < taskList.size(); rowIndex++) {
+                    Map taskRow = (Map) taskList.get(rowIndex);
+                    Row newRow = sheet.createRow(rowIndex);
+                    for (int columnIndex = 0; columnIndex < 3; columnIndex++) {
+                        Cell cell = newRow.createCell(columnIndex);
+                        cell.setCellValue(String.valueOf(taskRow.get(columnIndex)));
+                    }
+                }
+                wb.write(outputStream);
+            } catch (IOException e) {
+                loggerProxy.error(e);
+            }
+        }
         return 1;
     }
 
