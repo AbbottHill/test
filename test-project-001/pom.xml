@@ -43,7 +43,17 @@
     </profiles>
 
     <build>
-        <finalName>APP</finalName>
+        <finalName>APP</finalName><resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <excludes>
+                <exclude>**/.svn/*</exclude>
+            </excludes>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+    </resources>
         <!--在命令行中执行mvn，则相当于执行mvn package-->
         <defaultGoal>package</defaultGoal>
         <directory>${basedir}/target</directory>
