@@ -9,6 +9,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +26,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/9/22.
  */
+@WebServlet(name="servlet01", urlPatterns="/servlet_01", initParams={@WebInitParam(name="servlet1", value="servlet01")})
 public class Servlet01 extends HttpServlet {
     private static Logger logger = LogManager.getLogger(Servlet01.class.getName());
 
