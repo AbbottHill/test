@@ -70,11 +70,11 @@
 
     </style>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.validate.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/messages_zh.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.ztree.core.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/js/plugin/css/zTreeStyle.css" type="text/css">
+    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/messages_zh.min.js"></script>
+    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery.ztree.core.js"></script>
 </head>
 <body>
 <ul class="content">
@@ -83,7 +83,7 @@
         <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/html/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
+        <a href="${pageContext.request.contextPath}/static/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a><br><br>
         <a href="${pageContext.request.contextPath}/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
@@ -186,6 +186,6 @@
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 </script>
-<script src="${pageContext.request.contextPath}/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
-<script src="${pageContext.request.contextPath}/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
+<script src="${pageContext.request.contextPath}/static/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+<script src="${pageContext.request.contextPath}/static/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
 </html>
