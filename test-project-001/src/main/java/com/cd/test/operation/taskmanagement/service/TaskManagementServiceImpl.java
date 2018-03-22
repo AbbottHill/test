@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Log4j2
-@Service("taskManagementService")
+//@Service("taskManagementService")
 public class TaskManagementServiceImpl implements TaskManagementService {
     @Autowired
     private LoggerProxy loggerProxy;

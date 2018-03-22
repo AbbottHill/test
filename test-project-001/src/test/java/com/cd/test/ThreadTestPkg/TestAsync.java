@@ -1,5 +1,6 @@
 package com.cd.test.ThreadTestPkg;
 
+import com.cd.test.base.RootConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,14 @@ import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:spring-conf.xml", "classpath*:springmvc-servlet.xml"})
+@WebAppConfiguration
+@ContextConfiguration(classes = {RootConfig.class})
 public class TestAsync {
     @Autowired
     private TestAsyncBean testAsyncBean;

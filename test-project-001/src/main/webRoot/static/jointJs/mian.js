@@ -133,12 +133,30 @@ function init() {
     // background = V('<image width="1920px" height="1080px"/>');
     background.attr({
         // 'xlink:href': 'https://file.isolarcloud.com/stpic/100004/file18220171110191652063.jpg', height: 780, width:1000
-        'xlink:href': '/resources/images/lianhua.png'
-        // 'xlink:href': '/resources/images/933.png'
+        'xlink:href': '/static/images/lianhua.png'
+        // 'xlink:href': '/static/images/933.png'
     });
     V(paper.viewport).prepend(background);
 
     $(window).resize();
+
+    paper.on('cell:pointerclick', function(cellView) {
+        cellView.highlight(null/* defaults to cellView.el */, {
+            highlighter: {
+                name: 'stroke',
+                options: {
+                    padding: 10,
+                    rx: 5,
+                    ry: 5,
+                    attrs: {
+                        'stroke-width': 3,
+                        stroke: '#FF0000'
+                    }
+                }
+            }
+        });
+    });
+
 }
 
 function bindEvent() {

@@ -16,7 +16,7 @@
         <poi-version>3.16</poi-version>
         <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
         <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
-        <springframework.version>4.3.4.RELEASE</springframework.version>
+        <!--<springframework.version>4.3.4.RELEASE</springframework.version>-->
         <jackson.version>2.9.0</jackson.version>
         <aspectj_version>1.8.6</aspectj_version>
         <oozie_version>4.2.0</oozie_version>
@@ -84,7 +84,7 @@
                 <configuration>
                     <warName>study</warName>
                     <!--指定web.xml的路径  -->
-                    <webXml>src/main/webRoot/WEB-INF/web.xml</webXml>
+                    <!--<webXml>src/main/webRoot/WEB-INF/web.xml</webXml>-->
                     <!-- 对丢失web.xml检测机制进行忽略， Dynamic Web Module 3.0 工程时代不需要web.xml文件注册相关内容的，所以工程默认不生成web.xml。-->
                     <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
                     <!--指定jsp、js、css的路劲  -->
@@ -183,6 +183,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${springframework.version}</version>
         </dependency>
@@ -241,6 +251,12 @@
             <groupId>org.apache.oozie</groupId>
             <artifactId>oozie-core</artifactId>
             <version>${oozie_version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>c3p0</artifactId>
+                    <groupId>c3p0</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.oozie</groupId>
@@ -435,6 +451,18 @@
             <version>1.3.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.mchange/mchange-commons-java -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>mchange-commons-java</artifactId>
+            <version>0.2.11</version>
+        </dependency>
 
 
     </dependencies>

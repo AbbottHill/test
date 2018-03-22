@@ -2,6 +2,7 @@ package com.cd.test.maintain.User.controller;
 
 import com.cd.test.maintain.User.service.UserService;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,8 @@ public class UserController {
     @ResponseBody
     public List queryUser() {
         Map params = new HashMap();
-        return userService.queryUser(params);
+//        return userService.queryUser(params);
+        return null;
     }
 }
     

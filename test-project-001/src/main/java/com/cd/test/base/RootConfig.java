@@ -1,6 +1,7 @@
 package com.cd.test.base;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,6 +21,8 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 @EnableAspectJAutoProxy
 //定义Spring MVC扫描的包
 @ComponentScan("com.cd.test")
+//spring-mybatis mapper scan
+@MapperScan("com.cd.test")
 //启动Spring MVC配置
 @EnableWebMvc
 public class RootConfig {
