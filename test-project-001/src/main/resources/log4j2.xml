@@ -37,26 +37,11 @@
 
     <Loggers>
         <!-- sql -->
-        <logger name="log4j.logger.org.mybatis" level="debug" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-        <logger name="log4j.logger.java.sql" level="debug" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-        <logger name="log4j.logger.java.sql.Connection" level="debug" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-        <logger name="log4j.logger.java.sql.Statement" level="debug" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-        <logger name="log4j.logger.java.sql.PreparedStatement" level="debug" additivity="false">
-            <appender-ref ref="Console"/>
-        </logger>
-        <logger name="log4j.logger.java.sql.ResultSet" level="debug" additivity="false">
+        <logger name="com.cd.test" level="info" additivity="false">
             <appender-ref ref="Console"/>
         </logger>
 
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="InfoLog"/>
             <AppenderRef ref="ErrorLog"/>

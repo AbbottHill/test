@@ -39,6 +39,7 @@ import java.text.SimpleDateFormat;
  */
 public class BusinessPlan {
 
+    //Locale.US
     private static SimpleDateFormat fmt = new SimpleDateFormat("dd-MMM", Locale.US);
 
     private static final String[] titles = {
