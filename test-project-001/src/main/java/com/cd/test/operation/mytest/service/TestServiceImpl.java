@@ -1,6 +1,6 @@
 package com.cd.test.operation.mytest.service;
 
-import com.cd.test.common.LoggerProxy;
+import com.cd.test.utils.LoggerProxy;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

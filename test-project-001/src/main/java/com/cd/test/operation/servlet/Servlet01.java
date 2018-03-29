@@ -1,9 +1,9 @@
 package com.cd.test.operation.servlet;
 
 import com.alibaba.fastjson.JSONArray;
-import com.cd.test.common.LoggerProxy;
-import com.cd.test.common.SpringContextUtil;
-import com.cd.test.common.StringUtil;
+import com.cd.test.utils.LoggerProxy;
+import com.cd.test.utils.SpringContextUtil;
+import com.cd.test.utils.StringUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

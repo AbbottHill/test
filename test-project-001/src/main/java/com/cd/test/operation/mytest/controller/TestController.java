@@ -1,8 +1,8 @@
 package com.cd.test.operation.mytest.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.cd.test.common.LoggerProxy;
-import com.cd.test.common.User;
+import com.cd.test.utils.LoggerProxy;
+import com.cd.test.utils.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
