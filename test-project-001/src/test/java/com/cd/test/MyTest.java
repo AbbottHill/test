@@ -1,7 +1,7 @@
 
 package com.cd.test;
 
-import com.cd.test.common.Constants;
+import com.cd.test.utils.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -602,6 +602,14 @@ class EnumTest {
                 System.out.println(color.ordinal() + ": " + color.name());
             }
         }
+    }
+
+}
+
+class StringTest {
+    public static void main(String[] args) {
+        String [] strArr = "".split(",");
+        System.out.println(strArr);
     }
 }
 

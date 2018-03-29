@@ -1,6 +1,6 @@
 package com.cd.test.UserTest;
 
-import com.cd.test.base.RootConfig;
+import com.cd.test.config.RootConfig;
 import com.cd.test.maintain.User.service.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.apache.ibatis.logging.LogFactory;
@@ -20,7 +20,7 @@ import java.util.Map;
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootConfig.class})
 @Log4j2
-public class UserControllerTest {static {
+public class UserServiceTest {static {
 }
 
     @Autowired

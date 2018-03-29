@@ -1,6 +1,6 @@
 package com.cd.test.baseJdbc;
 
-import com.cd.test.common.Constants;
+import com.cd.test.utils.Constants;
 
 import java.util.*;
 

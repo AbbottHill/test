@@ -1,10 +1,10 @@
 package com.cd.test.TaskManagementTest;
 
 
-import com.cd.test.base.AppConfig;
-import com.cd.test.base.MyWebAppInitializer;
-import com.cd.test.base.RootConfig;
-import com.cd.test.common.Constants;
+import com.cd.test.config.AppConfig;
+import com.cd.test.config.MyWebAppInitializer;
+import com.cd.test.config.RootConfig;
+import com.cd.test.utils.Constants;
 import com.cd.test.operation.taskmanagement.service.TaskManagementServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;

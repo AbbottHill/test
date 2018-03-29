@@ -110,6 +110,7 @@ mytestObj.calculateLen();
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [
         {id: 1, pId: 0, name: "父节点1"},
+        {id: 2, pId: 0, name: "父节点2", isParent: true},
         {id: 11, pId: 1, name: "子节点1"},
         {id: 12, pId: 1, name: "子节点2", isParent: true}
     ];

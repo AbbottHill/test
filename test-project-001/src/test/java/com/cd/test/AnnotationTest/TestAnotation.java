@@ -1,7 +1,7 @@
 package com.cd.test.AnnotationTest;
 
 
-import com.cd.test.common.Constants;
+import com.cd.test.utils.Constants;
 
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;

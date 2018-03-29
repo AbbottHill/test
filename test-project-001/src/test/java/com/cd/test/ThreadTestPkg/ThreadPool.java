@@ -4,7 +4,7 @@ package com.cd.test.ThreadTestPkg;
  * Created by Administrator on 2017/12/9.
  */
 
-import com.cd.test.common.Constants;
+import com.cd.test.utils.Constants;
 
 import java.io.*;
 import java.util.Calendar;

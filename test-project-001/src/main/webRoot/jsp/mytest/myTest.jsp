@@ -5,8 +5,8 @@
   Time: 8:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="com.cd.test.common.JspUtils"%>
-<%@ page import="com.cd.test.common.MyPropertyPlaceholder" %>
+<%@ page import="com.cd.test.utils.JspUtils"%>
+<%@ page import="com.cd.test.utils.MyPropertyPlaceholder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -187,5 +187,5 @@
     var contextPath = '${pageContext.request.contextPath}';
 </script>
 <script src="${pageContext.request.contextPath}/static/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
-<script src="${pageContext.request.contextPath}/static/js/myTest.js?vx=<%=JspUtils.resourceVersion()%>"></script>
+<script src="${pageContext.request.contextPath}/static/js/myTest.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </html>
