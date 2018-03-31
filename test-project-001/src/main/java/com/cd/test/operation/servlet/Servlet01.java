@@ -38,14 +38,14 @@ public class Servlet01 extends HttpServlet {
             response.setContentType("application/json; charset=UTF-8");
             response.setHeader("cache-control", "no-cache");
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         try (Writer writer = response.getWriter()) {
             Map requestMap = getParamsFromRequest(request);
             Object result = doExecute(requestMap);
             writer.write(JSONArray.toJSONString(result));
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
     }
 
@@ -69,7 +69,7 @@ public class Servlet01 extends HttpServlet {
 //            Object obj = classType.newInstance();\
 
             String service = String.valueOf(params.get("service"));
-            Object obj = SpringContextUtil.getBean(service);
+            Object obj = SpringContextUtil.getBean("testServiceImpl");
             Method[] methods = obj.getClass().getMethods();
             Method mExec = null;
             for (int i = 0; i < methods.length; i++) {
@@ -81,13 +81,13 @@ public class Servlet01 extends HttpServlet {
 //            Method method = obj.getClass().getMethod("queryTreeNodes", classType);
             result = mExec.invoke(obj, params);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         return result;
     }

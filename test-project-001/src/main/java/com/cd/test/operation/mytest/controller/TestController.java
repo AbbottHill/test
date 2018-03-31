@@ -1,6 +1,7 @@
 package com.cd.test.operation.mytest.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cd.test.base.BaseController;
 import com.cd.test.utils.LoggerProxy;
 import com.cd.test.utils.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,9 @@ import java.util.*;
 /**
  * Created by Administrator on 2017/11/25.
  */
-@Controller
+//@Controller
 @RequestMapping("/mvc")
-public class TestController {
+public class TestController extends BaseController{
     @Autowired
     LoggerProxy logProxy;
 

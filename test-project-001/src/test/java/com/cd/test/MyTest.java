@@ -1,6 +1,8 @@
 
 package com.cd.test;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.cd.test.utils.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
 import org.apache.commons.lang3.StringUtils;
@@ -108,19 +110,22 @@ class Tools {
 
 class CollectionsTest {
     public static void main(String[] args) {
-        String[] strs = {
-                "0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
-                "0.4500", "--", "--", "0.4600", "0.4800", "1.4", "0.4800", "5", "5.3", "0.5700", "0.5200", "--", "0.5500", "0.4800",
-                "0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700"
-        };
-        List list = Arrays.asList(strs);
-        System.out.println(list);
-        sortList(list, "value", -1, 0);
-        System.out.println(list);
+//        String[] strs = {
+//                "0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
+//                "0.4500", "--", "--", "0.4600", "0.4800", "1.4", "0.4800", "5", "5.3", "0.5700", "0.5200", "--", "0.5500", "0.4800",
+//                "0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700"
+//        };
+//        List list = Arrays.asList(strs);
+//        System.out.println(list);
+//        sortList(list, "value", -1, 0);
+//        System.out.println(list);
+//
+//        for (Object object : list) {
+//            System.out.println(object);
+//        }
 
-        for (Object object : list) {
-            System.out.println(object);
-        }
+
+        TreeSetTest();
 
     }
 
@@ -194,6 +199,30 @@ class CollectionsTest {
         }
     }
 
+    public static void TreeSetTest() {/*
+        Set<String> set = new TreeSet(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+//                return Double.parseDouble(o1).compareTo(Double.parseDouble(o1));
+                return o1.compareTo(o2);
+            }
+        });*/
+        Set<String> set = new TreeSet();
+//        Set<String> set = new HashSet<>();
+        set.add("10");
+        set.add("2010");
+        set.add("2099");
+        set.add("2018");
+        set.add("2017");
+        set.add("2020");
+        set.add("0");
+
+        System.out.println("set.size(): " + set.size());
+        for (String str: set) {
+            System.out.println(str);
+        }
+
+    }
 
 }
 
@@ -229,12 +258,22 @@ class GooeleAviator {
 class MyException extends Exception {
 
     public static void main(String[] args) {
-        try {
-            throw new MyException("由于MyException重写了fillInStackTrace方法，那么它不会收集线程运行栈信息。");
-        } catch (MyException e) {
-            e.printStackTrace(); // 在控制台的打印结果为：demo.blog.java.exception.MyException:
-            // 由于MyException重写了fillInStackTrace方法，那么它不会收集线程运行栈信息。
-        }
+//        try {
+//            throw new MyException("由于MyException重写了fillInStackTrace方法，那么它不会收集线程运行栈信息。");
+//        } catch (MyException e) {
+//            e.printStackTrace(); // 在控制台的打印结果为：demo.blog.java.exception.MyException:
+//            // 由于MyException重写了fillInStackTrace方法，那么它不会收集线程运行栈信息。
+//        }
+
+
+        int result;
+
+        result = foo();
+        System.out.println(result);     /////////2
+
+        result = bar();
+        System.out.println(result);    /////////2
+
     }
 
     public MyException(String message) {
@@ -254,6 +293,33 @@ class MyException extends Exception {
         throw new Exception();
 //        System.out.println("end"); //unreachable statement
     }
+
+
+
+    @SuppressWarnings("finally")
+    public static int foo() {
+        int a = 0;
+        try {
+            a = 5 / 0;
+        } catch (Exception e) {
+            return 1;
+        } finally {
+//            return 2;
+        }
+        return a;
+
+    }
+
+    @SuppressWarnings("finally")
+    public static int bar() {
+        try {
+            return 1;
+        }finally {
+            return 2;
+        }
+//        return 3;
+    }
+
 
 }
 
@@ -612,5 +678,8 @@ class StringTest {
         System.out.println(strArr);
     }
 }
+
+
+
 
 

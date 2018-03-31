@@ -2,6 +2,9 @@ package com.cd.test.utils;
 
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
@@ -14,16 +17,18 @@ import java.util.Properties;
 /**
  * Created by Administrator on 2017/12/23.
  */
-@Component
 public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
 //    @Autowired
 //    LoggerProxy loggerProxy;
-//    Resource location = "";
+//    Resource location = null;
 
-    private static Map<String,String> propertyMap = new HashMap<String, String>();
+    private static Map<String,String> propertyMap = new HashMap<>();
 
     @Override
     protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) {
+        this.setLocation(new PathResource("config.properties"));
+        System.out.println(new PathResource("config.properties"));
+
         for (Object key : props.keySet()) {
             String keyStr = key.toString();
             String value = props.getProperty(keyStr);
@@ -42,6 +47,12 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
     public static Object appVersion() {
 //        return propertyMap.get(Constants.VERSION);//todo
         return Constants.VERSION_TIME_FORMAT.format(new Date());
+    }
+
+    //static method for get system version
+    public static Object staticResourceUrl() {
+//        return propertyMap.get("staticResourceUrl");
+        return "";
     }
 
     /**

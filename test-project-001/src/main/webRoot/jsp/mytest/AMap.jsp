@@ -14,7 +14,7 @@
     <div id="map_main" style="height: 100%; width: 80%"></div>
 </body>
 <%--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=3a96bfcb5f18ddce4f670a5dd096e13b"></script>--%>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/amaps.js"></script>
+<script type="text/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/amaps.js"></script>
 <script>
     var MyAMap = {};
     (function () {

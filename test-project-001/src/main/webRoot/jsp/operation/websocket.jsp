@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.cd.test.utils.MyPropertyPlaceholder" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2017/12/14
@@ -13,14 +13,14 @@
 <html>
 <head>
     <title>spring websocket</title>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/jquery/jquery-3.2.1.js"></script>
     <script type="text/javascript">
         var socPath = '<%=socPath%>'
         var ws = null;
         $(function () {
             console.log("abc");
             $.ajax({
-                url: "${pageContext.request.contextPath}/login/abcd", success: function (result) {
+                url: "<%=MyPropertyPlaceholder.staticResourceUrl()%>/login/abcd", success: function (result) {
                     console.log(result);
                     var ws = new WebSocket(socPath + "/myHandler");
                     ws.onopen = function () {
@@ -43,7 +43,7 @@
 
         function sendAjax() {
             $.ajax({
-                url: "${pageContext.request.contextPath}/message", success: function (result) {
+                url: "<%=MyPropertyPlaceholder.staticResourceUrl()%>/message", success: function (result) {
                 }
             });
         }

@@ -25,23 +25,23 @@
         }
 
     </style>
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/plugin/jquery/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/js/CanDoUtils.js"></script>
+    <link rel="shortcut icon" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/resources/images/favicon.ico"/>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/jquery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/CanDoUtils.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/bootstrap/bootstrap.css">
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
     <%--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">--%>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="${pageContext.request.contextPath}/js/plugin/bootstrap/bootstrap.js"></script>
-    <script src="${pageContext.request.contextPath}/js/plugin/jquery/jquery.form.js"></script>
+    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/bootstrap/bootstrap.js"></script>
+    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/jquery/jquery.form.js"></script>
     <!-- 移动端1：1缩放达到缩放布局不乱的效果 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 </head>
 <body>
 <form id="add_task_form" class="form-inline" role="form" method="post" enctype="multipart/form-data"  target="nm_iframe" onsubmit="return addTask()"
-      action="${pageContext.request.contextPath}/taskManagement/addTask">
+      action="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/addTask">
     <div class="form-group">
         <label class="sr-only" for="task_content">Task</label>
         <input type="text" class="form-control" id="task_content" name="task_content" placeholder="请输入名称">
@@ -118,7 +118,7 @@
             return false;
         }
         var options = {
-            url: '${pageContext.request.contextPath}/taskManagement/addTask',   //同action
+            url: '<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/addTask',   //同action
             type: 'post',
             beforeSend: function (xhr) {//请求之前
 

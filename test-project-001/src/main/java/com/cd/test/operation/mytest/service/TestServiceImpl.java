@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Log4j2
-//@Service("testService")
+@Service("testServiceImpl")
 public class TestServiceImpl implements TestService{
     @Autowired
     LoggerProxy loggerProxy;

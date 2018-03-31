@@ -69,25 +69,25 @@
         }
 
     </style>
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico"/>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/js/plugin/css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery.validate.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/messages_zh.min.js"></script>
-    <script type="application/javascript" src="${pageContext.request.contextPath}/static/js/plugin/jquery/jquery.ztree.core.js"></script>
+    <link rel="shortcut icon" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/resources/images/favicon.ico"/>
+    <link rel="stylesheet" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/css/zTreeStyle.css" type="text/css">
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery-3.2.1.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/messages_zh.min.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.ztree.core.js"></script>
 </head>
 <body>
 <ul class="content">
 
     <li class="element">
-        <a href="${pageContext.request.contextPath}/jsp/mytest/AMap.jsp">AMap</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/static/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/jsp/operation/websocket.jsp">spring websocket</a><br><br>
-        <a href="${pageContext.request.contextPath}/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/taskManagement/toTaskManagementPage">taskManagement</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/AMap.jsp">AMap</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/operation/websocket.jsp">spring websocket</a><br><br>
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/toTaskManagementPage">taskManagement</a>&nbsp;&nbsp;&nbsp;
     </li>
 
     <li class="element">
@@ -186,6 +186,6 @@
 <script type="application/javascript">
     var contextPath = '${pageContext.request.contextPath}';
 </script>
-<script src="${pageContext.request.contextPath}/static/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
-<script src="${pageContext.request.contextPath}/static/js/myTest.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/myTest.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </html>
