@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -5,8 +6,8 @@
   Time: 11:30
   user google tile
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%@include file="/jsp/common/common.jsp"%>
 <head>
     <title>Title</title>
 </head>

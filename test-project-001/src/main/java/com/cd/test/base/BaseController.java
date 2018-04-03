@@ -2,10 +2,13 @@ package com.cd.test.base;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -14,6 +17,12 @@ import java.util.Map;
 @Log4j2
 @Controller
 public class BaseController {
+
+    @RequestMapping("/toPage/{url}")
+    @ResponseBody
+    public String setTopic(HttpSession session, @PathVariable("url") String url) {
+        return url;
+    }
 
     protected Map requestParameters(HttpServletRequest request) {
         Map params = new HashMap();

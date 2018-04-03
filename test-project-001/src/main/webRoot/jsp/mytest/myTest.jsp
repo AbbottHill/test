@@ -5,9 +5,7 @@
   Time: 8:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="com.cd.test.utils.JspUtils"%>
-<%@ page import="com.cd.test.utils.MyPropertyPlaceholder" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/jsp/common/common.jsp"%>
 <html>
 <head>
     <meta name="renderer" content="ie-comp">
@@ -86,7 +84,7 @@
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/operation/websocket.jsp">spring websocket</a><br><br>
-        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/toTaskManagementPage">taskManagement</a>&nbsp;&nbsp;&nbsp;
     </li>
 
@@ -183,9 +181,6 @@
     </li>--%>
 </ul>
 </body>
-<script type="application/javascript">
-    var contextPath = '${pageContext.request.contextPath}';
-</script>
-<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
-<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/myTest.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/utils/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+<script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/mytest/myTest.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </html>

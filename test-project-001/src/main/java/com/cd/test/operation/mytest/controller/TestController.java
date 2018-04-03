@@ -24,7 +24,7 @@ import java.util.*;
 /**
  * Created by Administrator on 2017/11/25.
  */
-//@Controller
+@Controller
 @RequestMapping("/mvc")
 public class TestController extends BaseController{
     @Autowired
@@ -36,7 +36,7 @@ public class TestController extends BaseController{
         User user = new User();
         user.setName("super man");
         model.addAttribute("name", user.getName());
-        return "hello";
+        return "mytest/hello";
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
@@ -55,7 +55,7 @@ public class TestController extends BaseController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "hello";
+        return "mytest/hello";
     }
 
 
