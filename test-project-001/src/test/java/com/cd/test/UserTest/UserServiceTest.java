@@ -20,8 +20,9 @@ import java.util.Map;
 @WebAppConfiguration
 @ContextConfiguration(classes = {RootConfig.class})
 @Log4j2
-public class UserServiceTest {static {
-}
+public class UserServiceTest {
+    static {
+    }
 
     @Autowired
     UserService userService;

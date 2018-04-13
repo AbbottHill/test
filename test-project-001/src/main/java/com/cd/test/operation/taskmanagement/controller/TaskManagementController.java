@@ -1,6 +1,6 @@
 package com.cd.test.operation.taskmanagement.controller;
 
-import com.cd.test.config.BaseController;
+import com.cd.test.base.BaseController;
 import com.cd.test.utils.Constants;
 import com.cd.test.utils.LoggerProxy;
 import com.cd.test.operation.taskmanagement.service.TaskManagementService;

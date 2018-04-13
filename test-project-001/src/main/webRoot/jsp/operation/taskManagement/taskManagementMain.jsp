@@ -1,6 +1,5 @@
-<%--<%@ page import="com.cd.test.utils.JspUtils"%>--%>
 <%@ page language="java" pageEncoding="UTF-8" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/jsp/common/common.jsp"%>
 <html>
 <head>
     <meta name="renderer" content="ie-comp">

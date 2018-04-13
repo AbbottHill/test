@@ -4,6 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,10 +18,14 @@ import java.util.Map;
 @Log4j2
 @Controller
 public class BaseController {
+/*
+    @RequestMapping("/toPage{url}")
+    public String dispatcher(HttpSession session, @PathVariable("url") String url) {
+        return url;
+    }*/
 
-    @RequestMapping("/toPage/{url}")
-    @ResponseBody
-    public String setTopic(HttpSession session, @PathVariable("url") String url) {
+    @RequestMapping("/toPage")
+    public String dispatcher(@RequestParam("url") String url) {
         return url;
     }
 

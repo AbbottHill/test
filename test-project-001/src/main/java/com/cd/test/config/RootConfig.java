@@ -1,5 +1,6 @@
 package com.cd.test.config;
 
+import com.cd.test.utils.Constants;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
@@ -18,6 +19,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.mybatis.spring.SqlSessionFactoryBean;
 
 @Configuration
@@ -39,6 +43,7 @@ public class RootConfig {
     @Resource
     private Environment env;
 
+    public static Map<String, String> configProperties = new HashMap<>();
 
     /**
      * 配置数据库连接池 c3p0，
@@ -57,6 +62,10 @@ public class RootConfig {
         dataSource.setAutoCommitOnClose(false);
         dataSource.setCheckoutTimeout(Integer.valueOf(env.getProperty("pool.checkoutTimeout")));
         dataSource.setAcquireRetryAttempts(2);
+
+        //set config todo
+        configProperties.put(Constants.VERSION, env.getProperty("resource_version"));
+
         return dataSource;
     }
 

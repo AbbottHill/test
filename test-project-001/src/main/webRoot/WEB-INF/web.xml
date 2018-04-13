@@ -6,7 +6,8 @@
          version="3.0">
 
     <welcome-file-list>
-        <welcome-file>jsp/exceptions/welcome.jsp</welcome-file>
+        <welcome-file>jsp/main.jsp</welcome-file>
+        <!--<welcome-file>jsp/exceptions/welcome.jsp</welcome-file>-->
     </welcome-file-list>
 
 

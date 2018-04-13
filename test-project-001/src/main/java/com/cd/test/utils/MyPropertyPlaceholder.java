@@ -1,13 +1,21 @@
 package com.cd.test.utils;
 
+import com.cd.test.config.RootConfig;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.lang.Nullable;
+import org.springframework.objenesis.instantiator.annotations.Instantiator;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.InitBinder;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 import java.util.Date;
 import java.util.HashMap;
@@ -17,6 +25,7 @@ import java.util.Properties;
 /**
  * Created by Administrator on 2017/12/23.
  */
+//@Component
 public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
 //    @Autowired
 //    LoggerProxy loggerProxy;
@@ -24,10 +33,16 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
 
     private static Map<String,String> propertyMap = new HashMap<>();
 
+
+    void beforeInit() {
+        this.setLocation(new FileSystemResource("config.properties"));
+    }
+
+
     @Override
     protected void processProperties(ConfigurableListableBeanFactory beanFactoryToProcess, Properties props) {
-        this.setLocation(new PathResource("config.properties"));
-        System.out.println(new PathResource("config.properties"));
+//        this.setLocation(new PathResource("config.properties"));
+//        this.setLocation(new FileSystemResource("config.properties"));
 
         for (Object key : props.keySet()) {
             String keyStr = key.toString();
@@ -46,7 +61,10 @@ public class MyPropertyPlaceholder extends PropertyPlaceholderConfigurer {
     //static method for get system version
     public static Object appVersion() {
 //        return propertyMap.get(Constants.VERSION);//todo
-        return Constants.VERSION_TIME_FORMAT.format(new Date());
+//        return Constants.VERSION_TIME_FORMAT.format(new Date());
+
+        return RootConfig.configProperties.get(Constants.VERSION);
+
     }
 
     //static method for get system version

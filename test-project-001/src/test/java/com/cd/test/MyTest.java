@@ -300,14 +300,15 @@ class MyException extends Exception {
     public static int foo() {
         int a = 0;
         try {
+            if (true) {
+                return 0;
+            }
             a = 5 / 0;
         } catch (Exception e) {
             return 1;
         } finally {
-//            return 2;
+            return 2;
         }
-        return a;
-
     }
 
     @SuppressWarnings("finally")
@@ -382,8 +383,7 @@ class FileTest {
             Long end = System.currentTimeMillis();
             System.out.println("time: " + (end - start));
 
-        } catch (IOException e) {
-            e.getMessage();
+        } catch (IOException e) {e.getMessage();
         }
     }
 }
@@ -678,6 +678,38 @@ class StringTest {
         System.out.println(strArr);
     }
 }
+
+class PolymorphicTest {
+    public static void main(String[] args) {
+        List<animal> animals = new ArrayList<>();
+        animals.add(new panda());
+        animals.add(new shark());
+        for (animal a: animals) {
+            a.eat();
+        }
+    }
+
+    static class animal{
+        protected void eat(){
+            System.out.println("eat foot");
+        }
+    }
+
+    static class panda extends animal{
+        protected void eat(){
+            System.out.println("eat bamboo");
+        }
+    }
+
+    static class shark extends animal{
+        protected void eat(){
+            System.out.println("eat fish");
+        }
+    }
+
+
+}
+
 
 
 

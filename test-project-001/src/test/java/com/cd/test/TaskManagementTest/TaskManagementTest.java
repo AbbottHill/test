@@ -2,7 +2,6 @@ package com.cd.test.TaskManagementTest;
 
 
 import com.cd.test.config.AppConfig;
-import com.cd.test.config.MyWebAppInitializer;
 import com.cd.test.config.RootConfig;
 import com.cd.test.utils.Constants;
 import com.cd.test.operation.taskmanagement.service.TaskManagementServiceImpl;

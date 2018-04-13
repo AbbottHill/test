@@ -21,7 +21,6 @@ var mytestObj = (function () {
 
                 },
                 success: function (data) {
-                    debugger
                     $(".resultArea").val('1：' + data);
                     try {
                         $(".resultArea").val($(".resultArea").val() + '\n2：' + JSON.parse(data));

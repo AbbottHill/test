@@ -5,7 +5,7 @@
   Time: 8:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@include file="/jsp/common/common.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta name="renderer" content="ie-comp">
@@ -15,6 +15,7 @@
     <meta http-equiv="expires" content="0">
 
     <title>mytest</title>
+    <%@include file="/jsp/common/common.jsp"%>
     <style>
         body {
             background-color: #fff;
@@ -67,9 +68,7 @@
         }
 
     </style>
-    <link rel="shortcut icon" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/resources/images/favicon.ico"/>
     <link rel="stylesheet" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery-3.2.1.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.min.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/messages_zh.min.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.ztree.core.js"></script>
@@ -85,7 +84,8 @@
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/operation/websocket.jsp">spring websocket</a><br><br>
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
-        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/toTaskManagementPage">taskManagement</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/toTaskManagementPage?vx=<%=MyPropertyPlaceholder.appVersion()%>">taskManagement</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/toPage?url=operation/revenueexpenditure/revenueexpenditure&vx=<%=MyPropertyPlaceholder.appVersion()%>">revenueexpenditure</a>&nbsp;&nbsp;&nbsp;
     </li>
 
     <li class="element">
