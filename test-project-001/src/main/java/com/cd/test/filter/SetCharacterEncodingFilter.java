@@ -1,4 +1,4 @@
-package com.cd.test.config;
+package com.cd.test.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

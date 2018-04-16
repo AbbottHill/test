@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.HandlerAdapter;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -54,6 +55,17 @@ public class AppConfig implements WebMvcConfigurer {
         //往适配器加入json转换器
         rmhd.getMessageConverters().add(jsonConverter);
         return rmhd;
+    }
+
+    /**
+     * 使用apache的commons fileupload实现,org.springframework.web.multipart.cos.CosMultipartResolver
+     */
+    @Bean(name="multipartResolver")
+    public CommonsMultipartResolver commonsMultipartResolver() {
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+        commonsMultipartResolver.setMaxUploadSize(1024 * 1024);//1MB
+        commonsMultipartResolver.setMaxInMemorySize(4096);
+        return commonsMultipartResolver;
     }
 
     /**

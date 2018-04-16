@@ -5,6 +5,7 @@
     var contextPath = '${pageContext.request.contextPath}';
 </script>
 <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery-3.2.1.js"></script>
+<script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/utils/CanDoUtils.js"></script>
 <!-- 新 Bootstrap4 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->

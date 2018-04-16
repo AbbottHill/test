@@ -32,7 +32,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 //定义Spring MVC扫描的包
 @ComponentScan("com.cd.test")
 //spring-mybatis mapper scan
-@MapperScan("com.cd.test")
+@MapperScan("com.cd.test.maintain")
 //启动Spring MVC配置
 @EnableWebMvc
 public class RootConfig {

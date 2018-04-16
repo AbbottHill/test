@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 @Log4j2
-//@Service("taskManagementService")
+@Service("taskManagementService")
 public class TaskManagementServiceImpl implements TaskManagementService {
     @Autowired
     private LoggerProxy loggerProxy;
@@ -69,24 +69,7 @@ public class TaskManagementServiceImpl implements TaskManagementService {
                     }
                     sheetList.add(rowNum, rowMap);
 
-
-//                    log.info("excelFileExecution: " + JSON.toJSONString(rowMap));
                     loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
-
                 }
                 list.add(sheetIndex, sheetList);
             }

@@ -1,5 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-<%@include file="/jsp/common/common.jsp"%>
+<%@include file="/jsp/common/common.jsp" %>
 <html>
 <head>
     <meta name="renderer" content="ie-comp">
@@ -24,22 +24,13 @@
         }
 
     </style>
-    <link rel="shortcut icon" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/resources/images/favicon.ico"/>
-    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/jquery/jquery-3.2.1.js"></script>
-    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/CanDoUtils.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/bootstrap/bootstrap.css">
-    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <%--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">--%>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/bootstrap/bootstrap.js"></script>
-    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/js/plugin/jquery/jquery.form.js"></script>
+    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.form.js"></script>
     <!-- 移动端1：1缩放达到缩放布局不乱的效果 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
 </head>
 <body>
-<form id="add_task_form" class="form-inline" role="form" method="post" enctype="multipart/form-data"  target="nm_iframe" onsubmit="return addTask()"
+<form id="add_task_form" class="form-inline" role="form" method="post" enctype="multipart/form-data" target="nm_iframe"
+      onsubmit="return addTask()"
       action="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/addTask">
     <div class="form-group">
         <label class="sr-only" for="task_content">Task</label>
@@ -73,21 +64,21 @@
         }, dealData, null, 'json');
     }
 
-//
-//    var inner = "";
-//    for (var i = 0; i < 100; i++) {
-//        inner += "<tr>";
-//        for (var j = 0; j < 3; j++) {
-//            inner += "<td>" + i + j + "</td>";
-//        }
-//        inner += "</tr>"
-//    }
-//    tbody.innerHTML = inner;
+    //
+    //    var inner = "";
+    //    for (var i = 0; i < 100; i++) {
+    //        inner += "<tr>";
+    //        for (var j = 0; j < 3; j++) {
+    //            inner += "<td>" + i + j + "</td>";
+    //        }
+    //        inner += "</tr>"
+    //    }
+    //    tbody.innerHTML = inner;
 
 
     function dealData(data) {
         var innerHtml = "";
-        for(var i = 0, temObj, lens = data.length; i < lens; i ++) {
+        for (var i = 0, temObj, lens = data.length; i < lens; i++) {
             temObj = data[i];
 
             innerHtml += "<tr><td>" + temObj["0"] + "</td><td>" + temObj["1"] + "</td><td>" + dealImageNames(temObj["2"]) + "</td></tr>"
@@ -99,7 +90,7 @@
         var htmlStr = "";
         if (!CanDoUtils.isEmptyStr(imgNames)) {
             var imgNamesArr = imgNames.split(/;/g);
-            for(var i = 0, temObj, lens = imgNamesArr.length; i < lens; i ++) {
+            for (var i = 0, temObj, lens = imgNamesArr.length; i < lens; i++) {
                 temObj = imgNamesArr[i];
                 if (/\./g.test(temObj)) {//文件名中包含'.'
                     htmlStr += '<img style="max-width: 580px;" src="/taskManagement/loadImg?imgName=' + temObj + '">'

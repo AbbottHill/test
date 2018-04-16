@@ -1,13 +1,9 @@
-package com.cd.test.operation.servlet;
+package com.cd.test.operation.mytest;
 
 import com.alibaba.fastjson.JSONArray;
-import com.cd.test.utils.LoggerProxy;
 import com.cd.test.utils.SpringContextUtil;
-import com.cd.test.utils.StringUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -27,8 +23,8 @@ import java.util.Map;
  * Created by Administrator on 2017/9/22.
  */
 @WebServlet(name="servlet01", urlPatterns="/servlet_01", initParams={@WebInitParam(name="servlet1", value="servlet01")})
-public class Servlet01 extends HttpServlet {
-    private static Logger logger = LogManager.getLogger(Servlet01.class.getName());
+public class MyServlet extends HttpServlet {
+    private static Logger logger = LogManager.getLogger(MyServlet.class.getName());
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {

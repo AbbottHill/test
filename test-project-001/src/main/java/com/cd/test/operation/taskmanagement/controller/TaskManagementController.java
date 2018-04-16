@@ -76,6 +76,9 @@ public class TaskManagementController  extends BaseController {
         rowMap.put(0, Constants.SIMPLE_DATE_FORMAT.format(new Date()));
         rowMap.put(1, multipartRequest.getParameter("task_content"));
         rowMap.put(2, fileName);
+
+        int x = 1/0;
+
         taskManagementService.addRow(rowMap);
         // Servlet way
 //        MultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());

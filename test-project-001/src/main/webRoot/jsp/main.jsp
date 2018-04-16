@@ -75,7 +75,7 @@
         <div class="carousel-item">
             <img src="http://static.runoob.com/images/mix/img_mountains_wide.jpg">
             <div class="carousel-caption">
-                <h3>一壶浊酒喜相逢</h3>
+                <h3>You have to believe in yourself. That's the secret of success.</h3>
                 <p>古今多少事，都付笑谈中</p>
             </div>
         </div>

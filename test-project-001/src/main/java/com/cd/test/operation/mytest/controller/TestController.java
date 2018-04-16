@@ -2,10 +2,9 @@ package com.cd.test.operation.mytest.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.cd.test.base.BaseController;
+import com.cd.test.maintain.User.model.UserInfo;
 import com.cd.test.utils.LoggerProxy;
-import com.cd.test.utils.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,6 @@ import javax.servlet.http.HttpSession;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -33,7 +31,7 @@ public class TestController extends BaseController{
     @RequestMapping("/hello")
     public String greeting(@RequestParam(value = "name", required = false, defaultValue = "World") String name, Model model) {
 //        model.addAttribute("name", name);
-        User user = new User();
+        UserInfo user = new UserInfo();
         user.setName("super man");
         model.addAttribute("name", user.getName());
         return "mytest/hello";

@@ -1,5 +1,7 @@
 package com.cd.test.exceptions;
 
+import com.cd.test.utils.LoggerProxy;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,8 +13,11 @@ import java.util.Map;
 
 @Component("exceptionHandler")
 public class MyExceptionHandler implements HandlerExceptionResolver {
+    @Autowired
+    LoggerProxy loggerProxy;
 
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        loggerProxy.error(ex);
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("ex", ex);
 
