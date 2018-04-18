@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -21,6 +22,7 @@ import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.*;
 
 import org.mybatis.spring.SqlSessionFactoryBean;
 
@@ -35,6 +37,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 @MapperScan("com.cd.test.maintain")
 //启动Spring MVC配置
 @EnableWebMvc
+@EnableAsync
 public class RootConfig {
 
     /**
@@ -47,6 +50,7 @@ public class RootConfig {
 
     /**
      * 配置数据库连接池 c3p0，
+     *
      * @return
      * @throws PropertyVetoException
      */
@@ -71,6 +75,7 @@ public class RootConfig {
 
     /**
      * 配置事物管理器
+     *
      * @param dataSource
      * @return
      */
@@ -80,17 +85,18 @@ public class RootConfig {
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate (DataSource dataSource) {
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 
     /**
      * mybatis sqlSessionFactoryBean
+     *
      * @param dataSource
      * @return
      */
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactory (DataSource dataSource) {
+    public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) {
 //        LogFactory.useLog4J2Logging();
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.setLogImpl(Log4j2Impl.class);
@@ -100,6 +106,15 @@ public class RootConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setConfiguration(configuration);
         return sqlSessionFactoryBean;
+    }
+
+    @Bean(name = "loggerExecutor")
+    public Executor loggerExecutor() {
+        Executor executor = new ThreadPoolExecutor(2, 2, 2, TimeUnit.MILLISECONDS,
+            new ArrayBlockingQueue<Runnable>(2),
+            new ThreadPoolExecutor.CallerRunsPolicy()
+            );
+        return executor;
     }
 
 }

@@ -29,12 +29,12 @@ public class LoggerProxy {
         System.out.println("AOP Before. currentThread: " + Thread.currentThread().getName());
     }
 
-    @Async
+    @Async("loggerExecutor")
     public void info(Object info) {
         log.info(info);
     }
 
-    @Async
+    @Async("loggerExecutor")
     public void info(String message) {
 //        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\chudong.SUNGROW\\Desktop\\RedisDesktopManager.rar");
 //             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\chudong.SUNGROW\\Desktop\\RedisDesktopManager.copy.rar");

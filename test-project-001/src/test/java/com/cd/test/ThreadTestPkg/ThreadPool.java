@@ -17,6 +17,18 @@ public class ThreadPool implements Serializable {
     private static ExecutorService executorService = null;
 
     public ThreadPool(int poolSize) {
+
+        //创建线程池来执行任务
+        ThreadPoolExecutor executor = new
+                ThreadPoolExecutor(4, //核心线程数
+                12, //最大线程数
+                60, //线程空闲周期
+                TimeUnit.SECONDS, //周期单位s
+//                new SynchronousQueue<>()//创建一个任务队列
+//                new LinkedBlockingDeque<>(60)//创建一个任务队列
+                new ArrayBlockingQueue<>(60)//创建一个任务队列
+        );
+
         arrayBlockingQueue = new ArrayBlockingQueue<Map>(3 * poolSize);
         //创建一个可重用固定线程数的线程池
         executorService = Executors.newFixedThreadPool(poolSize);

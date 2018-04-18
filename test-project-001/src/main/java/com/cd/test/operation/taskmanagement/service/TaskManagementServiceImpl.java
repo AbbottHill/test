@@ -70,6 +70,25 @@ public class TaskManagementServiceImpl implements TaskManagementService {
                     sheetList.add(rowNum, rowMap);
 
                     loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
+                    loggerProxy.info("excelFileExecution: " + JSON.toJSONString(rowMap));
                 }
                 list.add(sheetIndex, sheetList);
             }

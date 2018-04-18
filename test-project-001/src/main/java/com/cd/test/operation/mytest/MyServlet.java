@@ -18,6 +18,7 @@ import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by Administrator on 2017/9/22.
@@ -57,9 +58,9 @@ public class MyServlet extends HttpServlet {
         Class classType = null;
         String method = String.valueOf(params.get("method"));
         try {
-            if ("treeService".equals(String.valueOf(params.get("service")))) {
+            if (Objects.equals("treeService", String.valueOf(params.get("service")))) {
                 classType = Class.forName("com.cd.test.operation.mytest.service.TestService");
-            } else if ("pollingService".equals(String.valueOf(params.get("service")))) {
+            } else if (Objects.equals("pollingService", String.valueOf(params.get("service")))) {
                 classType = Class.forName("com.cd.test.project.operation.service.PollingService.PollingService");
             }
 //            Object obj = classType.newInstance();\

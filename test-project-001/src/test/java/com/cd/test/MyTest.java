@@ -16,6 +16,7 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 
 public class MyTest {
@@ -31,6 +32,10 @@ public class MyTest {
         System.out.println(1 + 0.5);//0
         System.out.println(1 / 3f);//0.33333334
         System.out.println(1d / 3d);//0.3333333333333333
+
+        for (int i = 0; i < 25600; i++) {
+            System.out.println(i + ": " + (char)i);
+        }
 
     }
 
@@ -110,22 +115,86 @@ class Tools {
 
 class CollectionsTest {
     public static void main(String[] args) {
-//        String[] strs = {
-//                "0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
-//                "0.4500", "--", "--", "0.4600", "0.4800", "1.4", "0.4800", "5", "5.3", "0.5700", "0.5200", "--", "0.5500", "0.4800",
-//                "0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700"
-//        };
-//        List list = Arrays.asList(strs);
-//        System.out.println(list);
-//        sortList(list, "value", -1, 0);
-//        System.out.println(list);
+        String[] strs = {
+                "0.4500", "--", "0.5200", "0.4500", "0.4800", "0.4500", "0.5000", "0.5300", "--", "0.5200",
+                "0.4500", "--", "--", "0.4600", "0.4800", "1.4", "0.4800", "5", "5.3", "0.5700", "0.5200", "--", "0.5500", "0.4800",
+                "0.4600", "0.4500", "0.5000", "0.5000", "--", "0.5500", "0.5700", "0.5500", "--", "--", "0.5900", "0.5000", "0.5700",
+                "!", "$"
+        };
+        List list = Arrays.asList(strs);
+        System.out.println(list);
+        sortList(list, "value", -1, 0);
+        System.out.println(list);
 //
 //        for (Object object : list) {
 //            System.out.println(object);
 //        }
 
 
-        TreeSetTest();
+//        TreeSetTest();
+
+
+        // remove
+//        List<String> list = new ArrayList<String>();
+//        list.add("1");
+//        list.add("2");
+//        list.add("3");
+//        list.add("4");
+//        Iterator<String> iterator = list.iterator();
+////        synchronized (iterator) {
+//            while (iterator.hasNext()) {
+//                String item = iterator.next();
+//                if (Objects.equals("2", item)) {
+//                    iterator.remove();
+//                }
+////            }
+//        }
+//        System.out.println(JSONObject.toJSONString(list));
+
+        // JDK8 map.forEach
+//        Map map = new HashMap(3);
+//        map.put("1", 1);
+//        map.put("2", 2);
+//        map.put("3", 3);
+//        map.forEach(new BiConsumer() {
+//            @Override
+//            public void accept(Object o, Object o2) {
+//                System.out.println(o + "--> " + o2);
+//            }
+//        });
+
+        // treeMap
+//        Map treeMap = new TreeMap(new Comparator() {
+//            @Override
+//            public int compare(Object o1, Object o2) {
+//                String value1 = String.valueOf(o1);
+//                String value2 = String.valueOf(o2);
+//                if (!Tools.isStringDigit(value1) && !Tools.isStringDigit(value2)) {
+//                    return value1.compareTo(value2);
+//                }
+//                if (!Tools.isStringDigit(value1)) {
+//                    return 1;
+//                }
+//                if (!Tools.isStringDigit(value2)) {
+//                    return -1;
+//                }
+//                return new BigDecimal(value1).compareTo(new BigDecimal(value2));
+//            }
+//        });
+//        treeMap.put("*", "*");
+//        treeMap.put("100", 100);
+//        treeMap.put("19", 10);
+//        treeMap.put("$", "$");
+//        treeMap.put("101", 101);
+//        treeMap.put("-", "-");
+//        treeMap.put("!", "!");
+//        treeMap.put("--", "--");
+//        treeMap.forEach(new BiConsumer() {
+//            @Override
+//            public void accept(Object o, Object o2) {
+//                System.out.println(o + " --> " + o2);
+//            }
+//        });
 
     }
 
@@ -140,7 +209,8 @@ class CollectionsTest {
                 String value2 = String.valueOf(o2);
                 if (type == 0) {
                     if (!Tools.isStringDigit(value1) && !Tools.isStringDigit(value2)) {
-                        return 0;
+                        return value1.compareTo(value2);
+//                        return 0;
                     }
                     if (!Tools.isStringDigit(value1)) {
                         return 1;
@@ -674,8 +744,10 @@ class EnumTest {
 
 class StringTest {
     public static void main(String[] args) {
-        String [] strArr = "".split(",");
-        System.out.println(strArr);
+//        String [] strArr = "".split(",");
+//        System.out.println(strArr);
+
+        System.out.println(Objects.equals(null, null));
     }
 }
 

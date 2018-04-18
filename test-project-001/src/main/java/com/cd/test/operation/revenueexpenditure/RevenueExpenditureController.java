@@ -12,7 +12,7 @@ import java.util.Map;
 public class RevenueExpenditureController {
 
     @ResponseBody
-    @RequestMapping("/info")
+    @RequestMapping("/list")
     public Map queryRevenueExpenditureInfo() {
         return null;
     }

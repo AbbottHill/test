@@ -94,6 +94,10 @@
     <div class="list-group">
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/myTest.jsp"
            class="list-group-item list-group-item-action">myTest</a>
+        <a href="/toPage?url=operation/revenueexpenditure/revenueexpenditure&vx=<%=MyPropertyPlaceholder.appVersion()%>"
+           class="list-group-item list-group-item-action">Revenue & Expend</a>
+        <a href="/toPage?url=operation/taskManagement/taskManagementMain&vx=<%=MyPropertyPlaceholder.appVersion()%>"
+           class="list-group-item list-group-item-action">Task Management</a>
         <a href="#" class="list-group-item list-group-item-action">Second item</a>
         <a href="#" class="list-group-item list-group-item-action">Second item</a>
         <a href="#" class="list-group-item list-group-item-action">Second item</a>

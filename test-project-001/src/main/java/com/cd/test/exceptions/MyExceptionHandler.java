@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component("exceptionHandler")
+@Component("exceptionHandler") //TODO
 public class MyExceptionHandler implements HandlerExceptionResolver {
     @Autowired
     LoggerProxy loggerProxy;

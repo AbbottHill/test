@@ -2,6 +2,7 @@ package com.cd.test.utils;
 
 
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by Administrator on 2017/12/11.
@@ -10,6 +11,7 @@ public class Constants {
     public static final String REPLACEMENT_EMPTY_STRING = "--";
     public static final String VERSION = "APP_VERSION";
     public static final SimpleDateFormat VERSION_TIME_FORMAT = new SimpleDateFormat("yyyyMMddHHmmss");
+    DateTimeFormatter VERSION_TIME;
     public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     public static final String NETURL = "localhost:8099";
 

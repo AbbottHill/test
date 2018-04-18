@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>study</artifactId>
+    <artifactId>test</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
@@ -82,7 +82,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <warName>study</warName>
+                    <warName>test</warName>
                     <!--指定web.xml的路径  -->
                     <!--<webXml>src/main/webRoot/WEB-INF/web.xml</webXml>-->
                     <!-- 对丢失web.xml检测机制进行忽略， Dynamic Web Module 3.0 工程时代不需要web.xml文件注册相关内容的，所以工程默认不生成web.xml。-->
