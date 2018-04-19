@@ -36,6 +36,7 @@ public class UserServiceTest {
 //        System.out.println(sqlSessionFactoryBean);
         Map params = new HashMap();
         params.put("id", 10000);
+        params.put("user_account", "root");
         List list = userService.queryUser(params);
         log.info(list);
     }

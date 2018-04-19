@@ -1486,7 +1486,10 @@
                             <label for="sdk_app_id" class="col-sm-2 control-label">SdkAppId:</label>
 
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="sdk_app_id" placeholder="请输入SdkAppId" value="">
+                                <!--托管-->
+                                <!--<input type="text" class="form-control" id="sdk_app_id" placeholder="请输入SdkAppId" value="1400085247">-->
+                                <!--独立-->
+                                <input type="text" class="form-control" id="sdk_app_id" placeholder="请输入SdkAppId" value="1400084160">
                             </div>
                         </div>
                        
@@ -1495,7 +1498,10 @@
                             <label for="account_type" class="col-sm-2 control-label">AccountType:</label>
 
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="account_type" placeholder="请输入AccountType" value="">
+                                <!--托管-->
+                                <!--<input type="text" class="form-control" id="account_type" placeholder="请输入AccountType" value="25394">-->
+                                <!--独立-->
+                                <input type="text" class="form-control" id="account_type" placeholder="请输入AccountType" value="25409">
                             </div> 
                         </div>
 
@@ -1540,7 +1546,7 @@
                             <label for="login_account" class="col-sm-2 control-label">identifier</label>
 
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="login_account" value="" placeholder="请输入identifier" maxlength="100">
+                                <input type="text" class="form-control" id="login_account" value="demo" placeholder="请输入identifier" maxlength="100">
                             </div>
                         </div>
                         <div class="form-group">
@@ -2146,8 +2152,8 @@
         var accountMode = 1;
 
         //官方 demo appid,需要开发者自己修改（托管模式）
-        var sdkAppID = 1400085247; //1400001533;
-        var accountType = 25394; //792;
+        var sdkAppID = 1400001533;
+        var accountType = 792;
 
         //当前用户身份
         var loginInfo = {

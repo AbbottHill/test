@@ -24,7 +24,6 @@
         }
 
     </style>
-    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.form.js"></script>
     <!-- 移动端1：1缩放达到缩放布局不乱的效果 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>

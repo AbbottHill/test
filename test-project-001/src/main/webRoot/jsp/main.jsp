@@ -16,6 +16,7 @@
             height: 100%;
         }
     </style>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/main.js?version=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </head>
 <body>
 
@@ -32,7 +33,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">User</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal" id="nav_user_name">User</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Msg</a>
@@ -92,19 +93,23 @@
 
 <div class="container">
     <div class="list-group">
-        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/myTest.jsp"
+        <a target="_blank" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/myTest.jsp"
            class="list-group-item list-group-item-action">myTest</a>
-        <a href="/toPage?url=operation/revenueexpenditure/revenueexpenditure&vx=<%=MyPropertyPlaceholder.appVersion()%>"
+        <a target="_blank" href="/toPage?url=operation/revenueexpenditure/revenueexpenditure&vx=<%=MyPropertyPlaceholder.appVersion()%>"
            class="list-group-item list-group-item-action">Revenue & Expend</a>
-        <a href="/toPage?url=operation/taskManagement/taskManagementMain&vx=<%=MyPropertyPlaceholder.appVersion()%>"
+        <a target="_blank" href="/toPage?url=operation/taskManagement/taskManagementMain&vx=<%=MyPropertyPlaceholder.appVersion()%>"
            class="list-group-item list-group-item-action">Task Management</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Second item</a>
-        <a href="#" class="list-group-item list-group-item-action">Third item</a>
+        <a target="_blank" href="/toPage?url=chartroom/chartroom"
+           class="list-group-item list-group-item-action">Chart Room</a>
+        <a target="_blank" href="/static/tengxunIM/index.html"
+           class="list-group-item list-group-item-action">腾讯 云通讯 demo</a><%--
+        <a target="_blank" href="/static/chartroom/index.html"
+           class="list-group-item list-group-item-action">Chart Room(html)</a>--%>
+        <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a target="_blank" href="#" class="list-group-item list-group-item-action">Third item</a>
     </div>
 </div>
 
@@ -122,32 +127,34 @@
             <!-- 模态框主体 -->
             <div class="modal-body">
                 <%--模态框内容..--%>
-                <form>
+                <form id="login_form" role="form" method="post" target="nm_iframe"
+                      onsubmit="return userLogin()"
+                      action="<%=MyPropertyPlaceholder.staticResourceUrl()%>/user/login">
                     <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        <label for="user_account">Email:</label>
+                        <input type="email" class="form-control" id="user_account" name="user_account" placeholder="Enter account">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                        <label for="user_pwd">Password:</label>
+                        <input type="password" class="form-control" id="user_pwd" name="user_pwd" placeholder="Enter password">
                     </div>
                     <div class="form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox"> Remember me
                         </label>
                     </div>
-                    <%--<button type="submit" class="btn btn-primary">Submit</button>--%>
                 </form>
             </div>
 
             <!-- 模态框底部 -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="MainObj.userLogin()">Submit</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
             </div>
         </div>
     </div>
 </div>
 
+<iframe name="nm_iframe" style="display:none;"></iframe>
 </body>
 </html>

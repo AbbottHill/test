@@ -106,7 +106,8 @@ function independentModeLogin() {
 //初始化demo
 
 function initDemoApp() {
-    $("body").css("background-color", '#2f2f2f');
+    // $("body").css("background-color", '#2f2f2f');
+
     document.getElementById("webim_demo").style.display = "block"; //展开聊天界面
     document.getElementById("p_my_face").src = loginInfo.headurl;
     if (loginInfo.identifierNick) {
