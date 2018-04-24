@@ -19,6 +19,15 @@
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/main.js?version=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </head>
 <body>
+<%--<script src='//kefu.easemob.com/webim/easemob.js?configId=92b7b0d7-e652-4250-88d6-f7aa7d62b7a3'></script>--%>
+
+<!--[if lt IE 9]>
+<script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
+<![endif]-->
+<!-- 强制使用pc版本的kit -->
+<!--<script src="https://g.alicdn.com/aliww/??h5.openim.sdk/1.0.6/scripts/wsdk.js,h5.openim.kit/0.3.3/scripts/kit.js?pc=1" charset="utf-8"></script>-->
+
+
 
 <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
     <!-- Brand -->
@@ -92,24 +101,30 @@
 </div>
 
 <div class="container">
-    <div class="list-group">
+    <div class="list-group"><%--
         <a target="_blank" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/myTest.jsp"
            class="list-group-item list-group-item-action">myTest</a>
         <a target="_blank" href="/toPage?url=operation/revenueexpenditure/revenueexpenditure&vx=<%=MyPropertyPlaceholder.appVersion()%>"
            class="list-group-item list-group-item-action">Revenue & Expend</a>
         <a target="_blank" href="/toPage?url=operation/taskManagement/taskManagementMain&vx=<%=MyPropertyPlaceholder.appVersion()%>"
-           class="list-group-item list-group-item-action">Task Management</a>
-        <a target="_blank" href="/toPage?url=chartroom/chartroom"
-           class="list-group-item list-group-item-action">Chart Room</a>
+           class="list-group-item list-group-item-action">Task Management</a>--%>
+        <a style="display: none;" target="_blank" href="/toPage?url=tencentIM/chartroom"
+           class="list-group-item list-group-item-action chart_room_link">Chart Room</a><%--
         <a target="_blank" href="/static/tengxunIM/index.html"
-           class="list-group-item list-group-item-action">腾讯 云通讯 demo</a><%--
-        <a target="_blank" href="/static/chartroom/index.html"
-           class="list-group-item list-group-item-action">Chart Room(html)</a>--%>
+           class="list-group-item list-group-item-action">腾讯 云通讯 demo</a>--%>
+        <a style="display: none;" target="_blank" href="/static/aliopenim/enter.html"
+           class="list-group-item list-group-item-action chart_room_link">百川云旺·即时通讯</a>
+        <a target="_blank" href="/static/huanxin/index.html"
+           class="list-group-item list-group-item-action">环信 demo</a>
+        <%--
+        <a target="_blank" href="/static/tencentIM/index.html"
+           class="list-group-item list-group-item-action">Chart Room(html)</a>--%><%--
         <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
         <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
         <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
         <a target="_blank" href="#" class="list-group-item list-group-item-action">Second item</a>
         <a target="_blank" href="#" class="list-group-item list-group-item-action">Third item</a>
+        --%>
     </div>
 </div>
 

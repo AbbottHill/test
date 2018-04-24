@@ -14,7 +14,8 @@ var MainObj = {
                 $("#user_account").val("");
                 $("#user_pwd").val("");
                 if (data.login_status == 1) {
-                    $("#nav_user_name").html(data.user_name)
+                    $("#nav_user_name").html(data.user_name);
+                    $(".chart_room_link").show();
                 }
             },
             complete: function (xhr) {//请求完成

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="background-color: lightblue;">
+<a href="javascript:;" id="J_light">点我打开新窗口</a>
+<a href="javascript:;" id="J_lightIn">点我在页面上打开</a>
+
+<div id="J_lightDemoWrap" style="width: 700px;height: 500px;position:fixed;right:0;bottom:0;"></div>
+
+<!--[if lt IE 9]>
+<script src="//g.alicdn.com/aliww/ww/json/json.js"></script>
+<![endif]-->
+<script src="https://g.alicdn.com/aliww/??h5.openim.sdk/0.1.4/scripts/wsdk.js,h5.openim.kit/0.0.5/scripts/kit.js" charset="utf-8"></script>
+
+<script>
+    document.getElementById('J_light').onclick = function(){
+        window.open('http://www.taobao.com/market/seller/openim/kit.php?' +
+            'uid=test0&to=test1&appkey=23018936&pwd=123456&fullscreen',
+            'webcall', 'toolbar=no, ' +
+            'status=no,scrollbars=0,resizable=0,menubar＝0,' +
+            'location=0,width=700,height=500');
+    };
+
+    /**
+     logo:           [String]        左上角logo,  移动端设置无效
+     avatar:         [String]        登录用户的头像
+     toAvatar:       [String]        对方用户的头像
+     theme:          [String]        主题名称
+     themeBgColor:   [String]        主题背景色，示例: #f60, #dc2a2e
+     themeColor:     [String]        主题文字颜色 默认值: #fff
+     msgBgColor:     [String]        消息背景色 默认值: themeBgColor
+     msgColor:       [String]        消息文字颜色 默认值: #4a4a4a
+     titleBar:       [Boolean]       是否显示顶部title条, PC端设置无效 默认值: true
+     title:          [Boolean]       展示的title PC默认值: touid，移动默认值: false
+     imgUploader:    [Boolean]       是否显示上传图片按钮 默认值: true
+     sendBtn:        [Boolean]       是否显示发送按钮 默认值: false
+     pluginUrl:      [String]        左侧自定义区域url, 移动端设置无效, 如果不传左侧将隐藏 ，示例：http://www.taobao.com/market/seller/openim/plugindemo.php
+     customUrl:      [String]        右侧自定义区域url, 如果不传相应的区域将隐藏，示例：pc端：http://www.taobao.com/market/seller/openim/customdemo.php，移动端：http://www.taobao.com/market/seller/openim/mitem.php
+     placeholder:    [String]        输入框默认文案 默认值: 说点什么吧   
+     welcomeMsg:   [String]    显示在对方消息位置的默认欢迎文案，一般用在客服聊天时，用户登录后，在客服方的消息位置显示欢迎文案
+    */
+
+    document.getElementById('J_lightIn').onclick = function(){
+        WKIT.init({
+            container: document.getElementById('J_lightDemoWrap'),
+            uid: 'demo',
+            appkey: 24863283,
+            credential: 'demo1234',
+            touid: 'demo01',
+            theme: 'orange',
+            avatar: "/static/aliopenim/images/default_user_logo.png",
+            toAvatar: "/static/aliopenim/images/to_avator.png",
+            placeholder: '说点什么吧',
+            pluginUrl: '//www.taobao.com/market/seller/openim/plugindemo.php',// 左侧自定义区域url, 移动端设置无效, 如果不传左侧将隐藏
+            customUrl: '//www.taobao.com/market/seller/openim/customdemo.php' //右侧自定义区域url, 如果不传相应的区域将隐藏
+        });
+    }
+
+
+
+
+</script>
+</body>
+</html>

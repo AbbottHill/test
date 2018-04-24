@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title></title>
+</head>
+<body>
+<!--[if lt IE 9]>
+<script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
+<![endif]-->
+<!-- 自动适配移动端与pc端 -->
+<script src="https://g.alicdn.com/aliww/??h5.openim.sdk/0.1.4/scripts/wsdk.js,h5.openim.kit/0.0.5/scripts/kit.js" charset="utf-8"></script>
+
+<script>
+
+    // ?uid=test0&to=test1&appkey=23018936&pwd=123456&fullscreen
+
+    var search = location.search.substring(1);
+
+    var s = search.split('&'),
+            kv;
+
+    var result = {};
+
+    for(var i = 0, len = s.length; i < len; i++){
+        kv = s[i].split('=');
+
+        result[kv[0]] = decodeURIComponent(kv[1]);
+    }
+
+        WKIT.init({
+            uid: result.uid || 'test0',
+            appkey: result.appkey || '23018936',
+            credential: result.pwd || '123456',
+            touid: result.to || 'test1',
+//            theme: 'orange',
+//            themeBgColor: '#f00',
+            onMsgReceived: function(data){
+                console.log(data);
+            },
+            onMsgSent: function(data){
+                console.log(data);
+            },
+//            imgUploader: true,
+//            beforeImageUploaderTrigger: function(ev, uploadFn){
+//                console.log(this);
+//                uploadFn({
+//                    ext: 'png',
+//                    base64Img: "iVBORw0KGgoAAAANSUhEUgAAADQAAAAUCAYAAADC1B7dAAAC0klEQVRYR92Xv2sUQRTHv+9yyW4qSRdFRS6VWIhcGtHiClNoKSRmN7J7KJygjWCRNGKwiiCmSWOhZhbdidH/IIeVpWlEwcaz0GgpWOjeHcyT2cuFzXH7486cGLdZmB9v5jPvve+bocC5dB6UewTgIPb39w2srlLgWl+ZMTPqydf7meeXY50lwroGYlNI2s8w7b1rloEB1cv2NDMvGU2aJN///jcOLBWo7szeBtF1AIrBy6ZYu591Y4FjnwPxvCnkVNY5fzouEShwZ28AtBKNRWKURzwpsizcC1Dg2hWAp7PYBfGmubq20G1sMpBjfQL4GBGB9WwGiPDWEPJkloV7AcpiL8uYNKAtIhyKGmLGB9OTx+OMB671BkwLpudXo0Bs22P1Yd4wmjQ1yHxKCTlrGYybRAAzQ3sKwF1DyDvdgBquXVTgdVPICd3f6aG6Y88zcdEUcibLafczJhGIS6V84+j4cxBd1MYV8GxUyMtxC4Ubzqmxdnx3CzntQSK6Z6z6L/rZcNqcVJULU6dUyqNUUrS4qJIMBq71EUM0ZT72a908FGl7OCgpTwVqOtZpBk6pHIaY8H70iXzVXV20SqmiKdau7RS5GNkOXGuDmKqG599LO/Fe+1NyyF4BKy3dOxJHTL7h+XO7hKKV8No7k23vxHko0r5uNGlirwUiFqju2nPM6qnW6fALdRtttlumJx+EzdvqBeJqZ21Ikm3tpaR60qtndqIi7upTd613zDgR5YkU2C+GkEfaRrS6DTdR6zztRKArdmFXrvVDkEctGhGh9+OAwo5tx3S7tRoZLrNZC2tQnl0CU1HnVRYuJlUAqJADLYwIfzM6JyHkrM/MOABCC6x1S9B/XY5+GEIejpXv1qW0AqAAYHOQdadzD6kql+XEOsfovGrkUUEOtZEGqnud+CmlI3w+/BcPvJ/u3Jkc1EsKyvYFMOsn+Hg/HvmH5myBqPIbvMO+M8ZZvucAAAAASUVORK5CYII="
+//                });
+//            },
+
+            autoMsg: '这是默认用户打开页面给客服发的第一条消息',
+            titleBar: true,
+            title: '千牛',
+            customUrl: 'http://www.taobao.com/market/seller/openim/mitem.php ',
+            onBack: function(){
+              console.log('back');
+            },
+            onUploaderError: function(error){
+                console.log(error);
+            }
+        });
+
+</script>
+</body>
+</html>
