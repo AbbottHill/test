@@ -28,11 +28,11 @@ public class BaseController {
 
     @RequestMapping("/toPage")
     public String dispatcher(HttpSession session, @RequestParam("url") String url) {
-        if (Objects.equals("chartroom/chartroom", url) && StringUtil.isEmptyStr(String.valueOf(session.getAttribute("user_sig"))) &&
+        if (Objects.equals("tencentIM/chartroom", url) && StringUtil.isEmptyStr(String.valueOf(session.getAttribute("user_sig"))) &&
                 !StringUtil.isEmptyStr(String.valueOf(session.getAttribute("user_account")))) {
             String userSignature = null;
             try {
-                userSignature = TlsSignature.genTLSSigByuserIdentifier(String.valueOf(session.getAttribute("user_account")));
+                userSignature = TlsSignature.genTLSSigByUserIdentifier(String.valueOf(session.getAttribute("user_account")));
             } catch (IOException e) {
 
             } catch (DataFormatException e) {

@@ -13,6 +13,7 @@ import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
 
+import com.cd.test.utils.tls.base64url.Base64Url;
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
@@ -22,8 +23,6 @@ import org.bouncycastle.openssl.jcajce.JcaPEMKeyConverter;
 import org.bouncycastle.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.tls.base64_url.base64_url;
 
 /**
  * （Tencent Login Service，TLS）
@@ -55,7 +54,15 @@ public class TlsSignature {
 		}
 	}
 
-	public static String genTLSSigByuserIdentifier(String userIdentifier) throws IOException, DataFormatException, JSONException {
+	/**
+	 * 生成TSL用户签名
+	 * @param userIdentifier
+	 * @return
+	 * @throws IOException
+	 * @throws DataFormatException
+	 * @throws JSONException
+	 */
+	public static String genTLSSigByUserIdentifier(String userIdentifier) throws IOException, DataFormatException, JSONException {
 		//Use pemfile keys to test
 		String privStr = "-----BEGIN PRIVATE KEY-----\n" +
 				"MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgUDa8JwcTwshDxZRU\n" +
@@ -93,7 +100,7 @@ public class TlsSignature {
 //			System.out.println(genTLSSigByuserIdentifier("demo"));
 			// eJxFkF1vgjAYhf8L18tSaqt1dwzdBjoFP2a8aoot0Ci0KxVZlv33sUay2*fJm3PO**3tlttHprXklFk6Mtx78oD34LDotDSCstwK02MfYwwBGGwrTCNV3QsIfOzDEQD-UnJRW5lLd8hFpe68kUUP3ufHMEpnJFiFk9WkTT-V4bjIP24meUFhvLsUJMkCtplL1l2yWXwjRVQGazTd87Kq3uLrOnptpmXWPbcLq4u9VKk9bJLleazINhYqH8L4mbppf*VRX44gfzw0tLISbhREAEGEyZ2z00lda0vtlxbuFz*-i9VYNA__
 
-			System.out.println(genTLSSigByuserIdentifier("demo01"));
+			System.out.println(genTLSSigByUserIdentifier("demo"));
 			// eJxFkF1PwjAUhv-Lro1pu3UBEy42wuKYOIZGhJul0jM9uHWlFPkw-ndnw*Lt8*Tkfd-z7T0-PN0KrVGWwpa*kd6dR7wbh*Gk0UApKgumw5Rzzgjp7ReYPbaqE4xQTplPyL9ECcpihe5QQtMSejV7fO-QbFKM0*RxF64mecbv5ztj*FZoPixOcjld4-E1BUj8Roh6Ub3l8wjj5SxVJlFYn5s4Xk1ldIThReVbPyr8l7weHNZNtvgYq0wXo1EfJj9LN*6vftDVGwQ07DtabMDNYgEJWEj5lYvNpj0oW9qzBveNn18tk1iG
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -219,7 +226,7 @@ public class TlsSignature {
 			//System.out.println("#compressBytes "+ compressBytesLength+": " + Hex.encodeHexString(Arrays.copyOfRange(compressBytes,0,compressBytesLength)));
 
 			//String userSig = Base64.encodeBase64URLSafeString(Arrays.copyOfRange(compressBytes,0,compressBytesLength));
-			String userSig = new String(base64_url.base64EncodeUrl(Arrays.copyOfRange(compressBytes, 0, compressBytesLength)));
+			String userSig = new String(Base64Url.base64EncodeUrl(Arrays.copyOfRange(compressBytes, 0, compressBytesLength)));
 
 			result.urlSig = userSig;
 			//System.out.println("urlSig: "+ userSig);
@@ -255,7 +262,7 @@ public class TlsSignature {
 		Base64 decoder = new Base64();
 
 		//byte [] compressBytes = decoder.decode(urlSig.getBytes());
-		byte[] compressBytes = base64_url.base64DecodeUrl(urlSig.getBytes(Charset.forName("UTF-8")));
+		byte[] compressBytes = Base64Url.base64DecodeUrl(urlSig.getBytes(Charset.forName("UTF-8")));
 
 		//System.out.println("#compressBytes Passing in[" + compressBytes.length + "] " + Hex.encodeHexString(compressBytes));
 
@@ -404,7 +411,7 @@ public class TlsSignature {
 			byte[] compressBytes = new byte[512];
 			int compressBytesLength = compresser.deflate(compressBytes);
 			compresser.end();
-			String userSig = new String(base64_url.base64EncodeUrl(Arrays.copyOfRange(compressBytes, 0, compressBytesLength)));
+			String userSig = new String(Base64Url.base64EncodeUrl(Arrays.copyOfRange(compressBytes, 0, compressBytesLength)));
 
 			result.urlSig = userSig;
 		} catch (Exception e) {
@@ -427,7 +434,7 @@ public class TlsSignature {
 		//DeBaseUrl64 urlSig to json
 		Base64 decoder = new Base64();
 
-		byte[] compressBytes = base64_url.base64DecodeUrl(urlSig.getBytes(Charset.forName("UTF-8")));
+		byte[] compressBytes = Base64Url.base64DecodeUrl(urlSig.getBytes(Charset.forName("UTF-8")));
 
 		//Decompression
 		Inflater decompression = new Inflater();
