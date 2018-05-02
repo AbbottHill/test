@@ -20,6 +20,7 @@ import java.util.zip.DataFormatException;
 @Log4j2
 @Controller
 public class BaseController {
+
 /*
     @RequestMapping("/toPage{url}")
     public String dispatcher(HttpSession session, @PathVariable("url") String url) {
