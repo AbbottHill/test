@@ -82,7 +82,7 @@ public class TlsSignature {
 			System.out.println("GenTLSSignatureEx failed: " + result.errMessage);
 			return null;
 		}
-
+//eJxFkFFPgzAUhf8LrzOmLbQwEx82IVt1sEyH0b00lXakKl2FDhnG-25HRny857s355z7421XT9fcGCUYt8yvhXfjAe9qkGVnVC0Z31tZOxlijBEAI21l3aiDdgABiCHyAfiHSkht1V4Nh1bqwo00Zc6IcVEpfVlrVOl4muR3dBOnNAnf39B9ODV6UzV9lGQEZcfPfkLiZbuCfSvWQf49i9YlLenL42tudrx47sGk6zJF57r*eiAB3i0KxLcpmYfLJooXIbgdzcQHG5qeuwQuaxRAMga2qpJDRxSE-hQSfNF5URyO2jJ7MnJ4ze8fDXJcAA__
 		// check signature
 		CheckTLSSignatureResult checkResult = CheckTLSSignatureEx(result.urlSig, SDK_APP_ID, userIdentifier, pubStr);
 		if (checkResult.verifyResult == false) {
@@ -97,11 +97,7 @@ public class TlsSignature {
 
 	public static void main(String[] args) {
 		try {
-//			System.out.println(genTLSSigByuserIdentifier("demo"));
-			// eJxFkF1vgjAYhf8L18tSaqt1dwzdBjoFP2a8aoot0Ci0KxVZlv33sUay2*fJm3PO**3tlttHprXklFk6Mtx78oD34LDotDSCstwK02MfYwwBGGwrTCNV3QsIfOzDEQD-UnJRW5lLd8hFpe68kUUP3ufHMEpnJFiFk9WkTT-V4bjIP24meUFhvLsUJMkCtplL1l2yWXwjRVQGazTd87Kq3uLrOnptpmXWPbcLq4u9VKk9bJLleazINhYqH8L4mbppf*VRX44gfzw0tLISbhREAEGEyZ2z00lda0vtlxbuFz*-i9VYNA__
-
-			System.out.println(genTLSSigByUserIdentifier("demo"));
-			// eJxFkF1PwjAUhv-Lro1pu3UBEy42wuKYOIZGhJul0jM9uHWlFPkw-ndnw*Lt8*Tkfd-z7T0-PN0KrVGWwpa*kd6dR7wbh*Gk0UApKgumw5Rzzgjp7ReYPbaqE4xQTplPyL9ECcpihe5QQtMSejV7fO-QbFKM0*RxF64mecbv5ztj*FZoPixOcjld4-E1BUj8Roh6Ub3l8wjj5SxVJlFYn5s4Xk1ldIThReVbPyr8l7weHNZNtvgYq0wXo1EfJj9LN*6vftDVGwQ07DtabMDNYgEJWEj5lYvNpj0oW9qzBveNn18tk1iG
+			genTLSSigByUserIdentifier("tencentIM_app_admin");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (DataFormatException e) {

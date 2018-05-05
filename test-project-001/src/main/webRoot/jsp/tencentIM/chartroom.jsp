@@ -29,21 +29,6 @@
 </head>
 <body>
 
-<div class="jumbotron text-center">
-    <h1>my chart room</h1>
-    <p>聊聊!</p>
-</div>
-
-<div id="map_container" class="container" style="height: 300px">
-    <%--<div class="row">--%>
-        <%--<div class="col-sm-4">--%>
-            <%--<h3>第一列</h3>--%>
-            <%--<p>菜鸟教程</p>--%>
-            <%--<p>学的不仅是技术，更是梦想！！！</p>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
-</div>
 
 
 <div class="aio" id="webim_demo">
@@ -2377,12 +2362,8 @@
         }
     };
 
+    
 
-    var map = new AMap.Map('map_container', {
-        resizeEnable: true,
-        zoom:11,
-        center: [116.397428, 39.90923]
-    });
 </script>
 
 </body>

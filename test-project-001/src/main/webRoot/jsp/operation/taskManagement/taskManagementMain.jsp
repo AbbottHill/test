@@ -58,9 +58,15 @@
     var tbody = document.getElementById("user_table_tbody");
 
     function queryTasks() {
-        CanDoUtils.jqueryAjax(contextPath + "/taskManagement/tasksInfo", {
-            task_id: $("#task_id").val()
-        }, dealData, null, 'json');
+        var ajaxObj = {
+            url: contextPath + "/taskManagement/tasksInfo",
+            params: {task_id: $("#task_id").val()},
+            successFunc: dealData,
+            failFunc: null,
+            dataType: 'json',
+            type: null
+        };
+        CanDoUtils.jqueryAjax(ajaxObj);
     }
 
     //

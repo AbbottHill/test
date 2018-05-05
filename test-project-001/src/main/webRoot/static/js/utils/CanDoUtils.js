@@ -174,20 +174,30 @@ var CanDoUtils = (function () {
     /**
      * new cookie
      */
-    function jqueryAjax (url, params, successFunc, failFunc, dataType, type) {
-        if (isUndefinedOrNull(url) || url === '') {
+    function jqueryAjax (ajaxObj) {debugger
+        /*
+        ajaxObj = {
+            url: null,
+            params: null,
+            successFunc: null,
+            failFunc: null,
+            dataType: null,
+            type: null
+        }*/
+
+        if (isUndefinedOrNull(ajaxObj.url) || ajaxObj.url === '') {
             return;
         }
         var request = $.ajax({
-            url: url,
-            method: isUndefinedOrNull(type)? "POST": type,
-            data: params,
-            dataType: isUndefinedOrNull(dataType)?"json": dataType
+            url: ajaxObj.url,
+            method: isUndefinedOrNull(ajaxObj.type)? "POST": ajaxObj.type,
+            data: ajaxObj.params,
+            dataType: isUndefinedOrNull(ajaxObj.dataType)?"json": ajaxObj.dataType
         });
 
-        request.done(function( msg ) {
-            if (!isUndefinedOrNull(successFunc) && typeof successFunc === 'function') {
-                successFunc(msg);
+        request.done(function( msg ) {debugger
+            if (!isUndefinedOrNull(ajaxObj.successFunc) && typeof ajaxObj.successFunc === 'function') {
+                ajaxObj.successFunc(msg);
             }
         });
 
@@ -195,6 +205,13 @@ var CanDoUtils = (function () {
             // alert( "Request failed: " + textStatus );
             // failFunc();
         });
+    }
+
+    /**
+     * refresh
+     */
+    function refreshPage() {
+        location.reload(); //refresh
     }
 
     return {
@@ -207,5 +224,6 @@ var CanDoUtils = (function () {
         logger: logger,
         zeroFill: zeroFill,
         jqueryAjax: jqueryAjax,
+        refreshPage: refreshPage,
     };
 })();

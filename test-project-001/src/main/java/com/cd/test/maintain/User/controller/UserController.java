@@ -3,10 +3,6 @@ package com.cd.test.maintain.User.controller;
 import com.cd.test.base.BaseController;
 import com.cd.test.maintain.User.service.UserService;
 import com.cd.test.utils.CheckUtils;
-import com.cd.test.utils.StringUtil;
-import org.apache.http.HttpRequest;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,7 +43,8 @@ public class UserController extends BaseController{
                 Map tempMap = (Map) list.get(0);
                 if (Objects.equals(params.get("user_pwd"), tempMap.get("user_password"))) {
                     loginStatus = 1;
-                    session.setAttribute("user_account", params.get("user_account"));
+                    session.setAttribute("user_account", tempMap.get("user_account"));
+                    session.setAttribute("user_name", tempMap.get("user_name"));
                     result.put("user_name", tempMap.get("user_name"));
                 } else {
                     loginStatus = 2;
@@ -62,10 +59,10 @@ public class UserController extends BaseController{
 
     @RequestMapping("/logout")
     @ResponseBody
-    public Map logout() {
-        Map params = new HashMap();
-//        return userService.queryUser(params);
-        return null;
+    public Map logout(HttpSession session) {
+        Map result = new HashMap(3);
+        session.invalidate();
+        return result;
     }
 }
     

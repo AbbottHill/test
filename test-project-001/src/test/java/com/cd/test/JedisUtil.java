@@ -1,11 +1,14 @@
-package java.com.cd.test;
+package com.cd.test;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
-import static org.junit.Assert.*;
 import org.junit.Test;
-import redis.clients.jedis.*;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.SortingParams;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,8 +21,9 @@ import java.util.concurrent.TimeUnit;
  * Created by Administrator on 2017/10/13.
  * Jedis对redis的五大类型的操作：字符串、列表、散列、集合、有序集合
  */
+
 public class JedisUtil {
-    private static Logger logger = Logger.getLogger(JedisUtil.class.getName());
+    private static final Logger logger = LogManager.getLogger(JedisUtil.class);
     private static Jedis jedis = null;
     private static Map<String, JedisPool> maps = new HashMap<String, JedisPool>();
     private static Properties jedisConfig = new Properties();
@@ -46,7 +50,7 @@ public class JedisUtil {
         System.out.println("系统中所有的键如下：" + keys);
         System.out.println("删除键password:" + jedis.del("password"));
         System.out.println("判断键password是否存在：" + jedis.exists("password"));
-        System.out.println("设置键username的过期时间为5s:" + jedis.expire("username", 5));
+        System.out.println("设置键username的过期时间为5s:" + jedis.expire("username", 90 * 24 * 3600));
         TimeUnit.SECONDS.sleep(2);
         System.out.println("查看键username的剩余生存时间：" + jedis.ttl("username"));
         System.out.println("移除键username的生存时间：" + jedis.persist("username"));

@@ -2,14 +2,10 @@ package com.cd.test.config;
 
 import com.cd.test.utils.Constants;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import org.apache.ibatis.logging.Log;
-import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.logging.log4j2.Log4j2Impl;
-import org.apache.ibatis.session.*;
-import org.apache.log4j.Logger;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.*;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -22,9 +18,10 @@ import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.*;
-
-import org.mybatis.spring.SqlSessionFactoryBean;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 //导入属性文件

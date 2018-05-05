@@ -16,18 +16,18 @@
             height: 100%;
         }
     </style>
-    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/main.js?version=<%=MyPropertyPlaceholder.appVersion()%>"></script>
+    <script>
+        var userName = '${sessionScope.user_name}';
+    </script>
+    <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/main.js?version=<%=MyPropertyPlaceholder.appVersion()%>"></script>
 </head>
 <body>
-<%--<script src='//kefu.easemob.com/webim/easemob.js?configId=92b7b0d7-e652-4250-88d6-f7aa7d62b7a3'></script>--%>
 
 <!--[if lt IE 9]>
 <script src="https://g.alicdn.com/aliww/ww/json/json.js" charset="utf-8"></script>
 <![endif]-->
 <!-- 强制使用pc版本的kit -->
 <!--<script src="https://g.alicdn.com/aliww/??h5.openim.sdk/1.0.6/scripts/wsdk.js,h5.openim.kit/0.3.3/scripts/kit.js?pc=1" charset="utf-8"></script>-->
-
-
 
 <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
     <!-- Brand -->
@@ -42,7 +42,8 @@
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal" id="nav_user_name">User</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#modal_login" id="nav_user">User</a>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#user_info" id="nav_user_name" style="display: none">${sessionScope.user_name}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Msg</a>
@@ -54,7 +55,7 @@
     </div>
 </nav>
 
-<div id="demo" class="carousel slide" data-ride="carousel">
+<div id="demo" class="carousel slide" data-ride="carousel" style="margin-top: 56px;">
 
     <!-- 指示符 -->
     <ul class="carousel-indicators">
@@ -129,7 +130,7 @@
 </div>
 
 <!-- 模态框 -->
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="modal_login">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
@@ -163,7 +164,34 @@
 
             <!-- 模态框底部 -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="MainObj.userLogin()">Submit</button>
+                <button type="button" class="btn btn-primary" onclick="MainObj.userLogin()">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框 -->
+<div class="modal fade" id="user_info">
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">Login In</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <%--模态框内容..--%>
+
+                <button type="button" class="btn btn-secondary" onclick="MainObj.userLogout()">logout</button>
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
             </div>
         </div>
