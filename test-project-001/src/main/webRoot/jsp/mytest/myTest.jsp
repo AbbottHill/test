@@ -72,6 +72,8 @@
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.min.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/messages_zh.min.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.ztree.core.js"></script>
+    <%--<script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/echarts/echarts.js"></script>--%>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/echarts/echarts.min.js"></script>
 </head>
 <body>
 <ul class="content">
@@ -81,7 +83,7 @@
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/GMap.jsp">GMap</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/mvc/hello">Hello</a> |&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/jointJs/main.html">Joint</a>&nbsp;&nbsp;&nbsp;
-        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/greeting"<%-- onclick="mytestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
+        <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/greeting"<%-- onclick="MyTestObj.RESTful()"--%>>RESTful</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/operation/websocket.jsp">spring websocket</a><br><br>
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/jsp/mytest/statistic.jsp">statistic</a>&nbsp;&nbsp;&nbsp;
         <a href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/taskManagement/toTaskManagementPage?vx=<%=MyPropertyPlaceholder.appVersion()%>">taskManagement</a>&nbsp;&nbsp;&nbsp;
@@ -89,12 +91,23 @@
     </li>
 
     <li class="element">
-        <textarea class="resultArea"></textarea><button onclick="mytestObj.queryJson()">query json</button>
+        <textarea class="resultArea"></textarea><button onclick="MyTestObj.queryJson()">query json</button>
     </li>
 
     <li class="element">
         <ul id="treeDemo" class="ztree"></ul>
     </li>
+
+    <li class="element">
+        123456789.0 -> 123,456,789.0
+        <br>
+        <input id="original_value"><button onclick="MyTestObj.employThousandSplitSymbolOnValue()">trans</button>&nbsp;&nbsp;&nbsp;<span id="result_thousand_split_symbol"></span>
+    </li>
+
+    <li class="element">
+        <div style="height: 300px; width: 300px;" id="echarts_container"></div>
+    </li>
+
    <%-- <li class="element btnsLi">
         Event bind(scope)：
         <button class="btn">1</button>
@@ -161,7 +174,7 @@
         <div>test2</div>
     </li>
     <li class="element">
-        String length：<input id="inputStr" value="△？①p゛゜」ぅぃび㉨ㅂъ变器" onkeyup="mytestObj.calculateLen()">Length: <span id="showLength"></span>
+        String length：<input id="inputStr" value="△？①p゛゜」ぅぃび㉨ㅂъ变器" onkeyup="MyTestObj.calculateLen()">Length: <span id="showLength"></span>
     </li>
     <li class="element">
         <script>

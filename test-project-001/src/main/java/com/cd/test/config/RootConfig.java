@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 //定义Spring MVC扫描的包
 @ComponentScan("com.cd.test")
 //spring-mybatis mapper scan
-@MapperScan("com.cd.test.maintain")
+@MapperScan("com.cd.test")
 //启动Spring MVC配置
 @EnableWebMvc
 @EnableAsync
@@ -62,6 +62,7 @@ public class RootConfig {
         dataSource.setMaxPoolSize(Integer.valueOf(env.getProperty("pool.maxPoolSize")));
         dataSource.setAutoCommitOnClose(false);
         dataSource.setCheckoutTimeout(Integer.valueOf(env.getProperty("pool.checkoutTimeout")));
+        dataSource.setMaxIdleTime(Integer.valueOf(env.getProperty("pool.maxIdleTime")));
         dataSource.setAcquireRetryAttempts(2);
 
         //set config todo

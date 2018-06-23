@@ -1,6 +1,36 @@
-var mytestObj = (function () {
+var MyTestObj = (function () {
+
+    // 将金额类型转为数字类型
+    function toNum(str) {
+        return str.replace(/\,|\￥/g, "");
+    }
+
+    // 保留两位小数（四舍五入）
+    function toPrice(num) {
+        num = parseFloat(toNum(num)).toFixed(2).toString().split(".");
+        num[0] = num[0].replace(new RegExp('(\\d)(?=(\\d{3})+$)','ig'),"$1,");
+        return num.join(".");
+    }
+
+    // 保留两位小数（不四舍五入）
+    function toPrice1(num) {
+        num = parseFloat(toNum(num).replace(/(\.\d{2})\d+$/,"$1")).toFixed(2).toString().split(".");
+        num[0] = num[0].replace(new RegExp('(\\d)(?=(\\d{3})+$)','ig'),"$1,");
+        return num.join(".");;
+    }
+
+    // 使用千位分隔符
+    function employThousandSplitSymbol(num) {
+        var source = toNum(num).split(".");
+        source[0] = source[0].replace(new RegExp('(\\d)(?=(\\d{3})+$)','ig'),"$1,");
+        return source.join(".");
+    }
 
     return {
+        employThousandSplitSymbolOnValue: function () {
+            $("#result_thousand_split_symbol").html(employThousandSplitSymbol($("#original_value").val()))
+        },
+
         calculateLen: function () {
             var inputStr = $("#inputStr").val();
             var len = CanDoUtils.getStrLen(inputStr)
@@ -47,7 +77,7 @@ var mytestObj = (function () {
 
 })();
 
-mytestObj.calculateLen();
+MyTestObj.calculateLen();
 
 /**
  * OOP
@@ -258,3 +288,34 @@ mytestObj.calculateLen();
 
     }
 })();
+
+
+$(function () {
+    var myChart = echarts.init(document.getElementById('echarts_container'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        grid: {
+            x: 100
+        },
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [0.20, 0.21, 0.45]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+});

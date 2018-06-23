@@ -5,59 +5,62 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.cd.test.utils.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
+import com.googlecode.aviator.runtime.function.AbstractFunction;
+import com.googlecode.aviator.runtime.function.FunctionUtils;
+import com.googlecode.aviator.runtime.type.AviatorDouble;
+import com.googlecode.aviator.runtime.type.AviatorObject;
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.apache.xerces.dom.PSVIAttrNSImpl;
+import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.junit.Test;
+import sun.util.locale.provider.DecimalFormatSymbolsProviderImpl;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
 
+import static com.cd.test.EnumTest.PropertiesSingleton.PROPERTIES_SINGLETON;
+
 public class MyTest {
     String fieldStr;
 
     public static void main(String[] args) {
+//        int binVal = 0b10000000000000000000000000000000;
+//        System.out.println(binVal);
+
+//        String s = "abc def".replaceAll("(\\w+)\\s+(\\w+)", "$2 $1"); //s 就是 "def abc"，replaceFirst 也可以用 $1, $2 的替换。
+//        System.out.println(s);
+
 ////        new MyTest();
 //
 //        long l = 10_0_0;
 //        System.out.println(l);
 
-        System.out.println(1 / 3);//0
-        System.out.println(1 + 0.5);//0
-        System.out.println(1 / 3f);//0.33333334
-        System.out.println(1d / 3d);//0.3333333333333333
-
-        for (int i = 0; i < 25600; i++) {
-            System.out.println(i + ": " + (char)i);
-        }
-
-    }
-
-    public MyTest() {
-//		List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
-//		features.forEach(n -> System.out.println(n));
-        // 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，
-        // 看起来像C++的作用域解析运算符
-//		features.forEach(System.out::println);
-
-//		String variableStr = null;
-//		System.out.println(fieldStr);
-//		System.out.println(variableStr);
-
-//		String[] arr = {"Lambdas", "Default Method", "Stream API", "Date and Time API"};
-//		System.out.println(ArrayUtils.contains(arr,"Lambda"));
-
-//		System.out.println(String.valueOf(null));
-
-        System.out.println(new BigDecimal(1.1)); //1.100000000000000088817841970012523233890533447265625
-        System.out.println(new BigDecimal("1.1")); //1.1
-        System.out.println(BigDecimal.valueOf(1.1)); //1.1
+//        System.out.println(1 / 3);//0
+//        System.out.println(1 + 0.5);//0
+//        System.out.println(1 / 3f);//0.33333334
+//        System.out.println(1d / 3d);//0.3333333333333333
+//
+//        for (int i = 0; i < 25600; i++) {
+//            System.out.println(i + ": " + (char)i);
+//        }
 
     }
 
@@ -318,11 +321,47 @@ class ApacheCommonsLang {
 /**
  * aviator
  */
-class GooeleAviator {
-    static void expressionEngine() {
+class AviatorTest {
+    public static void main(String[] args) {
+        calculateVariance();
+    }
+
+    private static void expressionEngine() {
         Long result = (Long) AviatorEvaluator.execute("1+2+3");
         MyTest.myPrint(result);
     }
+
+    private static void calculateVariance() {
+        Map<String, Object> env = new HashMap<String, Object>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(3);
+        list.add(20);
+        list.add(10);
+        env.put("list", list);
+        env.put("count", list.size());
+        Object avg = AviatorEvaluator.execute("reduce(list, +, 0.0)/count", env);
+        System.out.println(avg);
+
+        List<Object> tmpList = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            Object pow = AviatorEvaluator.exec("math.pow(a-b, 2)", list.get(i), avg);
+            System.out.println(pow);
+            tmpList.add(pow);
+        }
+    }
+
+    static class AddFunction extends AbstractFunction {
+        @Override
+        public AviatorObject call(Map<String, Object> env, AviatorObject arg1, AviatorObject arg2) {
+            Number left = FunctionUtils.getNumberValue(arg1, env);
+            Number right = FunctionUtils.getNumberValue(arg2, env);
+            return new AviatorDouble(left.doubleValue() + right.doubleValue());
+        }
+        public String getName() {
+            return "add";
+        }
+    }
+
 }
 
 class MyException extends Exception {
@@ -740,6 +779,21 @@ class EnumTest {
         }
     }
 
+    enum PropertiesSingleton {
+        PROPERTIES_SINGLETON;
+        private Map<String, String> map;
+
+        public String getProperty(String key) {
+            return map.get(key);
+        }
+
+        PropertiesSingleton() {
+            map = new HashMap();
+            map.put("flag", "1");
+            System.out.println("PropertiesSingleton");
+        }
+    }
+
 }
 
 class StringTest {
@@ -747,8 +801,54 @@ class StringTest {
 //        String [] strArr = "".split(",");
 //        System.out.println(strArr);
 
-        System.out.println(Objects.equals(null, null));
+//        System.out.println(Objects.equals(null, null));
+
+        // place holder
+//        String str = "this is a test!";
+//        System.out.println(MessageFormat.format("MessageFormat方法：{0}这是{1}的使用", str , "占位符"));
+
+//        StringBuilder stringBuilder = new StringBuilder();
+//        System.out.println(stringBuilder.append("a").append("b"));
+//        System.out.println(stringBuilder.replace(0, stringBuilder.length(), ""));
+
+//        System.out.println(Pattern.matches("^\\w+@[a-zA-Z0-9]{2,10}(\\.[a-z0-9]{2,4}){1,3}$", "1234@123.qw"));
+
+//        checkDate("2007/1/7");
+
+        System.out.println(new SimpleDateFormat("yyyy/MM/dd").toPattern());
+
     }
+
+    /**
+     * date format
+     * @param str
+     */
+    private static void checkDate(String str) {
+        boolean flag = true;
+        DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        try{
+            Calendar instance = Calendar.getInstance();
+            Date date = formatter.parse(str);
+            instance.setTime(date);
+            String[] ymd = str.split("/");
+            int year = instance.get(Calendar.YEAR);
+            int month = instance.get(Calendar.MONTH) + 1;
+            int dt = instance.get(Calendar.DATE);
+            if (Integer.parseInt(ymd[0]) != year) {
+                flag = false;
+            }
+            if (Integer.parseInt(ymd[1]) != month) {
+                flag = false;
+            }
+            if (Integer.parseInt(ymd[2]) != dt) {
+                flag = false;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        System.out.println(flag);
+    }
+
 }
 
 class PolymorphicTest {
@@ -778,12 +878,227 @@ class PolymorphicTest {
             System.out.println("eat fish");
         }
     }
+}
 
+class RegexTest{
+    public static void main(String[] args) {
+        // back reference
+//        System.out.println("def abc".replaceAll("(\\w+)\\s+(\\w+)", "$2$1"));
+        System.out.println(Pattern.matches("\\d+", "1a234"));
+
+    }
+}
+
+class OptionalTest {
+    public static void main(String[] args) {
+
+        Optional<String> optional1 = Optional.ofNullable(PROPERTIES_SINGLETON.getProperty("flag"));
+        Optional<String> optional2 = Optional.ofNullable(PROPERTIES_SINGLETON.getProperty("xkey"));
+
+        if (optional1.isPresent()) {
+            System.out.println("flag is present");
+        }
+        if (optional2.isPresent()) {
+            System.out.println("xkey is present");
+        }
+
+        // orElse
+        System.out.println(Objects.equals(optional1.orElse("1"), "1"));// true
+        System.out.println(Objects.equals(optional2.orElse("1000"), "1000"));// true
+
+    }
+}
+
+class HttpClientTest {
+    public static void main(String[] args) throws IOException {
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost("http://test.isolarcloud.com/sungws/AppService");
+        List <NameValuePair> nvps = new ArrayList <NameValuePair>();
+        nvps.add(new BasicNameValuePair("service", "login"));
+        nvps.add(new BasicNameValuePair("username", "vip"));
+        nvps.add(new BasicNameValuePair("password", "secret"));
+        httpPost.setEntity(new UrlEncodedFormEntity(nvps));
+        CloseableHttpResponse response2 = httpclient.execute(httpPost);
+        try {
+            System.out.println(response2.getStatusLine());
+            HttpEntity entity = response2.getEntity();
+            // do something useful with the response body
+            // and ensure it is fully consumed
+            System.out.println(JSONObject.parseObject(EntityUtils.toString(entity, "UTF-8"), HashMap.class));
+            EntityUtils.consume(entity);
+        } finally {
+            response2.close();
+        }
+    }
+}
+
+class IOTest {
+
+
+//    String --> InputStream
+    String str = "abc";
+    ByteArrayInputStream stream = new ByteArrayInputStream(str.getBytes());
+
+//    InputStream --> String
+    String inputStream2String(InputStream is) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(is));
+        StringBuffer buffer = new StringBuffer();
+        String line = "";
+        while ((line = in.readLine()) != null){
+            buffer.append(line);
+        }
+        return buffer.toString();
+    }
+
+    //    File --> InputStream
+    InputStream fileToInputStream() throws FileNotFoundException {
+        File file = new File("");
+        InputStream in = new FileInputStream(file);
+        return in;
+    }
+
+//    InputStream --> File
+    public void inputstreamtofile(InputStream ins,File file) throws IOException {
+        OutputStream os = new FileOutputStream(file);
+        int bytesRead = 0;
+        byte[] buffer = new byte[8192];
+        while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
+            os.write(buffer, 0, bytesRead);
+        }
+        os.close();
+        ins.close();
+    }
+}
+
+class ClassLoaderTeset{
+    public static void main(String[] args) {
+
+        System.out.println(ClassLoader.getSystemResource(""));
+    }
+}
+
+class MD5Test {
+
+    public static void main(String[] args) throws Exception {
+        System.out.println(MD5("abcd"));
+        System.out.println(GetMD5Code("abcd"));
+    }
+
+    private static String MD5(String s) throws NoSuchAlgorithmException {
+        char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        byte[] btInput = s.getBytes();
+        // 获得MD5摘要算法的 MessageDigest 对象
+        MessageDigest mdInst = MessageDigest.getInstance("MD5");
+        // 使用指定的字节更新摘要
+        mdInst.update(btInput);
+        // 获得密文
+        byte[] md = mdInst.digest();
+        // 把密文转换成十六进制的字符串形式
+        int j = md.length;
+        char str[] = new char[j * 2];
+        for (int i = 0, k = 0; i < j; i++) {
+            byte byte0 = md[i];
+            str[k++] = hexDigits[byte0 >>> 4 & 0xf];
+            str[k++] = hexDigits[byte0 & 0xf];
+        }
+        return new String(str);
+    }
+
+    private static final String KEY_MD5 = "MD5";
+    // 全局数组
+    private static final String[] strDigits = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
+
+    // 返回形式为数字跟字符串
+    private static String byteToArrayString(byte bByte) {
+        int iRet = bByte;
+        if (iRet < 0) {
+            iRet += 256;
+        }
+        int iD1 = iRet / 16;
+        int iD2 = iRet % 16;
+        return strDigits[iD1] + strDigits[iD2];
+    }
+
+    // 转换字节数组为16进制字串
+    private static String byteToString(byte[] bByte) {
+        StringBuffer sBuffer = new StringBuffer();
+        for (int i = 0; i < bByte.length; i++) {
+            sBuffer.append(byteToArrayString(bByte[i]));
+        }
+        return sBuffer.toString();
+    }
+
+    /**
+     * MD5加密
+     * @param strObj
+     * @return
+     * @throws Exception
+     */
+    public static String GetMD5Code(String strObj) throws Exception {
+        MessageDigest md = MessageDigest.getInstance(KEY_MD5);
+        // md.digest() 该函数返回值为存放哈希值结果的byte数组
+        return byteToString(md.digest(strObj.getBytes()));
+    }
 
 }
 
+class BigDecimalTest {
+    public static void main(String[] args) {
+        valueOfFun();
+    }
+
+    public static void valueOfFun() {
+        System.out.println(new BigDecimal(1.1)); //1.100000000000000088817841970012523233890533447265625
+        System.out.println(new BigDecimal("1.1")); //1.1
+        System.out.println(BigDecimal.valueOf(1.1)); //1.1
+
+        Pattern compile = Pattern.compile("(\\d{1,3})(?=(?:\\d{3})+(?!\\d))");
+//        return x[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1.') + (x.length > 1 ? '.' + x[1] : '');
+
+        String[] numArr = "1234678.90".split("\\.");
+        System.out.println( numArr[0].replaceAll("(\\d{1,3})(?=(?:\\d{3})+(?!\\d))", "$1.") + (numArr.length > 1? "." + numArr[1]: ""));
+
+    }
+}
+
+class BigIntegerTest {
+    public static void main(String[] args) {
+        byte[] bytes = new byte[]{1,1};
+        System.out.println(new BigInteger(bytes));
+    }
+
+}
+
+class LocationTest {
+    public static void main(String[] args) {
+        System.out.println(LocationTest.class.getName());
+        System.out.println(LocationTest.class.getSimpleName());
+        System.out.println(ClassLoader.getSystemResource("").getPath());
 
 
+
+    }
+}
+
+class LocalTest {
+    public static void main(String[] args) {
+        Locale myLocale = Locale.getDefault();
+        System.out.println(myLocale.getCountry());
+        System.out.println(myLocale.getLanguage());
+        System.out.println(myLocale.getDisplayCountry());
+        System.out.println(myLocale.getDisplayLanguage());
+
+        NumberFormat integerFormat = NumberFormat.getIntegerInstance(myLocale);
+        System.out.println(integerFormat.format(123456789.234));
+
+        Locale germany = Locale.GERMANY;
+        integerFormat = NumberFormat.getIntegerInstance(germany);
+        NumberFormat numberFormat = DecimalFormat.getNumberInstance(germany);
+//        System.out.println(numberFormat.format(123456789123456789.234));
+        System.out.println(numberFormat.format(BigDecimal.valueOf(1234567891234567.234))); //此处精度不够
+
+    }
+}
 
 
 
