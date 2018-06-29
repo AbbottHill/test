@@ -14,7 +14,7 @@ public class CommonJdbc {
     public static Connection getConn() {
         String driver = "com.mysql.jdbc.Driver";
         //local
-        String url = "jdbc:mysql://127.0.0.1:3306/sungrow?characterEncoding=utf8&useSSL=true";
+        String url = "jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=true";
         String username = "root";
         String password = "mysqlpass";
 
