@@ -20,24 +20,23 @@
         <jackson.version>2.9.0</jackson.version>
         <aspectj_version>1.8.6</aspectj_version>
         <oozie_version>4.2.0</oozie_version>
+        <poi-version>3.16</poi-version>
     </properties>
 
     <profiles>
         <profile>
-            <id>test</id>
+            <id>dev</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <my-property>world</my-property>
-                <poi-version>3.16</poi-version>
-                <!--<package.environment>test</package.environment>-->
+                <environment.package>dev</environment.package>
             </properties>
         </profile>
         <profile>
-            <id>regular</id>
+            <id>product</id>
             <properties>
-                <package.environment>regular</package.environment>
+                <environment.package>product</environment.package>
             </properties>
         </profile>
     </profiles>
@@ -166,6 +165,36 @@
                     </aggregations>-->
                 </configuration>
             </plugin>
+
+            <!-- 不同环境的配置文件选择 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 覆盖原有文件 -->
+                            <overwrite>true</overwrite>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <!-- 也可以用下面这样的方式（指定相对url的方式指定outputDirectory） <outputDirectory>target/classes</outputDirectory> -->
+                            <!-- 待处理的资源定义 -->
+                            <resources>
+                                <resource>
+                                    <!-- 指定resources插件处理哪个目录下的资源文件 -->
+                                    <directory>src/main/resources/${environment.package}</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 

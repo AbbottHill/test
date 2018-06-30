@@ -34,6 +34,7 @@ import java.text.*;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.BiConsumer;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.cd.test.EnumTest.PropertiesSingleton.PROPERTIES_SINGLETON;
@@ -61,6 +62,11 @@ public class MyTest {
 //        for (int i = 0; i < 25600; i++) {
 //            System.out.println(i + ": " + (char)i);
 //        }
+
+        String str = "1234.1234";
+
+        str = str.replace(".", ",");
+        System.out.println(str);
 
     }
 
@@ -769,16 +775,6 @@ class EnumTest {
         black.printAll();
     }
 
-    enum ColorEnum {
-        RED, BLUE, BLACK;
-
-        public void printAll() {
-            for (ColorEnum color : ColorEnum.values()) {
-                System.out.println(color.ordinal() + ": " + color.name());
-            }
-        }
-    }
-
     enum PropertiesSingleton {
         PROPERTIES_SINGLETON;
         private Map<String, String> map;
@@ -795,6 +791,17 @@ class EnumTest {
     }
 
 }
+
+enum ColorEnum {
+    RED, BLUE, BLACK;
+
+    public void printAll() {
+        for (ColorEnum color : ColorEnum.values()) {
+            System.out.println(color.ordinal() + ": " + color.name());
+        }
+    }
+}
+
 
 class StringTest {
     public static void main(String[] args) {
@@ -882,11 +889,78 @@ class PolymorphicTest {
 
 class RegexTest{
     public static void main(String[] args) {
+
+        Matcher abcd = Pattern.compile("[a-z]").matcher("ab,cd");
+        System.out.println(abcd.replaceAll("1234"));
+
         // back reference
 //        System.out.println("def abc".replaceAll("(\\w+)\\s+(\\w+)", "$2$1"));
         System.out.println(Pattern.matches("\\d+", "1a234"));
+        getDiamondBracketsElement();
+
+
+        /*.{3}(?=a)代表着这样的功能：
+         * 查找给出的字符串中符合a前面有三个字母的这样的子串，当然取得的子串不包括（？=a)
+         */
+        Pattern p = Pattern.compile(".{3}(?=a)");//(?=X) X，通过零宽度的正 lookahead
+        String s1 = "444a66b";
+        Matcher m = p.matcher(s1);
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+        System.out.println("***********************************");
+
+        /*同理\\d{3}(?=a)代表着这样的功能：
+         * 查找给出的字符串中符合a前面有三个数字的这样的子串，当然取得的子串不包括（？=a)
+         * 本例给出的444a66b是匹配的，得出的group是444
+         * 而 "44d4a66b";是不匹配的，因为没有在a之前没连续的三个数字
+         * 在例如.{3}(?=b)这样的匹配，如果用来匹配444a66b得到的字符串是a66
+         */
+        p = Pattern.compile("\\d{3}(?=a)");//(?=X) X，通过零宽度的正 lookahead
+        String s2 = "444a66b";
+        m = p.matcher(s2);
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+        System.out.println("***********************************");
+
+
+        /**
+         * 通过上面的（？=X）下面来测试和设想一下(?!a)，api解释为
+         * (?！X) X，通过零宽度的负lookahead，所以对比一下很容易想到
+         * \\d{3}(?!a)代表着连续三个数字的后面出现的字符不是a的匹配，
+         * 所以字符串444a666b只有一个匹配子串666
+         * 字符串444b666b两个匹配444 666
+         * 字符串444a666a都不匹配
+         */
+        p = Pattern.compile("\\d{3}(?!a)");//(?！X) X，通过零宽度的负lookahead
+        String s3 = "444b666b";
+        m = p.matcher(s3);
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+
+
+
 
     }
+        /// 获取字符串中的 <> 元素 ； regex
+    private static List<String> getDiamondBracketsElement() {
+        String str = "a<b><c><储><><<<>>><>";
+        List<String> list = new ArrayList<String>();
+        Pattern p = Pattern.compile("(<[^>]*>)");
+
+        Matcher m = p.matcher(str);
+        while (m.find()) {
+            list.add(m.group());
+        }
+        for (String s1 : list) {
+            System.out.println(s1);
+        }
+        return list;
+    }
+
+
 }
 
 class OptionalTest {
@@ -1101,4 +1175,40 @@ class LocalTest {
 }
 
 
+class Stream_test {
+    public static void main(String[] args) {
+        List<Widget> widgets = Arrays.asList(new Widget(ColorEnum.RED, 10));
+        int sum = widgets.stream()
+                .filter(w -> w.getColor() == ColorEnum.RED)
+                .mapToInt(w -> w.getWeight())
+                .sum();
+        System.out.println(sum);
+    }
 
+    static class Widget {
+        private ColorEnum color;
+        private int weight;
+
+        public Widget(ColorEnum color, int weight) {
+            this.color = color;
+            this.weight = weight;
+        }
+
+        public ColorEnum getColor() {
+            return color;
+        }
+
+        public void setColor(ColorEnum color) {
+            this.color = color;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+
+        public void setWeight(int weight) {
+            this.weight = weight;
+        }
+    }
+
+}
