@@ -1,4 +1,4 @@
-package com.cd.test.SpringTest;
+package com.cd.test.spring;
 
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

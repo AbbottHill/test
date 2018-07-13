@@ -1,4 +1,4 @@
-package com.cd.test.ThreadTestPkg;
+package com.cd.test.concurrent;
 
 /**
  * Created by Administrator on 2017/12/9.

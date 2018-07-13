@@ -69,7 +69,8 @@
 
     </style>
     <link rel="stylesheet" href="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/css/zTreeStyle.css" type="text/css">
-    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.min.js"></script>
+    <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.js"></script>
+    <%--<script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.validate.min.js"></script>--%>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/messages_zh.min.js"></script>
     <script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/plugin/jquery/jquery.ztree.core.js"></script>
     <%--<script type="application/javascript" src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/echarts/echarts.js"></script>--%>
@@ -108,7 +109,7 @@
         <div style="height: 300px; width: 300px;" id="echarts_container"></div>
     </li>
 
-   <%-- <li class="element btnsLi">
+    <li class="element btnsLi">
         Event bind(scope)：
         <button class="btn">1</button>
         <button class="btn">2</button>
@@ -120,6 +121,8 @@
                 <legend>验证完整的表单</legend>
                 <label for="firstname">名字</label>
                 <input id="firstname" name="firstname" type="text">
+                age
+                <input id="age" name="age" type="text">
             </fieldset>
         </form>
     </li>
@@ -191,7 +194,7 @@
 
     <li class="element">
         MyPropertyHolder get version: <%=MyPropertyPlaceholder.getProperty("resource_version")%>
-    </li>--%>
+    </li>
 </ul>
 </body>
 <script src="<%=MyPropertyPlaceholder.staticResourceUrl()%>/static/js/utils/CanDoUtils.js?vx=<%=MyPropertyPlaceholder.appVersion()%>"></script>

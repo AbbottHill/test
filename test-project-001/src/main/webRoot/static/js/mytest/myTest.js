@@ -256,7 +256,11 @@ MyTestObj.calculateLen();
                 $(element).valid();
             },
             rules: {
-                firstname: "required"
+                firstname: "required",
+                age: {
+                    required: true,
+                    number: true
+                }
             }
         });
 

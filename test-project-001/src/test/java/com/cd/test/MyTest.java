@@ -3,6 +3,7 @@ package com.cd.test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.cd.test.beans.Person;
 import com.cd.test.utils.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
 import com.googlecode.aviator.runtime.function.AbstractFunction;
@@ -10,6 +11,7 @@ import com.googlecode.aviator.runtime.function.FunctionUtils;
 import com.googlecode.aviator.runtime.type.AviatorDouble;
 import com.googlecode.aviator.runtime.type.AviatorObject;
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+import org.apache.avro.data.Json;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -890,6 +892,11 @@ class PolymorphicTest {
 class RegexTest{
     public static void main(String[] args) {
 
+        String xxx = "\\' name";
+        System.out.println(xxx.replace("\\", ""));
+        System.out.println(xxx);
+
+
         Matcher abcd = Pattern.compile("[a-z]").matcher("ab,cd");
         System.out.println(abcd.replaceAll("1234"));
 
@@ -898,6 +905,25 @@ class RegexTest{
         System.out.println(Pattern.matches("\\d+", "1a234"));
         getDiamondBracketsElement();
 
+        // /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/
+        System.out.println("*************** ?: ?= ********************");
+        System.out.println("4444a666b".replace("44", "$1")); // $1$1a666b
+        System.out.println("444a666b".replaceAll("\\d{3}(?:a)(6)", "$1")); // 666b
+        System.out.println("444a666b".replaceAll("\\d{3}(?=a)(6)", "$4")); // 444a666b
+        System.out.println("444a666b".replaceAll("\\d{3}(?=a)", "1")); // 1a666b
+        System.out.println("444a666b".replaceAll("\\d{3}(?!a)", "1")); // 444a1b
+        System.out.println("444a666b".replaceAll("\\d{3}(?=a)a6", "1")); // 166b
+        System.out.println("444a666b".replaceAll("\\d{3}(?:a)6", "1")); // 166b
+        System.out.println("444a666b".replaceAll("\\d{3}(?:a)(6)", "$1")); // 666b
+
+        System.out.println("*************** number ********************");
+
+        System.out.println(Pattern.matches("^(?:-?\\d+|-?\\d{1,3}(?:,\\d{3})+)?(?:\\.\\d+)?$", "1234"));
+        System.out.println(Pattern.matches("^(?:-?\\d+|-?\\d{1,3}(?:,\\d{3})+)?(?:\\.\\d+)?$", "-12,345.67"));
+        System.out.println(Pattern.matches("^(-?\\d+|-?\\d{1,3}(,\\d{3})+)?(\\.\\d+)?$", "-12,345,678.67"));
+        System.out.println(Pattern.matches("^(-?\\d+|-?\\d{1,3}(,\\d{3})+)?(\\.\\d+)?$", ".67"));
+
+        System.out.println("***********************************");
 
         /*.{3}(?=a)代表着这样的功能：
          * 查找给出的字符串中符合a前面有三个字母的这样的子串，当然取得的子串不包括（？=a)
@@ -1212,3 +1238,172 @@ class Stream_test {
     }
 
 }
+
+
+
+
+class Generic_test {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> objects = new ArrayList<>();
+        objects.add("1");
+        System.out.println(objects);
+
+        System.out.println(getMe("a").getClass());
+        System.out.println(getMe("a") instanceof String);
+        System.out.println(getMe(1));
+        System.out.println(getMe(1).getClass());
+        System.out.println(getMe(Arrays.asList("1", 1, 'a')).getClass());
+        System.out.println(getMe(new String[]{""}.getClass()));
+
+        System.out.println("--------------------------");
+        Box<String> stringBox = new Box<>("1");
+        Box<Double> doubleBox = new Box<>(1.1);
+        Box.getValue(doubleBox);
+
+
+        // 编译正常
+        List<?>[] lsa2 = new List<?>[10];
+        // 编译 Error
+//        List<String>[] lsa = new List<String>[10];
+
+        ArrayList<? extends Map> maps = new ArrayList<>();
+        HashMap<Object, Object> hmap = new HashMap<>();
+        //compile error:
+        // add  (capture<? extends java.util.Map>) in ArrayList cannot be applied to (java.util.HashMap<java.lang.Object,java.lang.Object>)
+//        maps.add(hmap);
+
+
+
+    }
+
+
+
+    private static <T> T getMe(T a) {
+        return a;
+    }
+
+    private static Class getMe(Class c) {
+        return c;
+    }
+
+    private static <T extends Number> T getMeNumber(T a) {
+        return a;
+    }
+
+    // BOX class
+    static class Box<E> {
+        private Object value;
+
+        public Box(E e) {
+            this.setValue(e);
+        }
+
+//        static Box<E> getValue(Box<E> e) {
+//            System.out.println("object: " + e.get);
+//            return e;
+//        }
+
+        // wildcard
+        static Box getValue(Box<? extends Number> num) {
+            System.out.println("number: " + num.getValue());
+            return num;
+        }
+
+        public Object getValue() {
+            ArrayList<String> strings = new ArrayList<>();
+            ArrayList<Integer> is = new ArrayList<>();
+            System.out.println(strings);
+            System.out.println(is);
+            return value;
+        }
+
+        public void setValue(Object value) {
+            this.value = value;
+        }
+    }
+
+    public Object getValue() {
+        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<Integer> is = new ArrayList<>();
+        System.out.println(strings);
+        System.out.println(is);
+        return null;
+    }
+
+}
+
+
+class Fastjson_test {
+    public static void main(String[] args) {
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("a", "1");
+        map.put("b", "2");
+
+        String s = JSON.toJSONString(map);
+        System.out.println(s);
+        Object parse = JSON.parse(s);
+        System.out.println(parse.getClass());
+
+        Map map1 = JSON.parseObject(s, Map.class);
+        System.out.println(map1.getClass());
+    }
+}
+
+class CountDownLatch_test {
+
+    public static void main(String[] args) throws InterruptedException {
+        //1、 创建CountDownLatch 对象， 设定需要计数的子线程数目
+        final java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(3);
+        System.out.println(Thread.currentThread().getName() + " 主线程开始执行....");
+        for (int i = 0; i < 3; i++) {
+            new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        System.out.println(Thread.currentThread().getName() + "  开始执行存储过程..");
+                        Thread.sleep(2000);
+                        System.out.println(Thread.currentThread().getName() + "  存储过程执行完毕...");
+                        //2、子线程执行完毕，计数减1
+                        latch.countDown();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }.start();
+        }
+        System.out.println(Thread.currentThread().getName() + " 等待子线程执行完毕...");
+        //3、 当前线程挂起等待
+        latch.await();
+        System.out.println(Thread.currentThread().getName() + " 主线程执行完毕....");
+    }
+}
+
+class MemoryAnalysis_test {
+
+    static void setDate (Date date) {
+//        Calendar instance = Calendar.getInstance();
+//        instance.set(Calendar.DAY_OF_MONTH, 1);
+//        date = instance.getTime();
+        date.setDate(1);
+        System.out.println(date);
+    }
+
+    public static void main(String[] args) {
+        Date date = new Date();
+        System.out.println(date);
+        Person person = new Person();
+        Person person1 = new Person();
+        person.setBirth(date);
+        person1.setBirth(date);
+        System.out.println(person);
+        System.out.println(person1);
+        setDate(date);
+        System.out.println(date);
+        System.out.println(person);
+        System.out.println(person1);
+
+    }
+}
+
