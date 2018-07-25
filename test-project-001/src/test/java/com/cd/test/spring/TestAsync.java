@@ -1,4 +1,4 @@
-package com.cd.test.threads;
+package com.cd.test.spring;
 
 import com.cd.test.config.RootConfig;
 import org.junit.Test;

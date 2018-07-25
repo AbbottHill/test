@@ -4,6 +4,7 @@ package com.cd.test;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.cd.test.beans.Person;
+import com.cd.test.enums.ColorEnum;
 import com.cd.test.utils.Constants;
 import com.googlecode.aviator.AviatorEvaluator;
 import com.googlecode.aviator.runtime.function.AbstractFunction;
@@ -40,6 +41,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.cd.test.EnumTest.PropertiesSingleton.PROPERTIES_SINGLETON;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.range;
 
 public class MyTest {
     String fieldStr;
@@ -51,8 +54,7 @@ public class MyTest {
 //        String s = "abc def".replaceAll("(\\w+)\\s+(\\w+)", "$2 $1"); //s 就是 "def abc"，replaceFirst 也可以用 $1, $2 的替换。
 //        System.out.println(s);
 
-////        new MyTest();
-//
+////        new MyTest();//
 //        long l = 10_0_0;
 //        System.out.println(l);
 
@@ -794,17 +796,6 @@ class EnumTest {
 
 }
 
-enum ColorEnum {
-    RED, BLUE, BLACK;
-
-    public void printAll() {
-        for (ColorEnum color : ColorEnum.values()) {
-            System.out.println(color.ordinal() + ": " + color.name());
-        }
-    }
-}
-
-
 class StringTest {
     public static void main(String[] args) {
 //        String [] strArr = "".split(",");
@@ -1201,47 +1192,6 @@ class LocalTest {
 }
 
 
-class Stream_test {
-    public static void main(String[] args) {
-        List<Widget> widgets = Arrays.asList(new Widget(ColorEnum.RED, 10));
-        int sum = widgets.stream()
-                .filter(w -> w.getColor() == ColorEnum.RED)
-                .mapToInt(w -> w.getWeight())
-                .sum();
-        System.out.println(sum);
-    }
-
-    static class Widget {
-        private ColorEnum color;
-        private int weight;
-
-        public Widget(ColorEnum color, int weight) {
-            this.color = color;
-            this.weight = weight;
-        }
-
-        public ColorEnum getColor() {
-            return color;
-        }
-
-        public void setColor(ColorEnum color) {
-            this.color = color;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
-
-        public void setWeight(int weight) {
-            this.weight = weight;
-        }
-    }
-
-}
-
-
-
-
 class Generic_test {
 
     public static void main(String[] args) {
@@ -1403,7 +1353,6 @@ class MemoryAnalysis_test {
         System.out.println(date);
         System.out.println(person);
         System.out.println(person1);
-
     }
 }
 
