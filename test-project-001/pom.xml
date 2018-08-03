@@ -83,10 +83,10 @@
                 <configuration>
                     <warName>test</warName>
                     <!--指定web.xml的路径  -->
-                    <!--<webXml>src/main/webRoot/WEB-INF/web.xml</webXml>-->
+                    <!-- <webXml>src/main/webRoot/WEB-INF/web.xml</webXml>-->
                     <!-- 对丢失web.xml检测机制进行忽略， Dynamic Web Module 3.0 工程时代不需要web.xml文件注册相关内容的，所以工程默认不生成web.xml。-->
                     <!--<failOnMissingWebXml>false</failOnMissingWebXml>-->
-                    <!--指定jsp、js、css的路劲  -->
+                    <!-- 指定jsp、js、css的路劲  -->
                     <warSourceDirectory>${web.source.dir}</warSourceDirectory>
                 </configuration>
             </plugin>
@@ -550,6 +550,12 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
             <version>4.4.9</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.0</version>
         </dependency>
     </dependencies>
 </project>

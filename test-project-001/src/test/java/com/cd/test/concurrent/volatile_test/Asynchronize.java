@@ -2,6 +2,7 @@ package com.cd.test.concurrent.volatile_test;
 
 /**
  * volatile 不能保证数据的同步性
+ * 错误的示范
  */
 public class Asynchronize {
     public volatile static int count = 0;
@@ -14,8 +15,10 @@ public class Asynchronize {
         class UnsafeThread implements Runnable {
             @Override
             public void run() {
-                for (int i = 0; i < 10000; i++) Math.hypot(Math.pow(92456789, i), Math.cos(i));
-                count++;
+//                for (int i = 0; i < 10000; i++) Math.hypot(Math.pow(92456789, i), Math.cos(i));
+//                synchronized (UnsafeThread.class) {
+                    count++;
+//                }
             }
 
             public int getCount() {

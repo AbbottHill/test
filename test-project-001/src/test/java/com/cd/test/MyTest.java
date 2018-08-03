@@ -31,6 +31,7 @@ import sun.util.locale.provider.DecimalFormatSymbolsProviderImpl;
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.*;
@@ -48,6 +49,11 @@ public class MyTest {
     String fieldStr;
 
     public static void main(String[] args) {
+        System.out.println(Double.valueOf("12345678123"));
+        System.out.println(Double.valueOf("12345678123")/ 1000);
+        System.out.println(new BigDecimal("1234567812312342315321423"));
+        System.out.println(new BigDecimal("12345678123").divide(new BigDecimal(1000)));
+
 //        int binVal = 0b10000000000000000000000000000000;
 //        System.out.println(binVal);
 
@@ -1165,8 +1171,7 @@ class LocationTest {
         System.out.println(LocationTest.class.getName());
         System.out.println(LocationTest.class.getSimpleName());
         System.out.println(ClassLoader.getSystemResource("").getPath());
-
-
+        System.out.println(ClassLoader.getSystemResource(""));
 
     }
 }
@@ -1285,22 +1290,6 @@ class Generic_test {
 }
 
 
-class Fastjson_test {
-    public static void main(String[] args) {
-        HashMap<Object, Object> map = new HashMap<>();
-        map.put("a", "1");
-        map.put("b", "2");
-
-        String s = JSON.toJSONString(map);
-        System.out.println(s);
-        Object parse = JSON.parse(s);
-        System.out.println(parse.getClass());
-
-        Map map1 = JSON.parseObject(s, Map.class);
-        System.out.println(map1.getClass());
-    }
-}
-
 class CountDownLatch_test {
 
     public static void main(String[] args) throws InterruptedException {
@@ -1354,5 +1343,26 @@ class MemoryAnalysis_test {
         System.out.println(person);
         System.out.println(person1);
     }
+}
+
+class ClassPath {
+    public static void main(String[] args) {
+        System.out.println(ClassLoader.getSystemResource("/").toString());
+        System.out.println(ClassLoader.getSystemResource("").toString());
+        System.out.println(ClassPath.class.getResource("").getPath());
+        String path = ClassPath.class.getResource("/").getPath();
+        System.out.println(path);
+        System.out.println(path.substring(1, path.length()));
+
+        // 4. 读取文件内容
+        try (BufferedReader reader = new BufferedReader(new FileReader(path + "data.txt"))) {
+            String fileText = reader.lines().reduce("", String::concat);
+            System.out.println(fileText);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    // D:\IdeaWorkSpace\web-trunk\projects\test\target\test-classes\data.txt
+    // D:\IdeaWorkSpace\web-trunk\projects\test\target\test-classes\data.txt
 }
 

@@ -1,0 +1,16 @@
+import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.range;
+
+public class StreamTest {
+    public static void main(String[] args) throws FileNotFoundException {
+        // filter
+        List<Widget> widgets = Arrays.asList(new Widget(ColorEnum.RED, 10));
+        int sum = widgets.stream()
+                .filter(w -> w.getColor() == ColorEnum.RED)
+                .mapToInt(w -> w.getWeight())
+                .sum();
