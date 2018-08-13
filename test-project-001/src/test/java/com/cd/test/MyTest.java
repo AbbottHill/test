@@ -452,6 +452,12 @@ class MyException extends Exception {
 class MapTest {
 
     public static void main(String[] args) {
+        Map map = new HashMap(2);// initialCapacity
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        Iterator iterator = map.keySet().iterator();
+
 
     }
 
@@ -804,6 +810,20 @@ class EnumTest {
 
 class StringTest {
     public static void main(String[] args) {
+        String str = "abc";
+        String str1 = "a，b，，,c，,d,".replaceAll("，", ",");
+        str1 = str1.replaceAll(",+", ",");
+        str1 = str1.replaceAll(",$", "");
+        System.out.println(str + "==" + str1);
+        System.out.println(str == str1);
+
+//        Arrays.stream(str1.split(",")).forEach(System.out::print);
+        String[] split = str1.split(",");
+        for (int i = 0; i < split.length; i++) {
+            System.out.println(split[i]);
+        }
+
+
 //        String [] strArr = "".split(",");
 //        System.out.println(strArr);
 
@@ -1166,10 +1186,11 @@ class BigIntegerTest {
 
 }
 
-class LocationTest {
+class PathTest {
     public static void main(String[] args) {
-        System.out.println(LocationTest.class.getName());
-        System.out.println(LocationTest.class.getSimpleName());
+        System.out.println(PathTest.class.getName());
+        System.out.println(PathTest.class.getSimpleName());
+
         System.out.println(ClassLoader.getSystemResource("").getPath());
         System.out.println(ClassLoader.getSystemResource(""));
 
@@ -1365,4 +1386,17 @@ class ClassPath {
     // D:\IdeaWorkSpace\web-trunk\projects\test\target\test-classes\data.txt
     // D:\IdeaWorkSpace\web-trunk\projects\test\target\test-classes\data.txt
 }
+
+
+class Encode {
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String gb2312 = new String("毎時間発電".getBytes("gb2312")); // ?????
+        String utf8 = new String("毎時間発電".getBytes("UTF-8")); // 毎時間発電
+        System.out.println(gb2312);
+        System.out.println(utf8);
+    }
+
+}
+
 

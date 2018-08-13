@@ -25,7 +25,7 @@ import java.util.*;
  */
 @Controller
 @RequestMapping("/mvc")
-public class TestController extends BaseController{
+public class  TestController extends BaseController{
     @Autowired
     LoggerProxy logProxy;
 

@@ -24,8 +24,8 @@ public class UserController extends BaseController{
 
     @RequestMapping("/queryUser")
     @ResponseBody
-    public List queryUser() {
-        Map params = new HashMap();
+    public List queryUser(HttpServletRequest request, HttpSession session) {
+        Map params = this.requestParameters(request);
 //        return userService.queryUser(params);
         return null;
     }

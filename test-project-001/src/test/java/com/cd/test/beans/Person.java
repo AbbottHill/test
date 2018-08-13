@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class Person {
-    String id;
-    String name;
-    Date birth;
+    private String id;
+    private String name;
+    private Date birth;
 }

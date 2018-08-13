@@ -3,9 +3,9 @@ package com.cd.test.UserTest;
 import com.cd.test.config.RootConfig;
 import com.cd.test.maintain.User.service.UserService;
 import lombok.extern.log4j.Log4j2;
-import org.apache.ibatis.logging.LogFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mortbay.util.ajax.JSON;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -35,10 +35,10 @@ public class UserServiceTest {
 //        LogFactory.useLog4J2Logging();
 //        System.out.println(sqlSessionFactoryBean);
         Map params = new HashMap();
-        params.put("id", 10000);
-        params.put("user_account", "root");
+//        params.put("id", 10000);
+//        params.put("user_account", "root");
         List list = userService.queryUser(params);
-        log.info(list);
+        log.info(JSON.toString(list));
     }
 }
     

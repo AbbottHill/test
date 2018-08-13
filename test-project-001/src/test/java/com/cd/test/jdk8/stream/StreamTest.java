@@ -22,6 +22,9 @@ import static java.util.stream.IntStream.range;
 
 public class StreamTest {
     public static void main(String[] args) throws FileNotFoundException, MalformedURLException {
+        Arrays.asList("123", "1", "lallal").stream().forEach(System.out::println);
+
+
         // filter
         List<Widget> widgets = Arrays.asList(new Widget(ColorEnum.RED, 10));
         int sum = widgets.stream()
@@ -55,20 +58,22 @@ public class StreamTest {
         System.out.println("match: " + match);
         System.out.println("reduce: " + reduce);
 
-        // 4. 读取文件内容
-        try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+        // 4. 读取文件内容data.json
+        String path = ClassLoader.getSystemResource("").getPath();
+        try (BufferedReader reader = new BufferedReader(new FileReader(path + "data.txt"))) {
             String fileText = reader.lines().reduce("", String::concat);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(path + "data.txt"))) {
             List<String> fileLines = reader.lines().collect(toCollection(LinkedList<String>::new));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (Stream<String> lines = Files.lines(new File("data.txt").toPath(), Charset.defaultCharset()))
+        try (Stream<String> lines = Files.lines(new File(path + "data.txt").toPath(), Charset.defaultCharset()))
         {
             List<String> fileLines = lines.collect(toCollection(LinkedList<String>::new));
+            fileLines.stream().forEach(s -> System.out.println(s));
         } catch (IOException e) {
             e.printStackTrace();
         }

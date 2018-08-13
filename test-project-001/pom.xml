@@ -11,11 +11,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
+        <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
+
         <springframework.version>5.0.4.RELEASE</springframework.version>
         <junit.version>4.12</junit.version>
         <poi-version>3.16</poi-version>
-        <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
-        <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
         <!--<springframework.version>4.3.4.RELEASE</springframework.version>-->
         <jackson.version>2.9.0</jackson.version>
         <aspectj_version>1.8.6</aspectj_version>
@@ -478,12 +479,12 @@
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-
+<!--
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.6</version>
-        </dependency>
+        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -556,6 +557,14 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
             <version>2.3.0</version>
-        </dependency>
+        </dependency><!--
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.7-cd</version>
+            <type>test-jar</type>
+            <scope>compile</scope>
+        </dependency>-->
+
     </dependencies>
 </project>

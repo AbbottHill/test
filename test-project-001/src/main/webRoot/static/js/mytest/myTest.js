@@ -259,7 +259,8 @@ MyTestObj.calculateLen();
                 firstname: "required",
                 age: {
                     required: true,
-                    number: true
+                    number: true,
+                    range:[5,10]
                 }
             }
         });

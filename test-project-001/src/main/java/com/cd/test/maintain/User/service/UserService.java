@@ -8,6 +8,5 @@ import java.util.Map;
 
 @Mapper
 public interface UserService {
-
     List<Map> queryUser(Map params);
 }
