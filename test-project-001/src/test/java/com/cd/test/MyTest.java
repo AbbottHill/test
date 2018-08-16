@@ -35,6 +35,8 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.function.BiConsumer;
@@ -487,35 +489,8 @@ class LambdaExpress {
 
 class FileTest {
     public static void main(String[] args) {
-        copyFile();
+//        copyFile();
         System.out.println(File.separatorChar);
-    }
-
-    static void copyFile() {
-        String filePath = "C:/Users/Administrator/Desktop/handbook.pdf";
-        try (FileInputStream in = new FileInputStream(filePath);
-             FileOutputStream out = new FileOutputStream("C:/Users/Administrator/Desktop/handbook.copy.pdf")
-        ) {
-            Long start = System.currentTimeMillis();
-            int b;
-            while ((b = in.read()) != -1) {
-                out.write(b);
-            }
-
-//            byte buffer[] = new byte[1024];
-//            //判断输入流中的数据是否已经读完的标识
-//            int len;
-//            //循环将输入流读入到缓冲区当中，(len=in.read(buffer))>0就表示in里面还有数据
-//            while ((len = in.read(buffer)) > 0) {
-//                //使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "/" + filename)当中
-//                out.write(buffer, 0, len);
-//            }
-
-            Long end = System.currentTimeMillis();
-            System.out.println("time: " + (end - start));
-
-        } catch (IOException e) {e.getMessage();
-        }
     }
 }
 
@@ -560,7 +535,7 @@ class BlockQueueTest {
 }
 
 class CharSetTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 //        String str = "C逆变器ａｂ１２あㅟㅡ";
 //        int[] ints = checkHalf(str);
 //        System.out.println(ints[0] + ", " + ints[1]);
@@ -573,31 +548,13 @@ class CharSetTest {
 //        System.out.println(leftSubstr("全角文字判a", 10));
 //        System.out.println(leftSubstr("全角文字判断", 10));
 
-        String string = null;
-        getStrLength(string);
-        System.out.println("--------- end --------------");
-    }
+//        String string = null;
+//        getStrLength(string);
 
-    /**
-     * char是可以动态的（1-2字节），如果char的长度超过了1就是全角，否则半角
-     * return  checkRet[0]:半角个数    checkRet[1]:全角个数
-     */
-    public static int[] checkHalf(String str) {
-        int checkRet[] = new int[2];
-        byte[] Char = null;
-        for (int i = 0; i < str.length(); i++) {
-            try {
-                Char = (new Character(str.charAt(i)).toString()).getBytes("UTF-8");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if (Char.length == 1) {// 统计半角个数
-                checkRet[0]++;
-            } else {// 统计全角个数
-                checkRet[1]++;
-            }
-        }
-        return checkRet;
+        // string2Unicode
+        String 中 = Integer.toHexString('中');
+        System.out.println(中);
+        System.out.println((char) Integer.parseInt(中.substring(2), 16));
     }
 
     /**
@@ -668,6 +625,52 @@ class CharSetTest {
         }
         return "";
     }
+
+    /**
+     * char是可以动态的（1-2字节），如果char的长度超过了1就是全角，否则半角
+     * return  checkRet[0]:半角个数    checkRet[1]:全角个数
+     */
+    public static int[] checkHalf(String str) {
+        int checkRet[] = new int[2];
+        byte[] Char = null;
+        for (int i = 0; i < str.length(); i++) {
+            try {
+                Char = (new Character(str.charAt(i)).toString()).getBytes("UTF-8");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (Char.length == 1) {// 统计半角个数
+                checkRet[0]++;
+            } else {// 统计全角个数
+                checkRet[1]++;
+            }
+        }
+        return checkRet;
+    }
+
+    public static String string2Unicode(String string) {
+        StringBuffer unicode = new StringBuffer();
+        for (int i = 0; i < string.length(); i++) {
+            // 取出每一个字符
+            char c = string.charAt(i);
+            // 转换为unicode
+            unicode.append("\\u" + Integer.toHexString(c));
+        }
+        return unicode.toString();
+    }
+
+    public static String unicode2String(String unicode) {
+        StringBuffer string = new StringBuffer();
+        String[] hex = unicode.split("\\\\u");
+        for (int i = 1; i < hex.length; i++) {
+            // 转换出每一个代码点
+            int data = Integer.parseInt(hex[i], 16);
+            // 追加成string
+            string.append((char) data);
+        }
+        return string.toString();
+    }
+
 
 }
 
@@ -810,18 +813,20 @@ class EnumTest {
 
 class StringTest {
     public static void main(String[] args) {
-        String str = "abc";
-        String str1 = "a，b，，,c，,d,".replaceAll("，", ",");
-        str1 = str1.replaceAll(",+", ",");
-        str1 = str1.replaceAll(",$", "");
-        System.out.println(str + "==" + str1);
-        System.out.println(str == str1);
 
-//        Arrays.stream(str1.split(",")).forEach(System.out::print);
-        String[] split = str1.split(",");
-        for (int i = 0; i < split.length; i++) {
-            System.out.println(split[i]);
-        }
+        // split
+//        String str = "abc";
+//        String str1 = "a，b，，,c，,d,".replaceAll("，", ",");
+//        str1 = str1.replaceAll(",+", ",");
+//        str1 = str1.replaceAll(",$", "");
+//        System.out.println(str + "==" + str1);
+//        System.out.println(str == str1);
+//
+////        Arrays.stream(str1.split(",")).forEach(System.out::print);
+//        String[] split = str1.split(",");
+//        for (int i = 0; i < split.length; i++) {
+//            System.out.println(split[i]);
+//        }
 
 
 //        String [] strArr = "".split(",");
@@ -830,8 +835,21 @@ class StringTest {
 //        System.out.println(Objects.equals(null, null));
 
         // place holder
-//        String str = "this is a test!";
-//        System.out.println(MessageFormat.format("MessageFormat方法：{0}这是{1}的使用", str , "占位符"));
+        String str = "this is a test!";
+        System.out.println(MessageFormat.format("MessageFormat方法：{0}这是{1}的使用", str , "占位符"));
+
+        String stringFormat  = "lexical error at position %s, encountered %s, expected %s ";
+        String messageFormat ="lexical error at position {0}, encountered {1}, expected {2}";
+        System.out.println(String.format(stringFormat, 123, 100, 456));
+        System.out.println(MessageFormat.format(messageFormat, new Date(), 100, 456));
+
+        // %n$ms：代表输出的是字符串，n代表是第几个参数，设置m的值可以在输出之前放置空格，%n$-ms 可以在输出之后放置空格
+        // %n$md：代表输出的是整数，n代表是第几个参数，设置m的值可以在输出之前放置空格，也可以设为0m,在输出之前放置m个0
+        // %n$mf：代表输出的是浮点数，n代表是第几个参数，设置m的值可以控制小数位数，如m=2.2时，输出格式为00.00
+        String format = "%1$-5s%2$-5s,%3$2.2f";
+        System.out.format(format, "111","222", 1234.1299); //111  222  ,1234.13
+
+
 
 //        StringBuilder stringBuilder = new StringBuilder();
 //        System.out.println(stringBuilder.append("a").append("b"));
@@ -841,7 +859,7 @@ class StringTest {
 
 //        checkDate("2007/1/7");
 
-        System.out.println(new SimpleDateFormat("yyyy/MM/dd").toPattern());
+//        System.out.println(new SimpleDateFormat("yyyy/MM/dd").toPattern());
 
     }
 
@@ -1084,6 +1102,33 @@ class IOTest {
         }
         os.close();
         ins.close();
+    }
+
+    static void copyFile() {
+        String filePath = "C:/Users/Administrator/Desktop/handbook.pdf";
+        try (FileInputStream in = new FileInputStream(filePath);
+             FileOutputStream out = new FileOutputStream("C:/Users/Administrator/Desktop/handbook.copy.pdf")
+        ) {
+            Long start = System.currentTimeMillis();
+            int b;
+            while ((b = in.read()) != -1) {
+                out.write(b);
+            }
+
+//            byte buffer[] = new byte[1024];
+//            //判断输入流中的数据是否已经读完的标识
+//            int len;
+//            //循环将输入流读入到缓冲区当中，(len=in.read(buffer))>0就表示in里面还有数据
+//            while ((len = in.read(buffer)) > 0) {
+//                //使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "/" + filename)当中
+//                out.write(buffer, 0, len);
+//            }
+
+            Long end = System.currentTimeMillis();
+            System.out.println("time: " + (end - start));
+
+        } catch (IOException e) {e.getMessage();
+        }
     }
 }
 
@@ -1398,5 +1443,26 @@ class Encode {
     }
 
 }
+
+class DateTime {
+    public static void main(String[] args) throws ParseException {
+        System.out.println("TimeZone.getDefault -> " + TimeZone.getDefault());
+
+        // LocalDateTime.now
+        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
+        // parse trans
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss aaa", Locale.US); // Locale.US is required
+        Date parse = simpleDateFormat1.parse("Aug 15, 2018 14:04:10 AM");
+        System.out.println(simpleDateFormat.format(parse));
+//        long parse = Date.parse("Aug 8, 2018 12:00:00 AM");
+//        Calendar instance = Calendar.getInstance();
+//        instance.setTimeInMillis(parse);
+//        System.out.println(parse);
+        System.out.println(simpleDateFormat.format(parse));
+    }
+}
+
 
 

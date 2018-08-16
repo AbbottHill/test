@@ -1,22 +1,15 @@
 package com.cd.test.beans;
 
-import java.util.function.Supplier;
+import com.cd.test.AnnotationTest.CarSign;
 
-public class Car {
-    public static Car create(final Supplier<Car> supplier) {
-        return supplier.get();
+@CarSign
+public interface Car {
+
+    default void drive() {
+        System.out.println("drive " + getName());
     }
 
-    public static void collide(final Car car) {
-        System.out.println("Collided " + car.toString());
+    default String getName() {
+        return this.getClass().getSimpleName();
     }
-
-    public void repair() {
-        System.out.println("Repaired " + this.toString());
-    }
-
-    public void follow(final Car another) {
-        System.out.println("Following the " + another.toString());
-    }
-
 }

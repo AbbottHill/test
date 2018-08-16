@@ -14,7 +14,7 @@ public class CommonJdbc {
     public static Connection getConn() {
         String driver = "com.mysql.jdbc.Driver";
         //local
-        String url = "jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf8&useSSL=true";
+        String url = "jdbc:mysql://127.0.0.1:3306/database_mine?characterEncoding=utf8&useSSL=true";
         String username = "root";
         String password = "mysqlpass";
 
@@ -51,7 +51,7 @@ public class CommonJdbc {
     public static List<Map> query(String sql) {
         List<Map> list = new ArrayList();
         try (Connection conn = getConn();
-             PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             ResultSet resultSet = pstmt.executeQuery();
             ResultSetMetaData md = resultSet.getMetaData();//获取键名
             int columnCount = md.getColumnCount();//获取行的数量
@@ -67,6 +67,14 @@ public class CommonJdbc {
         }
 
         return list;
+    }
+
+
+    public static void main(String[] args) {
+        getConn();
+        String sql = "select * from score";
+        List<Map> query = query(sql);
+        System.out.println(query);
     }
 
 }

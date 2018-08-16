@@ -25,8 +25,8 @@ public class AnnotationTest {
 @Retention(RetentionPolicy.RUNTIME)
 @interface TestAnnotation {
 
-    public int id() default -1;
+    int id() default -1;
 
-    public String msg() default "Hi";
+    String msg() default "Hi";
 
 }
