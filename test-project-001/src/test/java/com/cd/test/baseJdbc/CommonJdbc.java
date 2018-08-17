@@ -69,7 +69,6 @@ public class CommonJdbc {
         return list;
     }
 
-
     public static void main(String[] args) {
         getConn();
         String sql = "select * from score";

@@ -10,7 +10,7 @@ public class InstanceLockClassLock extends Thread{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.print(x);
+            System.out.println(Thread.currentThread().getName() + "-> " + x);
         }
     }
 
@@ -22,7 +22,7 @@ public class InstanceLockClassLock extends Thread{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.print(x);
+                System.out.println(Thread.currentThread().getName() + "-> " + x);
             }
         }
     }
@@ -34,7 +34,7 @@ public class InstanceLockClassLock extends Thread{
     @Override
     public void run() {
         super.run();
-        doJobClassLk();
+        doJobInstanceLk();
     }
 
     public static void main(String[] args) {
