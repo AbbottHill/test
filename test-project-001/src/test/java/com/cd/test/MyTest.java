@@ -1239,6 +1239,20 @@ class PathTest {
         System.out.println(ClassLoader.getSystemResource("").getPath());
         System.out.println(ClassLoader.getSystemResource(""));
 
+        // way1 common
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        System.out.println("classLoader -> " + classLoader);
+        System.out.println("path -> " + classLoader.getResource(""));
+        System.out.println();
+
+        // way2
+        System.out.println("----- tomcat中而是由一个叫WebappClassLoader来装载，不要使用此方法 -----");
+        ClassLoader classLoader2 = ClassLoader.getSystemClassLoader();
+        System.out.println("classLoader -> " + classLoader2);
+        System.out.println("path -> " + classLoader2.getResource(""));
+        System.out.println();
+
+
     }
 }
 

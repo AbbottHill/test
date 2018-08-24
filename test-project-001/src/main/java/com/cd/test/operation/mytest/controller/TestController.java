@@ -35,6 +35,7 @@ public class  TestController extends BaseController{
         UserInfo user = new UserInfo();
         user.setName("super man");
         model.addAttribute("name", user.getName());
+        System.out.println(Thread.currentThread().getContextClassLoader().getResource(""));
         return "mytest/hello";
     }
 
