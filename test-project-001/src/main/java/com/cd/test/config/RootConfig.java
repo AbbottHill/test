@@ -94,6 +94,7 @@ public class RootConfig {
     public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) {
 //        LogFactory.useLog4J2Logging();
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
+        configuration.setCacheEnabled(false);
         configuration.setLogImpl(Log4j2Impl.class);
         System.out.println("configuration.getLogImpl ---> " + configuration.getLogImpl());
 

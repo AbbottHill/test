@@ -27,8 +27,8 @@ public class LazyPattern {
 }
 
 class LazyPattern1 {
-//    private LazyPattern1() {
-//    }
+    private LazyPattern1() {
+    }
 //
 //    /**
 //     * 类级内部类，也就是静态的成员式内部类，该内部类的实例与外部类的实例
@@ -45,7 +45,6 @@ class LazyPattern1 {
 //        return SingletonHolder.instance;
 //    }
 
-    private LazyPattern1(){};
 
     // JVM 初始化类线程安全
     private static class InnerClass {
