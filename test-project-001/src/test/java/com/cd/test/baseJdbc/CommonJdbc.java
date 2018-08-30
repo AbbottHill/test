@@ -48,6 +48,53 @@ public class CommonJdbc {
         return index;
     }
 
+
+
+
+//    public static ResultSet batchInsert(String sql, List list) {
+    public static ResultSet batchInsert() {
+//        PreparedStatement pstm = conn.prepareStatement("insert into students(name, email) values(?, ?), (?, ?), (?, ?)",
+//                Statement.RETURN_GENERATED_KEYS);
+//        pstm.setString(1, "name1");
+//        pstm.setString(2, "email1");
+//        pstm.setString(3, "name2");
+//        pstm.setString(4, "email2");
+//
+//        pstm.setString(5, "name2");
+//        pstm.setString(6, "email2");
+//        pstm.addBatch();
+//        pstm.executeBatch();
+//        ResultSet rs = pstm.getGeneratedKeys();
+//        while (rs.next()) {
+//            Object value = rs.getObject(1);
+//            System.out.println(value);
+//        }
+
+//        PreparedStatement pstmt
+
+        String sql = "insert into user (USER_PASSWORD, USER_NAME) values (?, ?),(?, ?)";
+        ResultSet resultSet = null;
+        try (Connection conn = getConn();
+             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            pstmt.setString(1, "eee");
+            pstmt.setString(2, "eee");
+            pstmt.setString(3, "fff");
+            pstmt.setString(4, "fff");
+            // must
+            pstmt.addBatch();
+            pstmt.executeBatch();
+            ResultSet rs = pstmt.getGeneratedKeys();
+            while (rs.next()) {
+                Object value = rs.getObject(1);
+                System.out.println(value);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+
     public static List<Map> query(String sql) {
         List<Map> list = new ArrayList();
         try (Connection conn = getConn();
@@ -70,10 +117,15 @@ public class CommonJdbc {
     }
 
     public static void main(String[] args) {
-        getConn();
-        String sql = "select * from score";
-        List<Map> query = query(sql);
-        System.out.println(query);
+        // select
+//        getConn();
+//        String sql = "select * from score";
+//        List<Map> query = query(sql);
+//        System.out.println(query);
+
+        // batch insert
+        batchInsert();
+
     }
 
 }
