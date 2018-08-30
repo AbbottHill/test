@@ -9,6 +9,8 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
+    <description>spring mvc, mybatis, </description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
