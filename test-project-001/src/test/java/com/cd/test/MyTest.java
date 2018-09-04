@@ -51,6 +51,11 @@ public class MyTest {
     String fieldStr;
 
     public static void main(String[] args) {
+
+        for (int i = 4; i < 18; i++) {
+            System.out.println(i);
+        }
+
         System.out.println(Double.valueOf("12345678123"));
         System.out.println(Double.valueOf("12345678123")/ 1000);
         System.out.println(new BigDecimal("1234567812312342315321423"));
