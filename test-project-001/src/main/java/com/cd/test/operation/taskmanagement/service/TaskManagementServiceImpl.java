@@ -10,6 +10,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,6 +32,7 @@ public class TaskManagementServiceImpl implements TaskManagementService {
      * @return
      */
     @Override
+    @Transactional(readOnly=true)
     public List excelFileExecution() {
         List list = new ArrayList();
         // Use a file

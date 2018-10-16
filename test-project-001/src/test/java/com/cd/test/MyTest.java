@@ -28,9 +28,11 @@ import org.codehaus.groovy.runtime.powerassert.SourceText;
 import org.junit.Test;
 import sun.util.locale.provider.DecimalFormatSymbolsProviderImpl;
 
+import javax.servlet.ServletContextListener;
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -1237,17 +1239,19 @@ class BigIntegerTest {
 }
 
 class PathTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException {
         System.out.println(PathTest.class.getName());
         System.out.println(PathTest.class.getSimpleName());
 
         System.out.println(ClassLoader.getSystemResource("").getPath());
+        System.out.println(ClassLoader.getSystemResource("").getPath().substring(1));
         System.out.println(ClassLoader.getSystemResource(""));
 
         // way1 common
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         System.out.println("classLoader -> " + classLoader);
         System.out.println("path -> " + classLoader.getResource(""));
+        System.out.println("path -> " + classLoader.getResource("").toURI().getPath());
         System.out.println();
 
         // way2
@@ -1482,6 +1486,9 @@ class DateTime {
         System.out.println(simpleDateFormat.format(parse));
     }
 }
+
+
+
 
 
 

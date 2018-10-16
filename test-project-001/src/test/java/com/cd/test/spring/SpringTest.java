@@ -7,7 +7,6 @@ import org.springframework.core.io.FileSystemResource;
 
 public class SpringTest {
 
-
     public static void main(String[] args) {
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
@@ -21,4 +20,3 @@ public class SpringTest {
         cfg.postProcessBeanFactory(factory);
     }
 }
-    
