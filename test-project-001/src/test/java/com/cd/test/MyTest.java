@@ -34,6 +34,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.*;
@@ -1485,9 +1487,21 @@ class DateTime {
 //        System.out.println(parse);
         System.out.println(simpleDateFormat.format(parse));
     }
+
 }
 
+class JVM {
+    public static void main(String[] args) throws InterruptedException {
+        Thread.sleep(100 * 1000);
+    }
+}
 
+class UrlEncode_1 {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.out.println(URLEncoder.encode(URLEncoder.encode("abcd1中", "UTF-8"), "UTF-8"));
+        System.out.println(URLDecoder.decode(URLDecoder.decode("abcd1中", "UTF-8"), "UTF-8"));
+    }
+}
 
 
 
