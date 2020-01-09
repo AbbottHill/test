@@ -1,4 +1,4 @@
-package com.cd.test;
+package com.cd.test.redis;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

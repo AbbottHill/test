@@ -4,14 +4,15 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-public class CyclicBarrier_test {
+public class CyclicBarrierTest {
 }
 
 class Barrier {
     public static void main(String[] args) {
         int n = 4;
+        int m = n * 4;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(n);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < m; i++) {
             new Writer(cyclicBarrier).start();
         }
     }
@@ -27,8 +28,9 @@ class Barrier {
         public void run() {
             try {
                 System.out.println(Thread.currentThread().getName() + " start");
-                Thread.sleep(new Random().nextInt(10) * 1000);
-                System.out.println(Thread.currentThread().getName() + " end");
+                int millis = new Random().nextInt(10) * 5000;
+                Thread.sleep(millis);
+                System.out.println(Thread.currentThread().getName() + " end; sleep " + millis);
                 barrier.await();
                 System.out.println(Thread.currentThread().getName() + " all ended");
             } catch (InterruptedException e) {
