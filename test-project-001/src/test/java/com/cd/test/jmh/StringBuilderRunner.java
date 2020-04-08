@@ -17,11 +17,18 @@ public class StringBuilderRunner {
                 // 导入要测试的类
                 .include(StringConnectBenchmark.class.getSimpleName())
                 // 预热5轮
-                .warmupIterations(5)
+                .warmupIterations(2)
                 // 度量10轮
-                .measurementIterations(10)
+                .measurementIterations(2)
                 .mode(Mode.Throughput)
-                .forks(3)
+//                .mode(Mode.AverageTime)
+                //默认JMH为每个试验(迭代集合)fork一个新的java进程。
+                // 这样可以防止前面收集的“资料”——其他被加载类以及它们执行的信息对当前测试的影响。
+                // 比如，实现了相同接口的两个类，测试它们的性能，
+                // 那么第一个实现(目标测试类)可能比第二个快，
+                // 因为JIT发现第二个实现类后就把第一个实现的直接方法调用替换为接口方法调用。
+                // 因此，不要把forks设为0除非你清楚这样做的目的
+                .forks(1)
                 .build();
 
         new Runner(opt).run();
