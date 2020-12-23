@@ -1469,6 +1469,21 @@ class Encode {
 
 }
 
+
+class Debug {
+    public static void main(String[] args) {
+        method();
+    }
+
+    private static String method() {
+        int i = 0;
+        for (; i < 100; i++) {
+            System.out.println(i);
+        }
+        return i + "";
+    }
+}
+
 class DateTime {
     public static void main(String[] args) throws ParseException {
         System.out.println("TimeZone.getDefault -> " + TimeZone.getDefault());

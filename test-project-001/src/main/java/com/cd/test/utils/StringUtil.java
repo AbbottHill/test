@@ -25,4 +25,8 @@ public class StringUtil {
         }
         return String.valueOf(string);
     }
+
+    public static String zeroFill(int value) {
+        return String.valueOf(value < 10 ? "0" + value : value);
+    }
 }
