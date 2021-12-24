@@ -1,0 +1,3570 @@
+{
+  "nation_prov_list": {
+    "0251": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025110",
+        "nation_code": "0251",
+        "prov": "默认"
+      }
+    ],
+    "0372": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037210",
+        "nation_code": "0372",
+        "prov": "默认"
+      }
+    ],
+    "0252": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025210",
+        "nation_code": "0252",
+        "prov": "默认"
+      }
+    ],
+    "0373": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037310",
+        "nation_code": "0373",
+        "prov": "默认"
+      }
+    ],
+    "1340": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0134010",
+        "nation_code": "1340",
+        "prov": "默认"
+      }
+    ],
+    "0370": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037010",
+        "nation_code": "0370",
+        "prov": "默认"
+      }
+    ],
+    "0250": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025010",
+        "nation_code": "0250",
+        "prov": "默认"
+      }
+    ],
+    "0371": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037110",
+        "nation_code": "0371",
+        "prov": "默认"
+      }
+    ],
+    "0248": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024810",
+        "nation_code": "0248",
+        "prov": "默认"
+      }
+    ],
+    "0007": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0000710",
+        "nation_code": "0007",
+        "prov": "默认"
+      }
+    ],
+    "0249": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024910",
+        "nation_code": "0249",
+        "prov": "默认"
+      }
+    ],
+    "0247": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024710",
+        "nation_code": "0247",
+        "prov": "默认"
+      }
+    ],
+    "0244": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024410",
+        "nation_code": "0244",
+        "prov": "默认"
+      }
+    ],
+    "0245": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024510",
+        "nation_code": "0245",
+        "prov": "默认"
+      }
+    ],
+    "0242": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024210",
+        "nation_code": "0242",
+        "prov": "默认"
+      }
+    ],
+    "0001": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0000110",
+        "nation_code": "0001",
+        "prov": "默认"
+      }
+    ],
+    "0243": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024310",
+        "nation_code": "0243",
+        "prov": "默认"
+      }
+    ],
+    "9991": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0999110",
+        "nation_code": "9991",
+        "prov": "默认"
+      }
+    ],
+    "9997": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0999710",
+        "nation_code": "9997",
+        "prov": "默认"
+      }
+    ],
+    "0020": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0002010",
+        "nation_code": "0020",
+        "prov": "默认"
+      }
+    ],
+    "0262": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026210",
+        "nation_code": "0262",
+        "prov": "默认"
+      }
+    ],
+    "1473": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0147310",
+        "nation_code": "1473",
+        "prov": "默认"
+      }
+    ],
+    "0263": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026310",
+        "nation_code": "0263",
+        "prov": "默认"
+      }
+    ],
+    "0260": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026010",
+        "nation_code": "0260",
+        "prov": "默认"
+      }
+    ],
+    "0381": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038110",
+        "nation_code": "0381",
+        "prov": "默认"
+      }
+    ],
+    "0261": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026110",
+        "nation_code": "0261",
+        "prov": "默认"
+      }
+    ],
+    "0382": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038210",
+        "nation_code": "0382",
+        "prov": "默认"
+      }
+    ],
+    "0380": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038010",
+        "nation_code": "0380",
+        "prov": "默认"
+      }
+    ],
+    "0259": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025910",
+        "nation_code": "0259",
+        "prov": "默认"
+      }
+    ],
+    "0257": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025710",
+        "nation_code": "0257",
+        "prov": "默认"
+      }
+    ],
+    "0378": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037810",
+        "nation_code": "0378",
+        "prov": "默认"
+      }
+    ],
+    "0258": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025810",
+        "nation_code": "0258",
+        "prov": "默认"
+      }
+    ],
+    "0255": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025510",
+        "nation_code": "0255",
+        "prov": "默认"
+      }
+    ],
+    "0376": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037610",
+        "nation_code": "0376",
+        "prov": "默认"
+      }
+    ],
+    "1345": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0134510",
+        "nation_code": "1345",
+        "prov": "默认"
+      }
+    ],
+    "0256": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025610",
+        "nation_code": "0256",
+        "prov": "默认"
+      }
+    ],
+    "0377": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037710",
+        "nation_code": "0377",
+        "prov": "默认"
+      }
+    ],
+    "0253": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025310",
+        "nation_code": "0253",
+        "prov": "默认"
+      }
+    ],
+    "0374": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037410",
+        "nation_code": "0374",
+        "prov": "默认"
+      }
+    ],
+    "0254": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0025410",
+        "nation_code": "0254",
+        "prov": "默认"
+      }
+    ],
+    "0375": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0037510",
+        "nation_code": "0375",
+        "prov": "默认"
+      }
+    ],
+    "0031": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003110",
+        "nation_code": "0031",
+        "prov": "默认"
+      }
+    ],
+    "1242": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0124210",
+        "nation_code": "1242",
+        "prov": "默认"
+      }
+    ],
+    "0032": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003210",
+        "nation_code": "0032",
+        "prov": "默认"
+      }
+    ],
+    "0030": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003010",
+        "nation_code": "0030",
+        "prov": "默认"
+      }
+    ],
+    "0268": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026810",
+        "nation_code": "0268",
+        "prov": "默认"
+      }
+    ],
+    "0389": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038910",
+        "nation_code": "0389",
+        "prov": "默认"
+      }
+    ],
+    "0027": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0002710",
+        "nation_code": "0027",
+        "prov": "默认"
+      }
+    ],
+    "0269": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026910",
+        "nation_code": "0269",
+        "prov": "默认"
+      }
+    ],
+    "0266": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026610",
+        "nation_code": "0266",
+        "prov": "默认"
+      }
+    ],
+    "0387": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038710",
+        "nation_code": "0387",
+        "prov": "默认"
+      }
+    ],
+    "0267": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026710",
+        "nation_code": "0267",
+        "prov": "默认"
+      }
+    ],
+    "0264": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026410",
+        "nation_code": "0264",
+        "prov": "默认"
+      }
+    ],
+    "0385": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038510",
+        "nation_code": "0385",
+        "prov": "默认"
+      }
+    ],
+    "0265": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0026510",
+        "nation_code": "0265",
+        "prov": "默认"
+      }
+    ],
+    "0386": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0038610",
+        "nation_code": "0386",
+        "prov": "默认"
+      }
+    ],
+    "1809": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0180910",
+        "nation_code": "1809",
+        "prov": "默认"
+      }
+    ],
+    "0043": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004310",
+        "nation_code": "0043",
+        "prov": "默认"
+      }
+    ],
+    "0040": [
+      {
+        "prov_en_us": "Alba",
+        "prov_code": "0040140",
+        "nation_code": "0040",
+        "prov": "阿尔巴县"
+      },
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004010",
+        "nation_code": "0040",
+        "prov": "默认"
+      }
+    ],
+    "0041": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004110",
+        "nation_code": "0041",
+        "prov": "默认"
+      }
+    ],
+    "0039": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003910",
+        "nation_code": "0039",
+        "prov": "默认"
+      }
+    ],
+    "1246": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0124610",
+        "nation_code": "1246",
+        "prov": "默认"
+      }
+    ],
+    "0036": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003610",
+        "nation_code": "0036",
+        "prov": "默认"
+      }
+    ],
+    "0033": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003310",
+        "nation_code": "0033",
+        "prov": "默认"
+      }
+    ],
+    "0034": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0003410",
+        "nation_code": "0034",
+        "prov": "默认"
+      }
+    ],
+    "0053": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005310",
+        "nation_code": "0053",
+        "prov": "默认"
+      }
+    ],
+    "1264": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0126410",
+        "nation_code": "1264",
+        "prov": "默认"
+      }
+    ],
+    "0054": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005410",
+        "nation_code": "0054",
+        "prov": "默认"
+      }
+    ],
+    "0051": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005110",
+        "nation_code": "0051",
+        "prov": "默认"
+      }
+    ],
+    "0052": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005210",
+        "nation_code": "0052",
+        "prov": "默认"
+      }
+    ],
+    "0291": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0029110",
+        "nation_code": "0291",
+        "prov": "默认"
+      }
+    ],
+    "0290": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0029010",
+        "nation_code": "0290",
+        "prov": "默认"
+      }
+    ],
+    "0963": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096310",
+        "nation_code": "0963",
+        "prov": "默认"
+      }
+    ],
+    "0964": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096410",
+        "nation_code": "0964",
+        "prov": "默认"
+      }
+    ],
+    "0048": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004810",
+        "nation_code": "0048",
+        "prov": "默认"
+      }
+    ],
+    "0961": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096110",
+        "nation_code": "0961",
+        "prov": "默认"
+      }
+    ],
+    "0049": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004910",
+        "nation_code": "0049",
+        "prov": "默认"
+      }
+    ],
+    "0962": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096210",
+        "nation_code": "0962",
+        "prov": "默认"
+      }
+    ],
+    "0046": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004610",
+        "nation_code": "0046",
+        "prov": "默认"
+      }
+    ],
+    "0047": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004710",
+        "nation_code": "0047",
+        "prov": "默认"
+      }
+    ],
+    "0960": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096010",
+        "nation_code": "0960",
+        "prov": "默认"
+      }
+    ],
+    "0044": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004410",
+        "nation_code": "0044",
+        "prov": "默认"
+      }
+    ],
+    "0045": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0004510",
+        "nation_code": "0045",
+        "prov": "默认"
+      }
+    ],
+    "0967": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096710",
+        "nation_code": "0967",
+        "prov": "默认"
+      }
+    ],
+    "0968": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096810",
+        "nation_code": "0968",
+        "prov": "默认"
+      }
+    ],
+    "0965": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096510",
+        "nation_code": "0965",
+        "prov": "默认"
+      }
+    ],
+    "0966": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0096610",
+        "nation_code": "0966",
+        "prov": "默认"
+      }
+    ],
+    "0064": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006410",
+        "nation_code": "0064",
+        "prov": "默认"
+      }
+    ],
+    "0065": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006510",
+        "nation_code": "0065",
+        "prov": "默认"
+      }
+    ],
+    "0062": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006210",
+        "nation_code": "0062",
+        "prov": "默认"
+      }
+    ],
+    "0063": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006310",
+        "nation_code": "0063",
+        "prov": "默认"
+      }
+    ],
+    "0060": [
+      {
+        "prov_en_us": "Johor",
+        "prov_code": "0060140",
+        "nation_code": "0060",
+        "prov": "柔佛"
+      },
+      {
+        "prov_en_us": "Kedah",
+        "prov_code": "0060070",
+        "nation_code": "0060",
+        "prov": "吉打"
+      },
+      {
+        "prov_en_us": "Kelantan",
+        "prov_code": "0060080",
+        "nation_code": "0060",
+        "prov": "吉兰丹"
+      },
+      {
+        "prov_en_us": "KualaLumpur",
+        "prov_code": "0060090",
+        "nation_code": "0060",
+        "prov": "吉隆坡"
+      },
+      {
+        "prov_en_us": "Labuan",
+        "prov_code": "0060110",
+        "nation_code": "0060",
+        "prov": "纳闽"
+      },
+      {
+        "prov_en_us": "Melaka",
+        "prov_code": "0060100",
+        "nation_code": "0060",
+        "prov": "马六甲"
+      },
+      {
+        "prov_en_us": "Pahang",
+        "prov_code": "0060120",
+        "nation_code": "0060",
+        "prov": "彭亨"
+      },
+      {
+        "prov_en_us": "Perak",
+        "prov_code": "0060130",
+        "nation_code": "0060",
+        "prov": "霹雳"
+      },
+      {
+        "prov_en_us": "Perlis",
+        "prov_code": "0060050",
+        "nation_code": "0060",
+        "prov": "玻璃市"
+      },
+      {
+        "prov_en_us": "PulauPinang",
+        "prov_code": "0060040",
+        "nation_code": "0060",
+        "prov": "槟榔屿"
+      },
+      {
+        "prov_en_us": "Sabah",
+        "prov_code": "0060010",
+        "nation_code": "0060",
+        "prov": "沙巴"
+      },
+      {
+        "prov_en_us": "Sarawak",
+        "prov_code": "0060160",
+        "nation_code": "0060",
+        "prov": "沙捞越"
+      },
+      {
+        "prov_en_us": "Selangor",
+        "prov_code": "0060020",
+        "nation_code": "0060",
+        "prov": "雪兰莪"
+      },
+      {
+        "prov_en_us": "Sembilan",
+        "prov_code": "0060150",
+        "nation_code": "0060",
+        "prov": "森美兰"
+      },
+      {
+        "prov_en_us": "Terengganu",
+        "prov_code": "0060030",
+        "nation_code": "0060",
+        "prov": "丁加奴"
+      }
+    ],
+    "0061": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006110",
+        "nation_code": "0061",
+        "prov": "默认"
+      }
+    ],
+    "0974": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097410",
+        "nation_code": "0974",
+        "prov": "默认"
+      }
+    ],
+    "0975": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097510",
+        "nation_code": "0975",
+        "prov": "默认"
+      }
+    ],
+    "0972": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097210",
+        "nation_code": "0972",
+        "prov": "默认"
+      }
+    ],
+    "0973": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097310",
+        "nation_code": "0973",
+        "prov": "默认"
+      }
+    ],
+    "0057": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005710",
+        "nation_code": "0057",
+        "prov": "默认"
+      }
+    ],
+    "0299": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0029910",
+        "nation_code": "0299",
+        "prov": "默认"
+      }
+    ],
+    "1268": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0126810",
+        "nation_code": "1268",
+        "prov": "默认"
+      }
+    ],
+    "0058": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005810",
+        "nation_code": "0058",
+        "prov": "默认"
+      }
+    ],
+    "0850": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0085010",
+        "nation_code": "0850",
+        "prov": "默认"
+      }
+    ],
+    "0971": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097110",
+        "nation_code": "0971",
+        "prov": "默认"
+      }
+    ],
+    "0055": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005510",
+        "nation_code": "0055",
+        "prov": "默认"
+      }
+    ],
+    "0297": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0029710",
+        "nation_code": "0297",
+        "prov": "默认"
+      }
+    ],
+    "0056": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0005610",
+        "nation_code": "0056",
+        "prov": "默认"
+      }
+    ],
+    "0298": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0029810",
+        "nation_code": "0298",
+        "prov": "默认"
+      }
+    ],
+    "0855": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0085510",
+        "nation_code": "0855",
+        "prov": "默认"
+      }
+    ],
+    "0976": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097610",
+        "nation_code": "0976",
+        "prov": "默认"
+      }
+    ],
+    "0856": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0085610",
+        "nation_code": "0856",
+        "prov": "默认"
+      }
+    ],
+    "0977": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0097710",
+        "nation_code": "0977",
+        "prov": "默认"
+      }
+    ],
+    "0501": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050110",
+        "nation_code": "0501",
+        "prov": "默认"
+      }
+    ],
+    "0502": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050210",
+        "nation_code": "0502",
+        "prov": "默认"
+      }
+    ],
+    "0500": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050010",
+        "nation_code": "0500",
+        "prov": "默认"
+      }
+    ],
+    "0066": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0006610",
+        "nation_code": "0066",
+        "prov": "默认"
+      }
+    ],
+    "0509": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050910",
+        "nation_code": "0509",
+        "prov": "默认"
+      }
+    ],
+    "0507": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050710",
+        "nation_code": "0507",
+        "prov": "默认"
+      }
+    ],
+    "0508": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050810",
+        "nation_code": "0508",
+        "prov": "默认"
+      }
+    ],
+    "0505": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050510",
+        "nation_code": "0505",
+        "prov": "默认"
+      }
+    ],
+    "0506": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050610",
+        "nation_code": "0506",
+        "prov": "默认"
+      }
+    ],
+    "0503": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050310",
+        "nation_code": "0503",
+        "prov": "默认"
+      }
+    ],
+    "0504": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0050410",
+        "nation_code": "0504",
+        "prov": "默认"
+      }
+    ],
+    "0086": [
+      {
+        "prov_en_us": "Anhui",
+        "prov_code": "0086340",
+        "nation_code": "0086",
+        "prov": "安徽省"
+      },
+      {
+        "prov_en_us": "Beijing",
+        "prov_code": "0086110",
+        "nation_code": "0086",
+        "prov": "北京市"
+      },
+      {
+        "prov_en_us": "Chongqing",
+        "prov_code": "0086500",
+        "nation_code": "0086",
+        "prov": "重庆市"
+      },
+      {
+        "prov_en_us": "Fujian",
+        "prov_code": "0086350",
+        "nation_code": "0086",
+        "prov": "福建省"
+      },
+      {
+        "prov_en_us": "Gansu",
+        "prov_code": "0086620",
+        "nation_code": "0086",
+        "prov": "甘肃省"
+      },
+      {
+        "prov_en_us": "Guangdong",
+        "prov_code": "0086440",
+        "nation_code": "0086",
+        "prov": "广东省"
+      },
+      {
+        "prov_en_us": "Guangxi",
+        "prov_code": "0086450",
+        "nation_code": "0086",
+        "prov": "广西壮族自治区"
+      },
+      {
+        "prov_en_us": "Guizhou",
+        "prov_code": "0086520",
+        "nation_code": "0086",
+        "prov": "贵州省"
+      },
+      {
+        "prov_en_us": "Hainan",
+        "prov_code": "0086460",
+        "nation_code": "0086",
+        "prov": "海南省"
+      },
+      {
+        "prov_en_us": "Hebei",
+        "prov_code": "0086130",
+        "nation_code": "0086",
+        "prov": "河北省"
+      },
+      {
+        "prov_en_us": "Heilongjiang",
+        "prov_code": "0086230",
+        "nation_code": "0086",
+        "prov": "黑龙江省"
+      },
+      {
+        "prov_en_us": "Henan",
+        "prov_code": "0086410",
+        "nation_code": "0086",
+        "prov": "河南省"
+      },
+      {
+        "prov_en_us": "Hubei",
+        "prov_code": "0086420",
+        "nation_code": "0086",
+        "prov": "湖北省"
+      },
+      {
+        "prov_en_us": "Hunan",
+        "prov_code": "0086430",
+        "nation_code": "0086",
+        "prov": "湖南省"
+      },
+      {
+        "prov_en_us": "Inner Mongolia",
+        "prov_code": "0086150",
+        "nation_code": "0086",
+        "prov": "内蒙古自治区"
+      },
+      {
+        "prov_en_us": "Jiangsu Province",
+        "prov_code": "0086320",
+        "nation_code": "0086",
+        "prov": "江苏省"
+      },
+      {
+        "prov_en_us": "Jiangxi",
+        "prov_code": "0086360",
+        "nation_code": "0086",
+        "prov": "江西省"
+      },
+      {
+        "prov_en_us": "Jilin",
+        "prov_code": "0086220",
+        "nation_code": "0086",
+        "prov": "吉林省"
+      },
+      {
+        "prov_en_us": "Liaoning",
+        "prov_code": "0086210",
+        "nation_code": "0086",
+        "prov": "辽宁省"
+      },
+      {
+        "prov_en_us": "Ningxia",
+        "prov_code": "0086640",
+        "nation_code": "0086",
+        "prov": "宁夏回族自治区"
+      },
+      {
+        "prov_en_us": "Qinghai",
+        "prov_code": "0086630",
+        "nation_code": "0086",
+        "prov": "青海省"
+      },
+      {
+        "prov_en_us": "Shaanxi",
+        "prov_code": "0086610",
+        "nation_code": "0086",
+        "prov": "陕西省"
+      },
+      {
+        "prov_en_us": "Shandong",
+        "prov_code": "0086370",
+        "nation_code": "0086",
+        "prov": "山东省"
+      },
+      {
+        "prov_en_us": "Shanghai",
+        "prov_code": "0086310",
+        "nation_code": "0086",
+        "prov": "上海市"
+      },
+      {
+        "prov_en_us": "Shanxi",
+        "prov_code": "0086140",
+        "nation_code": "0086",
+        "prov": "山西省"
+      },
+      {
+        "prov_en_us": "Sichuan",
+        "prov_code": "0086510",
+        "nation_code": "0086",
+        "prov": "四川省"
+      },
+      {
+        "prov_en_us": "Tianjin",
+        "prov_code": "0086120",
+        "nation_code": "0086",
+        "prov": "天津市"
+      },
+      {
+        "prov_en_us": "Tibet",
+        "prov_code": "0086540",
+        "nation_code": "0086",
+        "prov": "西藏自治区"
+      },
+      {
+        "prov_en_us": "Xinjiang",
+        "prov_code": "0086650",
+        "nation_code": "0086",
+        "prov": "新疆维吾尔自治区"
+      },
+      {
+        "prov_en_us": "Yunnan",
+        "prov_code": "0086530",
+        "nation_code": "0086",
+        "prov": "云南省"
+      },
+      {
+        "prov_en_us": "Zhejiang",
+        "prov_code": "0086330",
+        "nation_code": "0086",
+        "prov": "浙江省"
+      }
+    ],
+    "0084": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0008410",
+        "nation_code": "0084",
+        "prov": "默认"
+      }
+    ],
+    "0082": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0008210",
+        "nation_code": "0082",
+        "prov": "默认"
+      }
+    ],
+    "0081": [
+      {
+        "prov_ja_jp": "愛知県",
+        "prov_en_us": "Aichi",
+        "prov_code": "0008110",
+        "nation_code": "0081",
+        "prov": "\u00A0爱知县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "秋田県",
+        "prov_en_us": "Akita",
+        "prov_code": "0008111",
+        "nation_code": "0081",
+        "prov": "\u00A0秋田县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "青森県",
+        "prov_en_us": "Aomori",
+        "prov_code": "0008112",
+        "nation_code": "0081",
+        "prov": "\u00A0青森县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "千葉県",
+        "prov_en_us": "Chiba",
+        "prov_code": "0008113",
+        "nation_code": "0081",
+        "prov": "\u00A0千叶县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "愛媛県",
+        "prov_en_us": "Ehime",
+        "prov_code": "0008114",
+        "nation_code": "0081",
+        "prov": "\u00A0爱媛县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "福井県",
+        "prov_en_us": "Fukui",
+        "prov_code": "0008115",
+        "nation_code": "0081",
+        "prov": "\u00A0福井县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "福岡県",
+        "prov_en_us": "Fukuoka",
+        "prov_code": "0008116",
+        "nation_code": "0081",
+        "prov": "\u00A0福冈县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "福島県",
+        "prov_en_us": "Fukushima",
+        "prov_code": "0008117",
+        "nation_code": "0081",
+        "prov": "\u00A0福岛县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "岐阜県",
+        "prov_en_us": "Gifu",
+        "prov_code": "0008118",
+        "nation_code": "0081",
+        "prov": "\u00A0岐阜县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "群馬県",
+        "prov_en_us": "Gunma",
+        "prov_code": "0008119",
+        "nation_code": "0081",
+        "prov": "\u00A0群马县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "広島県",
+        "prov_en_us": "Hiroshima",
+        "prov_code": "0008120",
+        "nation_code": "0081",
+        "prov": "\u00A0广岛县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "北海道",
+        "prov_en_us": "Hokkaido",
+        "prov_code": "0008121",
+        "nation_code": "0081",
+        "prov": "\u00A0北海道"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "兵庫県",
+        "prov_en_us": "Hyōgo",
+        "prov_code": "0008122",
+        "nation_code": "0081",
+        "prov": "\u00A0兵库县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "茨城県",
+        "prov_en_us": "Ibaraki",
+        "prov_code": "0008123",
+        "nation_code": "0081",
+        "prov": "\u00A0茨城县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "石川県",
+        "prov_en_us": "Ishikawa",
+        "prov_code": "0008124",
+        "nation_code": "0081",
+        "prov": "\u00A0石川县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "岩手県",
+        "prov_en_us": "Iwate",
+        "prov_code": "0008125",
+        "nation_code": "0081",
+        "prov": "\u00A0岩手县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "香川県",
+        "prov_en_us": "Kagawa",
+        "prov_code": "0008126",
+        "nation_code": "0081",
+        "prov": "\u00A0香川县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "鹿児島県",
+        "prov_en_us": "Kagoshima",
+        "prov_code": "0008127",
+        "nation_code": "0081",
+        "prov": "\u00A0鹿儿岛县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "神奈川県",
+        "prov_en_us": "Kanagawa",
+        "prov_code": "0008128",
+        "nation_code": "0081",
+        "prov": "\u00A0神奈川县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "高知県",
+        "prov_en_us": "Kōchi",
+        "prov_code": "0008129",
+        "nation_code": "0081",
+        "prov": "\u00A0高知县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "熊本県",
+        "prov_en_us": "Kumamoto",
+        "prov_code": "0008130",
+        "nation_code": "0081",
+        "prov": "\u00A0熊本县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "京都府",
+        "prov_en_us": "Kyoto",
+        "prov_code": "0008131",
+        "nation_code": "0081",
+        "prov": "\u00A0京都府"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "三重県",
+        "prov_en_us": "Mie",
+        "prov_code": "0008132",
+        "nation_code": "0081",
+        "prov": "\u00A0三重县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "宮城県",
+        "prov_en_us": "Miyagi",
+        "prov_code": "0008133",
+        "nation_code": "0081",
+        "prov": "\u00A0宫城县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "宮崎県",
+        "prov_en_us": "Miyazaki",
+        "prov_code": "0008134",
+        "nation_code": "0081",
+        "prov": "\u00A0宫崎县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "長野県",
+        "prov_en_us": "Nagano",
+        "prov_code": "0008135",
+        "nation_code": "0081",
+        "prov": "\u00A0长野县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "長崎県",
+        "prov_en_us": "Nagasaki",
+        "prov_code": "0008136",
+        "nation_code": "0081",
+        "prov": "\u00A0长崎县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "奈良県",
+        "prov_en_us": "Nara",
+        "prov_code": "0008137",
+        "nation_code": "0081",
+        "prov": "\u00A0奈良县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "新潟県",
+        "prov_en_us": "Niigata",
+        "prov_code": "0008138",
+        "nation_code": "0081",
+        "prov": "\u00A0新潟县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "大分県",
+        "prov_en_us": "Ōita",
+        "prov_code": "0008139",
+        "nation_code": "0081",
+        "prov": "\u00A0大分县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "岡山県",
+        "prov_en_us": "Okayama",
+        "prov_code": "0008140",
+        "nation_code": "0081",
+        "prov": "\u00A0冈山县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "沖縄県",
+        "prov_en_us": "Okinawa",
+        "prov_code": "0008141",
+        "nation_code": "0081",
+        "prov": "\u00A0冲绳县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "大阪府",
+        "prov_en_us": "Osaka",
+        "prov_code": "0008142",
+        "nation_code": "0081",
+        "prov": "\u00A0大阪府"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "佐賀県",
+        "prov_en_us": "Saga",
+        "prov_code": "0008143",
+        "nation_code": "0081",
+        "prov": "\u00A0佐贺县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "埼玉県",
+        "prov_en_us": "Saitama",
+        "prov_code": "0008144",
+        "nation_code": "0081",
+        "prov": "\u00A0埼玉县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "滋賀県",
+        "prov_en_us": "Shiga",
+        "prov_code": "0008145",
+        "nation_code": "0081",
+        "prov": "\u00A0滋贺县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "島根県",
+        "prov_en_us": "Shimane",
+        "prov_code": "0008146",
+        "nation_code": "0081",
+        "prov": "\u00A0岛根县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "静岡県",
+        "prov_en_us": "Shizuoka",
+        "prov_code": "0008147",
+        "nation_code": "0081",
+        "prov": "\u00A0静冈县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "栃木県",
+        "prov_en_us": "Tochigi",
+        "prov_code": "0008148",
+        "nation_code": "0081",
+        "prov": "\u00A0栃木县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "徳島県",
+        "prov_en_us": "Tokushima",
+        "prov_code": "0008149",
+        "nation_code": "0081",
+        "prov": "\u00A0德岛县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "東京都",
+        "prov_en_us": "Tokyo",
+        "prov_code": "0008150",
+        "nation_code": "0081",
+        "prov": "\u00A0东京都"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "鳥取県",
+        "prov_en_us": "Tottori",
+        "prov_code": "0008151",
+        "nation_code": "0081",
+        "prov": "\u00A0鸟取县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "富山県",
+        "prov_en_us": "Toyama",
+        "prov_code": "0008152",
+        "nation_code": "0081",
+        "prov": "\u00A0富山县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "和歌山県",
+        "prov_en_us": "Wakayama",
+        "prov_code": "0008153",
+        "nation_code": "0081",
+        "prov": "\u00A0和歌山县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "山形県",
+        "prov_en_us": "Yamagata",
+        "prov_code": "0008154",
+        "nation_code": "0081",
+        "prov": "\u00A0山形县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "山口県",
+        "prov_en_us": "Yamaguchi",
+        "prov_code": "0008155",
+        "nation_code": "0081",
+        "prov": "\u00A0山口县"
+      },
+      {
+        "prov_de_de": "",
+        "prov_ja_jp": "山梨県",
+        "prov_en_us": "Yamanashi",
+        "prov_code": "0008156",
+        "nation_code": "0081",
+        "prov": "\u00A0山梨县"
+      }
+    ],
+    "0996": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099610",
+        "nation_code": "0996",
+        "prov": "默认"
+      }
+    ],
+    "0994": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099410",
+        "nation_code": "0994",
+        "prov": "默认"
+      }
+    ],
+    "0995": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099510",
+        "nation_code": "0995",
+        "prov": "默认"
+      }
+    ],
+    "0992": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099210",
+        "nation_code": "0992",
+        "prov": "默认"
+      }
+    ],
+    "0993": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099310",
+        "nation_code": "0993",
+        "prov": "默认"
+      }
+    ],
+    "0998": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0099810",
+        "nation_code": "0998",
+        "prov": "默认"
+      }
+    ],
+    "0090": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009010",
+        "nation_code": "0090",
+        "prov": "默认"
+      }
+    ],
+    "0098": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009810",
+        "nation_code": "0098",
+        "prov": "默认"
+      }
+    ],
+    "0095": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009510",
+        "nation_code": "0095",
+        "prov": "默认"
+      }
+    ],
+    "0093": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009310",
+        "nation_code": "0093",
+        "prov": "默认"
+      }
+    ],
+    "0094": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009410",
+        "nation_code": "0094",
+        "prov": "默认"
+      }
+    ],
+    "0091": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009110",
+        "nation_code": "0091",
+        "prov": "默认"
+      }
+    ],
+    "0092": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0009210",
+        "nation_code": "0092",
+        "prov": "默认"
+      }
+    ],
+    "0880": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0088010",
+        "nation_code": "0880",
+        "prov": "默认"
+      }
+    ],
+    "1869": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0186910",
+        "nation_code": "1869",
+        "prov": "默认"
+      }
+    ],
+    "1868": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0186810",
+        "nation_code": "1868",
+        "prov": "默认"
+      }
+    ],
+    "0670": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067010",
+        "nation_code": "0670",
+        "prov": "默认"
+      }
+    ],
+    "1876": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0187610",
+        "nation_code": "1876",
+        "prov": "默认"
+      }
+    ],
+    "0423": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0042310",
+        "nation_code": "0423",
+        "prov": "默认"
+      }
+    ],
+    "0420": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0042010",
+        "nation_code": "0420",
+        "prov": "默认"
+      }
+    ],
+    "0421": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0042110",
+        "nation_code": "0421",
+        "prov": "默认"
+      }
+    ],
+    "1758": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0175810",
+        "nation_code": "1758",
+        "prov": "默认"
+      }
+    ],
+    "0680": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068010",
+        "nation_code": "0680",
+        "prov": "默认"
+      }
+    ],
+    "0677": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067710",
+        "nation_code": "0677",
+        "prov": "默认"
+      }
+    ],
+    "1767": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0176710",
+        "nation_code": "1767",
+        "prov": "默认"
+      }
+    ],
+    "0678": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067810",
+        "nation_code": "0678",
+        "prov": "默认"
+      }
+    ],
+    "0675": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067510",
+        "nation_code": "0675",
+        "prov": "默认"
+      }
+    ],
+    "0676": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067610",
+        "nation_code": "0676",
+        "prov": "默认"
+      }
+    ],
+    "0673": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067310",
+        "nation_code": "0673",
+        "prov": "默认"
+      }
+    ],
+    "0674": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067410",
+        "nation_code": "0674",
+        "prov": "默认"
+      }
+    ],
+    "0672": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067210",
+        "nation_code": "0672",
+        "prov": "默认"
+      }
+    ],
+    "1649": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0164910",
+        "nation_code": "1649",
+        "prov": "默认"
+      }
+    ],
+    "0679": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0067910",
+        "nation_code": "0679",
+        "prov": "默认"
+      }
+    ],
+    "0691": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0069110",
+        "nation_code": "0691",
+        "prov": "默认"
+      }
+    ],
+    "0692": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0069210",
+        "nation_code": "0692",
+        "prov": "默认"
+      }
+    ],
+    "9381": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0938110",
+        "nation_code": "9381",
+        "prov": "默认"
+      }
+    ],
+    "9262": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0926210",
+        "nation_code": "9262",
+        "prov": "默认"
+      }
+    ],
+    "0688": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068810",
+        "nation_code": "0688",
+        "prov": "默认"
+      }
+    ],
+    "0689": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068910",
+        "nation_code": "0689",
+        "prov": "默认"
+      }
+    ],
+    "0686": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068610",
+        "nation_code": "0686",
+        "prov": "默认"
+      }
+    ],
+    "0687": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068710",
+        "nation_code": "0687",
+        "prov": "默认"
+      }
+    ],
+    "0685": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068510",
+        "nation_code": "0685",
+        "prov": "默认"
+      }
+    ],
+    "0682": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068210",
+        "nation_code": "0682",
+        "prov": "默认"
+      }
+    ],
+    "0683": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0068310",
+        "nation_code": "0683",
+        "prov": "默认"
+      }
+    ],
+    "1671": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0167110",
+        "nation_code": "1671",
+        "prov": "默认"
+      }
+    ],
+    "1670": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0167010",
+        "nation_code": "1670",
+        "prov": "默认"
+      }
+    ],
+    "0216": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0021610",
+        "nation_code": "0216",
+        "prov": "默认"
+      }
+    ],
+    "0213": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0021310",
+        "nation_code": "0213",
+        "prov": "默认"
+      }
+    ],
+    "0211": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0021110",
+        "nation_code": "0211",
+        "prov": "默认"
+      }
+    ],
+    "1664": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0166410",
+        "nation_code": "1664",
+        "prov": "默认"
+      }
+    ],
+    "0212": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0021210",
+        "nation_code": "0212",
+        "prov": "默认"
+      }
+    ],
+    "1784": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0178410",
+        "nation_code": "1784",
+        "prov": "默认"
+      }
+    ],
+    "0218": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0021810",
+        "nation_code": "0218",
+        "prov": "默认"
+      }
+    ],
+    "9961": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0996110",
+        "nation_code": "9961",
+        "prov": "默认"
+      }
+    ],
+    "4397": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "1439710",
+        "nation_code": "4397",
+        "prov": "默认"
+      }
+    ],
+    "0350": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035010",
+        "nation_code": "0350",
+        "prov": "默认"
+      }
+    ],
+    "0592": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059210",
+        "nation_code": "0592",
+        "prov": "默认"
+      }
+    ],
+    "0230": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023010",
+        "nation_code": "0230",
+        "prov": "默认"
+      }
+    ],
+    "0351": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035110",
+        "nation_code": "0351",
+        "prov": "默认"
+      }
+    ],
+    "0593": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059310",
+        "nation_code": "0593",
+        "prov": "默认"
+      }
+    ],
+    "0590": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059010",
+        "nation_code": "0590",
+        "prov": "默认"
+      }
+    ],
+    "0591": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059110",
+        "nation_code": "0591",
+        "prov": "默认"
+      }
+    ],
+    "0226": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022610",
+        "nation_code": "0226",
+        "prov": "默认"
+      }
+    ],
+    "0227": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022710",
+        "nation_code": "0227",
+        "prov": "默认"
+      }
+    ],
+    "0224": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022410",
+        "nation_code": "0224",
+        "prov": "默认"
+      }
+    ],
+    "0225": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022510",
+        "nation_code": "0225",
+        "prov": "默认"
+      }
+    ],
+    "0222": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022210",
+        "nation_code": "0222",
+        "prov": "默认"
+      }
+    ],
+    "0223": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022310",
+        "nation_code": "0223",
+        "prov": "默认"
+      }
+    ],
+    "0220": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022010",
+        "nation_code": "0220",
+        "prov": "默认"
+      }
+    ],
+    "0221": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022110",
+        "nation_code": "0221",
+        "prov": "默认"
+      }
+    ],
+    "0228": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022810",
+        "nation_code": "0228",
+        "prov": "默认"
+      }
+    ],
+    "0229": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0022910",
+        "nation_code": "0229",
+        "prov": "默认"
+      }
+    ],
+    "0240": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024010",
+        "nation_code": "0240",
+        "prov": "默认"
+      }
+    ],
+    "0241": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0024110",
+        "nation_code": "0241",
+        "prov": "默认"
+      }
+    ],
+    "0237": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023710",
+        "nation_code": "0237",
+        "prov": "默认"
+      }
+    ],
+    "0358": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035810",
+        "nation_code": "0358",
+        "prov": "默认"
+      }
+    ],
+    "0238": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023810",
+        "nation_code": "0238",
+        "prov": "默认"
+      }
+    ],
+    "0359": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035910",
+        "nation_code": "0359",
+        "prov": "默认"
+      }
+    ],
+    "0235": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023510",
+        "nation_code": "0235",
+        "prov": "默认"
+      }
+    ],
+    "0356": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035610",
+        "nation_code": "0356",
+        "prov": "默认"
+      }
+    ],
+    "0598": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059810",
+        "nation_code": "0598",
+        "prov": "默认"
+      }
+    ],
+    "0236": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023610",
+        "nation_code": "0236",
+        "prov": "默认"
+      }
+    ],
+    "0357": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035710",
+        "nation_code": "0357",
+        "prov": "默认"
+      }
+    ],
+    "0599": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059910",
+        "nation_code": "0599",
+        "prov": "默认"
+      }
+    ],
+    "0233": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023310",
+        "nation_code": "0233",
+        "prov": "默认"
+      }
+    ],
+    "0354": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035410",
+        "nation_code": "0354",
+        "prov": "默认"
+      }
+    ],
+    "0596": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059610",
+        "nation_code": "0596",
+        "prov": "默认"
+      }
+    ],
+    "0234": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023410",
+        "nation_code": "0234",
+        "prov": "默认"
+      }
+    ],
+    "0355": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035510",
+        "nation_code": "0355",
+        "prov": "默认"
+      }
+    ],
+    "0597": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059710",
+        "nation_code": "0597",
+        "prov": "默认"
+      }
+    ],
+    "0231": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023110",
+        "nation_code": "0231",
+        "prov": "默认"
+      }
+    ],
+    "0352": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035210",
+        "nation_code": "0352",
+        "prov": "默认"
+      }
+    ],
+    "0594": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059410",
+        "nation_code": "0594",
+        "prov": "默认"
+      }
+    ],
+    "1684": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0168410",
+        "nation_code": "1684",
+        "prov": "默认"
+      }
+    ],
+    "0232": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023210",
+        "nation_code": "0232",
+        "prov": "默认"
+      }
+    ],
+    "0353": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0035310",
+        "nation_code": "0353",
+        "prov": "默认"
+      }
+    ],
+    "0595": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0059510",
+        "nation_code": "0595",
+        "prov": "默认"
+      }
+    ],
+    "1441": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0144110",
+        "nation_code": "1441",
+        "prov": "默认"
+      }
+    ],
+    "0239": [
+      {
+        "prov_en_us": "default",
+        "prov_code": "0023910",
+        "nation_code": "0239",
+        "prov": "默认"
+      }
+    ]
+  },
+  "nation_list": [
+    {
+      "nation": "不丹",
+      "nation_en_us": "Bhutan",
+      "nation_code": "0975"
+    },
+    {
+      "nation": "东帝汶",
+      "nation_en_us": "Timor-leste",
+      "nation_code": "0670"
+    },
+    {
+      "nation": "东萨摩亚(美)",
+      "nation_en_us": "AmericanSamoa",
+      "nation_code": "1684"
+    },
+    {
+      "nation": "中国",
+      "nation_en_us": "China",
+      "nation_code": "0086"
+    },
+    {
+      "nation": "中非",
+      "nation_en_us": "CentralAfricanRepublic",
+      "nation_code": "0236"
+    },
+    {
+      "nation": "丹麦",
+      "nation_en_us": "Denmark",
+      "nation_code": "0045"
+    },
+    {
+      "nation": "乌克兰",
+      "nation_en_us": "Ukraine",
+      "nation_code": "0380"
+    },
+    {
+      "nation": "乌兹别克斯坦",
+      "nation_en_us": "Uzbekistan",
+      "nation_code": "0998"
+    },
+    {
+      "nation": "乌干达",
+      "nation_en_us": "Uganda",
+      "nation_code": "0256"
+    },
+    {
+      "nation": "乌拉圭",
+      "nation_en_us": "Uruguay",
+      "nation_code": "0598"
+    },
+    {
+      "nation": "乍得",
+      "nation_en_us": "Chad",
+      "nation_code": "0235"
+    },
+    {
+      "nation": "也门",
+      "nation_en_us": "Yemen",
+      "nation_code": "0967"
+    },
+    {
+      "nation": "亚美尼亚",
+      "nation_en_us": "Armenia",
+      "nation_code": "0374"
+    },
+    {
+      "nation": "以色列",
+      "nation_en_us": "Israel",
+      "nation_code": "0972"
+    },
+    {
+      "nation": "伊拉克",
+      "nation_en_us": "Iraq",
+      "nation_code": "0964"
+    },
+    {
+      "nation": "伊郎",
+      "nation_en_us": "Iran",
+      "nation_code": "0098"
+    },
+    {
+      "nation": "伯利兹",
+      "nation_en_us": "Belize",
+      "nation_code": "0501"
+    },
+    {
+      "nation": "佛得角",
+      "nation_en_us": "CapeVerde",
+      "nation_code": "0238"
+    },
+    {
+      "nation": "俄罗斯",
+      "nation_en_us": "RussianFederation",
+      "nation_code": "0007"
+    },
+    {
+      "nation": "保加利亚",
+      "nation_en_us": "Bulgaria",
+      "nation_code": "0359"
+    },
+    {
+      "nation": "克罗地亚",
+      "nation_en_us": "Croatia",
+      "nation_code": "0385"
+    },
+    {
+      "nation": "关岛(美)",
+      "nation_en_us": "Guam",
+      "nation_code": "1671"
+    },
+    {
+      "nation": "冈比亚",
+      "nation_en_us": "Gambia",
+      "nation_code": "0220"
+    },
+    {
+      "nation": "冰岛",
+      "nation_en_us": "Iceland",
+      "nation_code": "0354"
+    },
+    {
+      "nation": "几内亚",
+      "nation_en_us": "Guinea",
+      "nation_code": "0224"
+    },
+    {
+      "nation": "几内亚比绍",
+      "nation_en_us": "Guinea-bissau",
+      "nation_code": "0245"
+    },
+    {
+      "nation": "列支敦士登",
+      "nation_en_us": "Liechtenstein",
+      "nation_code": "0423"
+    },
+    {
+      "nation": "刚果",
+      "nation_en_us": "Congo",
+      "nation_code": "0242"
+    },
+    {
+      "nation": "刚果(金)",
+      "nation_en_us": "DemocraticRepublicoftheCongo",
+      "nation_code": "0243"
+    },
+    {
+      "nation": "利比亚",
+      "nation_en_us": "Libya",
+      "nation_code": "0218"
+    },
+    {
+      "nation": "利比里亚",
+      "nation_en_us": "Liberia",
+      "nation_code": "0231"
+    },
+    {
+      "nation": "加拿大",
+      "nation_en_us": "Canada",
+      "nation_code": "9991"
+    },
+    {
+      "nation": "加纳",
+      "nation_en_us": "Ghana",
+      "nation_code": "0233"
+    },
+    {
+      "nation": "加蓬",
+      "nation_en_us": "Gabon",
+      "nation_code": "0241"
+    },
+    {
+      "nation": "匈牙利",
+      "nation_en_us": "HunGary",
+      "nation_code": "0036"
+    },
+    {
+      "nation": "南斯拉夫",
+      "nation_en_us": "Yugoslavia",
+      "nation_code": "0381"
+    },
+    {
+      "nation": "南苏丹",
+      "nation_en_us": "SouthSudan",
+      "nation_code": "0211"
+    },
+    {
+      "nation": "南非",
+      "nation_en_us": "SouthAfrica",
+      "nation_code": "0027"
+    },
+    {
+      "nation": "博茨瓦纳",
+      "nation_en_us": "Botswana",
+      "nation_code": "0267"
+    },
+    {
+      "nation": "卡塔尔",
+      "nation_en_us": "Qatar",
+      "nation_code": "0974"
+    },
+    {
+      "nation": "卢旺达",
+      "nation_en_us": "Rwanda",
+      "nation_code": "0250"
+    },
+    {
+      "nation": "卢森堡",
+      "nation_en_us": "Luxembourg",
+      "nation_code": "0352"
+    },
+    {
+      "nation": "印度",
+      "nation_en_us": "India",
+      "nation_code": "0091"
+    },
+    {
+      "nation": "印度尼西亚",
+      "nation_en_us": "Indonesia",
+      "nation_code": "0062"
+    },
+    {
+      "nation": "危地马拉",
+      "nation_en_us": "Guatemala",
+      "nation_code": "0502"
+    },
+    {
+      "nation": "厄瓜多尔",
+      "nation_en_us": "Ecuador",
+      "nation_code": "0593"
+    },
+    {
+      "nation": "厄立特里亚",
+      "nation_en_us": "Eritrea",
+      "nation_code": "0291"
+    },
+    {
+      "nation": "叙利亚",
+      "nation_en_us": "Syria",
+      "nation_code": "0963"
+    },
+    {
+      "nation": "古巴",
+      "nation_en_us": "Cuba",
+      "nation_code": "0053"
+    },
+    {
+      "nation": "吉尔吉斯斯坦",
+      "nation_en_us": "Kyrgyzstan",
+      "nation_code": "0996"
+    },
+    {
+      "nation": "吉布提",
+      "nation_en_us": "Djibouti",
+      "nation_code": "0253"
+    },
+    {
+      "nation": "哈萨克斯坦",
+      "nation_en_us": "Kazakhstan",
+      "nation_code": "9997"
+    },
+    {
+      "nation": "哥伦比亚",
+      "nation_en_us": "Colombia",
+      "nation_code": "0057"
+    },
+    {
+      "nation": "哥斯达黎加",
+      "nation_en_us": "CostaRica",
+      "nation_code": "0506"
+    },
+    {
+      "nation": "喀麦隆",
+      "nation_en_us": "Cameroon",
+      "nation_code": "0237"
+    },
+    {
+      "nation": "图瓦卢",
+      "nation_en_us": "Tuvalu",
+      "nation_code": "0688"
+    },
+    {
+      "nation": "土库曼斯坦",
+      "nation_en_us": "Turkmenistan",
+      "nation_code": "0993"
+    },
+    {
+      "nation": "土耳其",
+      "nation_en_us": "Turkey",
+      "nation_code": "0090"
+    },
+    {
+      "nation": "圣克里斯托弗和尼维斯",
+      "nation_en_us": "SaintKittsandNevis",
+      "nation_code": "1869"
+    },
+    {
+      "nation": "圣卢西亚",
+      "nation_en_us": "SaintLucia",
+      "nation_code": "1758"
+    },
+    {
+      "nation": "圣多美和普林西比",
+      "nation_en_us": "SaoTomeandPrincipe",
+      "nation_code": "0239"
+    },
+    {
+      "nation": "圣文森特岛(英)",
+      "nation_en_us": "SaintVincentandtheGrenadines",
+      "nation_code": "1784"
+    },
+    {
+      "nation": "圣皮埃尔岛及密克隆岛",
+      "nation_en_us": "SaintPierreandMiquelon",
+      "nation_code": "0508"
+    },
+    {
+      "nation": "圣诞岛",
+      "nation_en_us": "ChristmasIsland",
+      "nation_code": "9961"
+    },
+    {
+      "nation": "圣赫勒拿",
+      "nation_en_us": "SaintHelena,AscensionandTristandaCunha",
+      "nation_code": "0290"
+    },
+    {
+      "nation": "圣马力诺",
+      "nation_en_us": "SanMarino",
+      "nation_code": "0378"
+    },
+    {
+      "nation": "圭亚那",
+      "nation_en_us": "Guyana",
+      "nation_code": "0592"
+    },
+    {
+      "nation": "坦桑尼亚",
+      "nation_en_us": "UnitedRepublicofTanzania",
+      "nation_code": "0255"
+    },
+    {
+      "nation": "埃及",
+      "nation_en_us": "Egypt",
+      "nation_code": "0020"
+    },
+    {
+      "nation": "埃塞俄比亚",
+      "nation_en_us": "Ethiopia",
+      "nation_code": "0251"
+    },
+    {
+      "nation": "基里巴斯",
+      "nation_en_us": "Kiribati",
+      "nation_code": "0686"
+    },
+    {
+      "nation": "塔吉克斯坦",
+      "nation_en_us": "Tajikistan",
+      "nation_code": "0992"
+    },
+    {
+      "nation": "塞内加尔",
+      "nation_en_us": "Senegal",
+      "nation_code": "0221"
+    },
+    {
+      "nation": "塞尔维亚",
+      "nation_en_us": "Serbia",
+      "nation_code": "9381"
+    },
+    {
+      "nation": "塞拉利昂",
+      "nation_en_us": "SierraLeone",
+      "nation_code": "0232"
+    },
+    {
+      "nation": "塞浦路斯",
+      "nation_en_us": "Cyprus",
+      "nation_code": "0357"
+    },
+    {
+      "nation": "塞舌尔",
+      "nation_en_us": "Seychelles",
+      "nation_code": "0248"
+    },
+    {
+      "nation": "墨西哥",
+      "nation_en_us": "Mexico",
+      "nation_code": "0052"
+    },
+    {
+      "nation": "多哥",
+      "nation_en_us": "Togo",
+      "nation_code": "0228"
+    },
+    {
+      "nation": "多米尼克国",
+      "nation_en_us": "Dominica",
+      "nation_code": "1767"
+    },
+    {
+      "nation": "多米尼加共和国",
+      "nation_en_us": "DominicanRepublic",
+      "nation_code": "1809"
+    },
+    {
+      "nation": "奥地利",
+      "nation_en_us": "Austria",
+      "nation_code": "0043"
+    },
+    {
+      "nation": "委内瑞拉",
+      "nation_en_us": "Venezuela",
+      "nation_code": "0058"
+    },
+    {
+      "nation": "孟加拉国",
+      "nation_en_us": "Bangladesh",
+      "nation_code": "0880"
+    },
+    {
+      "nation": "安哥拉",
+      "nation_en_us": "Angola",
+      "nation_code": "0244"
+    },
+    {
+      "nation": "安圭拉岛(英)",
+      "nation_en_us": "Anguilla",
+      "nation_code": "1264"
+    },
+    {
+      "nation": "安提瓜和巴布达",
+      "nation_en_us": "AntiguaandBarbuda",
+      "nation_code": "1268"
+    },
+    {
+      "nation": "安道尔",
+      "nation_en_us": "Andorra",
+      "nation_code": "0376"
+    },
+    {
+      "nation": "密克罗尼西亚(美)",
+      "nation_en_us": "Micronesia",
+      "nation_code": "0691"
+    },
+    {
+      "nation": "尼加拉瓜",
+      "nation_en_us": "Nicaragua",
+      "nation_code": "0505"
+    },
+    {
+      "nation": "尼日利亚",
+      "nation_en_us": "Nigeria",
+      "nation_code": "0234"
+    },
+    {
+      "nation": "尼日尔",
+      "nation_en_us": "Niger",
+      "nation_code": "0227"
+    },
+    {
+      "nation": "尼泊尔",
+      "nation_en_us": "Nepal",
+      "nation_code": "0977"
+    },
+    {
+      "nation": "巴哈马国",
+      "nation_en_us": "TheCommonwealthofTheBahamas",
+      "nation_code": "1242"
+    },
+    {
+      "nation": "巴基斯坦",
+      "nation_en_us": "Pakistan",
+      "nation_code": "0092"
+    },
+    {
+      "nation": "巴巴多斯",
+      "nation_en_us": "Barbados",
+      "nation_code": "1246"
+    },
+    {
+      "nation": "巴布亚新几内亚",
+      "nation_en_us": "PapuaNewGuinea",
+      "nation_code": "0675"
+    },
+    {
+      "nation": "巴拉圭",
+      "nation_en_us": "Paraguay",
+      "nation_code": "0595"
+    },
+    {
+      "nation": "巴拿马",
+      "nation_en_us": "Panama",
+      "nation_code": "0507"
+    },
+    {
+      "nation": "巴林",
+      "nation_en_us": "Bahrain",
+      "nation_code": "0973"
+    },
+    {
+      "nation": "巴西",
+      "nation_en_us": "Brazil",
+      "nation_code": "0055"
+    },
+    {
+      "nation": "布基纳法索",
+      "nation_en_us": "Burkinafaso",
+      "nation_code": "0226"
+    },
+    {
+      "nation": "布隆迪",
+      "nation_en_us": "Burundi",
+      "nation_code": "0257"
+    },
+    {
+      "nation": "希腊",
+      "nation_en_us": "Greece",
+      "nation_code": "0030"
+    },
+    {
+      "nation": "帕劳(美)",
+      "nation_en_us": "Palau",
+      "nation_code": "0680"
+    },
+    {
+      "nation": "开曼群岛(英)",
+      "nation_en_us": "CaymanIslands",
+      "nation_code": "1345"
+    },
+    {
+      "nation": "德国",
+      "nation_en_us": "Germany",
+      "nation_code": "0049"
+    },
+    {
+      "nation": "意大利",
+      "nation_en_us": "Italy",
+      "nation_code": "0039"
+    },
+    {
+      "nation": "所罗门群岛",
+      "nation_en_us": "SolomonIslands",
+      "nation_code": "0677"
+    },
+    {
+      "nation": "拉脱维亚",
+      "nation_en_us": "Latvia",
+      "nation_code": "0371"
+    },
+    {
+      "nation": "挪威",
+      "nation_en_us": "Norway",
+      "nation_code": "0047"
+    },
+    {
+      "nation": "捷克",
+      "nation_en_us": "Czech",
+      "nation_code": "0420"
+    },
+    {
+      "nation": "摩尔多瓦",
+      "nation_en_us": "RepublicofMoldova",
+      "nation_code": "0373"
+    },
+    {
+      "nation": "摩洛哥",
+      "nation_en_us": "Morocco",
+      "nation_code": "0212"
+    },
+    {
+      "nation": "摩纳哥",
+      "nation_en_us": "Monaco",
+      "nation_code": "0377"
+    },
+    {
+      "nation": "文莱",
+      "nation_en_us": "BruneiDarussalam",
+      "nation_code": "0673"
+    },
+    {
+      "nation": "斐济",
+      "nation_en_us": "Fiji",
+      "nation_code": "0679"
+    },
+    {
+      "nation": "斯威士兰",
+      "nation_en_us": "Swaziland",
+      "nation_code": "0268"
+    },
+    {
+      "nation": "斯洛伐克",
+      "nation_en_us": "Slovakia",
+      "nation_code": "0421"
+    },
+    {
+      "nation": "斯洛文尼亚",
+      "nation_en_us": "Slovenia",
+      "nation_code": "0386"
+    },
+    {
+      "nation": "斯里兰卡",
+      "nation_en_us": "SriLanka",
+      "nation_code": "0094"
+    },
+    {
+      "nation": "新加坡",
+      "nation_en_us": "Singapore",
+      "nation_code": "0065"
+    },
+    {
+      "nation": "新喀里多尼亚群岛(法)",
+      "nation_en_us": "NewCaledonia",
+      "nation_code": "0687"
+    },
+    {
+      "nation": "新西兰",
+      "nation_en_us": "NewZealand",
+      "nation_code": "0064"
+    },
+    {
+      "nation": "日本",
+      "nation_en_us": "Japan",
+      "nation_code": "0081"
+    },
+    {
+      "nation": "智利",
+      "nation_en_us": "Chile",
+      "nation_code": "0056"
+    },
+    {
+      "nation": "朝鲜",
+      "nation_en_us": "NorthKorea",
+      "nation_code": "0850"
+    },
+    {
+      "nation": "柬埔塞",
+      "nation_en_us": "Kampuchea",
+      "nation_code": "0855"
+    },
+    {
+      "nation": "格林纳达",
+      "nation_en_us": "Grenada",
+      "nation_code": "1473"
+    },
+    {
+      "nation": "格陵兰岛",
+      "nation_en_us": "Greenland",
+      "nation_code": "0299"
+    },
+    {
+      "nation": "格鲁吉亚",
+      "nation_en_us": "Georgia",
+      "nation_code": "0995"
+    },
+    {
+      "nation": "桑给巴尔",
+      "nation_en_us": "Zanzibar",
+      "nation_code": "0259"
+    },
+    {
+      "nation": "梵蒂冈",
+      "nation_en_us": "TheVaticanCityState",
+      "nation_code": "4397"
+    },
+    {
+      "nation": "比利时",
+      "nation_en_us": "Belgium",
+      "nation_code": "0032"
+    },
+    {
+      "nation": "毛里塔尼亚",
+      "nation_en_us": "Mauritania",
+      "nation_code": "0222"
+    },
+    {
+      "nation": "毛里求斯",
+      "nation_en_us": "Mauritius",
+      "nation_code": "0230"
+    },
+    {
+      "nation": "汤加",
+      "nation_en_us": "Tonga",
+      "nation_code": "0676"
+    },
+    {
+      "nation": "沙特阿拉伯",
+      "nation_en_us": "SaudiArabia",
+      "nation_code": "0966"
+    },
+    {
+      "nation": "法国",
+      "nation_en_us": "France",
+      "nation_code": "0033"
+    },
+    {
+      "nation": "法属圭亚那",
+      "nation_en_us": "Guyana",
+      "nation_code": "0594"
+    },
+    {
+      "nation": "法属波里尼西亚",
+      "nation_en_us": "FrenchPolynesia",
+      "nation_code": "0689"
+    },
+    {
+      "nation": "法罗群岛(丹)",
+      "nation_en_us": "FaroeIslands",
+      "nation_code": "0298"
+    },
+    {
+      "nation": "波兰",
+      "nation_en_us": "Poland",
+      "nation_code": "0048"
+    },
+    {
+      "nation": "波斯尼亚和黑塞哥维那",
+      "nation_en_us": "BosniaandHerzegovina",
+      "nation_code": "0387"
+    },
+    {
+      "nation": "泰国",
+      "nation_en_us": "Thailand",
+      "nation_code": "0066"
+    },
+    {
+      "nation": "津巴布韦",
+      "nation_en_us": "Zimbabwe",
+      "nation_code": "0263"
+    },
+    {
+      "nation": "洪都拉斯",
+      "nation_en_us": "Honduras",
+      "nation_code": "0504"
+    },
+    {
+      "nation": "海地",
+      "nation_en_us": "Haiti",
+      "nation_code": "0509"
+    },
+    {
+      "nation": "澳大利亚",
+      "nation_en_us": "Australia",
+      "nation_code": "0061"
+    },
+    {
+      "nation": "爱尔兰",
+      "nation_en_us": "Ireland",
+      "nation_code": "0353"
+    },
+    {
+      "nation": "爱沙尼亚",
+      "nation_en_us": "Estonia",
+      "nation_code": "0372"
+    },
+    {
+      "nation": "牙买加",
+      "nation_en_us": "Jamaica",
+      "nation_code": "1876"
+    },
+    {
+      "nation": "特克斯和凯科斯群岛(英)",
+      "nation_en_us": "TurksandCaicosIslands",
+      "nation_code": "1649"
+    },
+    {
+      "nation": "特立尼达和多巴哥",
+      "nation_en_us": "TrinidadandTobago",
+      "nation_code": "1868"
+    },
+    {
+      "nation": "玻利维亚",
+      "nation_en_us": "Bolivia",
+      "nation_code": "0591"
+    },
+    {
+      "nation": "瑙鲁",
+      "nation_en_us": "Nauru",
+      "nation_code": "0674"
+    },
+    {
+      "nation": "瑞典",
+      "nation_en_us": "Sweden",
+      "nation_code": "0046"
+    },
+    {
+      "nation": "瑞士",
+      "nation_en_us": "Switzerland",
+      "nation_code": "0041"
+    },
+    {
+      "nation": "瓜德罗普岛(法)",
+      "nation_en_us": "Guadeloupe",
+      "nation_code": "0590"
+    },
+    {
+      "nation": "瓦努阿图",
+      "nation_en_us": "Vanuatu",
+      "nation_code": "0678"
+    },
+    {
+      "nation": "留尼汪岛",
+      "nation_en_us": "Reunion",
+      "nation_code": "0262"
+    },
+    {
+      "nation": "白俄罗斯",
+      "nation_en_us": "Belarus",
+      "nation_code": "0375"
+    },
+    {
+      "nation": "百慕大群岛(英)",
+      "nation_en_us": "Bermuda",
+      "nation_code": "1441"
+    },
+    {
+      "nation": "直布罗陀(英)",
+      "nation_en_us": "Gibraltar",
+      "nation_code": "0350"
+    },
+    {
+      "nation": "福克兰群岛",
+      "nation_en_us": "FalklandIslands(Malvinas)",
+      "nation_code": "0500"
+    },
+    {
+      "nation": "科克群岛(新)",
+      "nation_en_us": "CookIsland",
+      "nation_code": "0682"
+    },
+    {
+      "nation": "科威特",
+      "nation_en_us": "Kuwait",
+      "nation_code": "0965"
+    },
+    {
+      "nation": "科摩罗",
+      "nation_en_us": "Comoros",
+      "nation_code": "0269"
+    },
+    {
+      "nation": "科特迪瓦",
+      "nation_en_us": "IvoryCoast",
+      "nation_code": "0225"
+    },
+    {
+      "nation": "秘鲁",
+      "nation_en_us": "Peru",
+      "nation_code": "0051"
+    },
+    {
+      "nation": "突尼斯",
+      "nation_en_us": "Tunisia",
+      "nation_code": "0216"
+    },
+    {
+      "nation": "立陶宛",
+      "nation_en_us": "Lithuania",
+      "nation_code": "0370"
+    },
+    {
+      "nation": "索马里",
+      "nation_en_us": "Somalia",
+      "nation_code": "0252"
+    },
+    {
+      "nation": "约旦",
+      "nation_en_us": "Jordan",
+      "nation_code": "0962"
+    },
+    {
+      "nation": "纳米比亚",
+      "nation_en_us": "Namibia",
+      "nation_code": "0264"
+    },
+    {
+      "nation": "纽埃岛(新)",
+      "nation_en_us": "Niue",
+      "nation_code": "0683"
+    },
+    {
+      "nation": "维尔京群岛(英)",
+      "nation_en_us": "VirginIslands,British",
+      "nation_code": "1340"
+    },
+    {
+      "nation": "缅甸",
+      "nation_en_us": "Myanmar",
+      "nation_code": "0095"
+    },
+    {
+      "nation": "罗马尼亚",
+      "nation_en_us": "Romania",
+      "nation_code": "0040"
+    },
+    {
+      "nation": "美国",
+      "nation_en_us": "UnitedStatesofAmerica",
+      "nation_code": "0001"
+    },
+    {
+      "nation": "老挝",
+      "nation_en_us": "Laos",
+      "nation_code": "0856"
+    },
+    {
+      "nation": "肯尼亚",
+      "nation_en_us": "Kenya",
+      "nation_code": "0254"
+    },
+    {
+      "nation": "芬兰",
+      "nation_en_us": "Finland",
+      "nation_code": "0358"
+    },
+    {
+      "nation": "苏丹",
+      "nation_en_us": "Sudan",
+      "nation_code": "0249"
+    },
+    {
+      "nation": "苏里南",
+      "nation_en_us": "Suriname",
+      "nation_code": "0597"
+    },
+    {
+      "nation": "英国",
+      "nation_en_us": "UnitedKingdom",
+      "nation_code": "0044"
+    },
+    {
+      "nation": "荷兰",
+      "nation_en_us": "Netherlands",
+      "nation_code": "0031"
+    },
+    {
+      "nation": "荷属安的列斯群岛",
+      "nation_en_us": "NetherlandsAntilles",
+      "nation_code": "0599"
+    },
+    {
+      "nation": "莫桑比克",
+      "nation_en_us": "Mozambique",
+      "nation_code": "0258"
+    },
+    {
+      "nation": "莱索托",
+      "nation_en_us": "Lesotho",
+      "nation_code": "0266"
+    },
+    {
+      "nation": "菲律宾",
+      "nation_en_us": "Philippines",
+      "nation_code": "0063"
+    },
+    {
+      "nation": "萨尔瓦多",
+      "nation_en_us": "ElSalvador",
+      "nation_code": "0503"
+    },
+    {
+      "nation": "葡萄牙",
+      "nation_en_us": "Portugal",
+      "nation_code": "0351"
+    },
+    {
+      "nation": "蒙古",
+      "nation_en_us": "Mongolia",
+      "nation_code": "0976"
+    },
+    {
+      "nation": "蒙特塞拉特岛(英)",
+      "nation_en_us": "Montserrat",
+      "nation_code": "1664"
+    },
+    {
+      "nation": "西班牙",
+      "nation_en_us": "Spain",
+      "nation_code": "0034"
+    },
+    {
+      "nation": "西萨摩亚",
+      "nation_en_us": "Samoa",
+      "nation_code": "0685"
+    },
+    {
+      "nation": "诺福克岛(澳)",
+      "nation_en_us": "NorfolkIsland",
+      "nation_code": "0672"
+    },
+    {
+      "nation": "贝宁",
+      "nation_en_us": "Benin",
+      "nation_code": "0229"
+    },
+    {
+      "nation": "赞比亚",
+      "nation_en_us": "Zambia",
+      "nation_code": "0260"
+    },
+    {
+      "nation": "赤道几内亚",
+      "nation_en_us": "EquatorialGuinea",
+      "nation_code": "0240"
+    },
+    {
+      "nation": "越南",
+      "nation_en_us": "Vietnam",
+      "nation_code": "0084"
+    },
+    {
+      "nation": "阿塞拜疆",
+      "nation_en_us": "Azerbaijan",
+      "nation_code": "0994"
+    },
+    {
+      "nation": "阿富汗",
+      "nation_en_us": "Afghanistan",
+      "nation_code": "0093"
+    },
+    {
+      "nation": "阿尔及利亚",
+      "nation_en_us": "Algeria",
+      "nation_code": "0213"
+    },
+    {
+      "nation": "阿尔巴尼亚",
+      "nation_en_us": "Albania",
+      "nation_code": "0355"
+    },
+    {
+      "nation": "阿拉伯联合酋长国",
+      "nation_en_us": "UnitedArabEmirates",
+      "nation_code": "0971"
+    },
+    {
+      "nation": "阿曼",
+      "nation_en_us": "Oman",
+      "nation_code": "0968"
+    },
+    {
+      "nation": "阿根廷",
+      "nation_en_us": "Argentina",
+      "nation_code": "0054"
+    },
+    {
+      "nation": "阿森松(英)",
+      "nation_en_us": "SaintHelena,AscensionandTristandaCunha",
+      "nation_code": "0247"
+    },
+    {
+      "nation": "阿鲁巴岛",
+      "nation_en_us": "Aruba",
+      "nation_code": "0297"
+    },
+    {
+      "nation": "韩国",
+      "nation_en_us": "Southkorea",
+      "nation_code": "0082"
+    },
+    {
+      "nation": "马其顿",
+      "nation_en_us": "Macedonia",
+      "nation_code": "0389"
+    },
+    {
+      "nation": "马尔代夫",
+      "nation_en_us": "Maldives",
+      "nation_code": "0960"
+    },
+    {
+      "nation": "马拉维",
+      "nation_en_us": "Malawi",
+      "nation_code": "0265"
+    },
+    {
+      "nation": "马提尼克(法)",
+      "nation_en_us": "Martinique",
+      "nation_code": "0596"
+    },
+    {
+      "nation": "马来西亚",
+      "nation_en_us": "Malaysia",
+      "nation_code": "0060"
+    },
+    {
+      "nation": "马约特岛",
+      "nation_en_us": "Mayotte",
+      "nation_code": "9262"
+    },
+    {
+      "nation": "马绍尔群岛",
+      "nation_en_us": "MarshallIsland",
+      "nation_code": "0692"
+    },
+    {
+      "nation": "马耳他",
+      "nation_en_us": "Malta",
+      "nation_code": "0356"
+    },
+    {
+      "nation": "马达加斯加",
+      "nation_en_us": "Madagascar",
+      "nation_code": "0261"
+    },
+    {
+      "nation": "马里",
+      "nation_en_us": "Mali",
+      "nation_code": "0223"
+    },
+    {
+      "nation": "马里亚纳群岛",
+      "nation_en_us": "NorthernMarianaIslands",
+      "nation_code": "1670"
+    },
+    {
+      "nation": "黎巴嫩",
+      "nation_en_us": "Lebanon",
+      "nation_code": "0961"
+    },
+    {
+      "nation": "黑山",
+      "nation_en_us": "Montenegro",
+      "nation_code": "0382"
+    }
+  ]
+}
