@@ -73,12 +73,9 @@ public class QuartzTest {
      * @throws SchedulerException 定时调用异常
      */
     private void addJobOnce(String name, String group, Class<? extends Job> clazz) throws SchedulerException {
-        JobDetail jobDetail = newJob(clazz)
-                .withIdentity(name, group)
-                .build();
+        JobDetail jobDetail = newJob(clazz).withIdentity(name, group).build();
         SimpleTrigger simpleTrigger = TriggerBuilder.newTrigger().
-                startNow().
-                withIdentity(name, group).
+                startNow().withIdentity(name, group).
                 // repeatCount 重复次数。实际执行次数是 repeatCount+1。因为在startTime的时候一定会执行一次。
                 withSchedule(SimpleScheduleBuilder.simpleSchedule().withRepeatCount(0))
                 .build();
