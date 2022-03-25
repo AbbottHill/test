@@ -1467,3 +1467,25 @@ class ClassCodeTest {
     }
 }
 
+
+
+class TypeTset {
+    public static void main(String[] args) {
+        byte bt = 127;
+        short st = 32717;
+        int it = 2147483647;
+        long lg = 1000000000000000000L;
+        System.out.println("bt == st > " + (bt == st));
+
+        char cr = 'a';
+        char cr1 = '你';
+        boolean bl = true;
+    }
+}
+
+class HeapOOM{
+    public static void main(String[] args) {
+        String[] sa = new String[10 * 1024 * 1024];
+    }
+}
+
