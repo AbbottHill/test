@@ -51,6 +51,7 @@ import static com.cd.test.EnumTest.PropertiesSingleton.PROPERTIES_SINGLETON;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
 
+
 public class MyTest {
     String fieldStr;
 
@@ -1447,8 +1448,22 @@ class UrlEncode_1 {
 
 
 class ConcurrentTest {
+    public static void main(String[] args) {
+
+    }
+}
 
 
+class ClassCodeTest {
 
+    public static void main(String[] args) {
+        int i = 10;
+        int a = i++;
+        int b = ++i;
+
+        System.out.println(i);// 10 10
+        System.out.println(a);// 10 11
+        System.out.println(b);// 11 12
+    }
 }
 
