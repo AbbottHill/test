@@ -21,7 +21,7 @@
         <junit.version>4.12</junit.version>
         <poi-version>3.16</poi-version>
         <!--<springframework.version>4.3.4.RELEASE</springframework.version>-->
-        <jackson.version>2.9.0</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <aspectj_version>1.8.6</aspectj_version>
         <oozie_version>4.2.0</oozie_version>
         <poi-version>3.16</poi-version>
