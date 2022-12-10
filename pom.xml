@@ -17,7 +17,7 @@
         <web.source.dir>${basedir}/src/main/webRoot</web.source.dir>
         <yuicompressor.output.dir>${project.build.directory}/${project.build.finalName}</yuicompressor.output.dir>
 
-        <springframework.version>5.0.4.RELEASE</springframework.version>
+        <springframework.version>6.0.0</springframework.version>
         <junit.version>4.12</junit.version>
         <poi-version>3.16</poi-version>
         <!--<springframework.version>4.3.4.RELEASE</springframework.version>-->
